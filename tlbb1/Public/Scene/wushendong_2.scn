@@ -1,0 +1,5 @@
+[System]
+pathmapname=wushendong_2.path
+monsterfile=wushendong_2_monster.ini
+patrolpoint=wushendong_2_patrolpoint.ini
+eventfile=wushendong_2_area.ini

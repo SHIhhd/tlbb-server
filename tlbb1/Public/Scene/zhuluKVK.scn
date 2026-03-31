@@ -1,0 +1,9 @@
+[System]
+pathmapname=zhuluKVK.path
+monsterfile=zhuluKVK_monster.ini
+patrolpoint=zhuluKVK_patrolpoint.ini
+growpointdata=zhuluKVK_growpoint.txt
+growpointsetup=zhuluKVK_growpointsetup.txt
+eventfile=zhuluKVK_area.ini
+platformfile=zhuluKVK_platform.ini
+

@@ -1,0 +1,5 @@
+[System]
+pathmapname=wudang_2.path
+monsterfile=wudang_2_monster.ini
+patrolpoint=wudang_2_patrolpoint.ini
+eventfile=wudang_2_area.ini

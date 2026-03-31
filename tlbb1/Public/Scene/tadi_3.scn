@@ -1,0 +1,5 @@
+[System]
+pathmapname=tadi_3.path
+monsterfile=tadi_3_monster.ini
+patrolpoint=tadi_3_patrolpoint.ini
+eventfile=tadi_3_area.ini

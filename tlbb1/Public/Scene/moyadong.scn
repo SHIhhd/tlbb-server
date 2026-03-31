@@ -1,0 +1,5 @@
+[System]
+pathmapname=moyadong.path
+monsterfile=moyadong_monster.ini
+patrolpoint=moyadong_patrolpoint.ini
+eventfile=moyadong_area.ini

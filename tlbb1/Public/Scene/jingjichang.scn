@@ -1,0 +1,5 @@
+[System]
+pathmapname=jingjichang.path
+monsterfile=jingjichang_monster.ini
+patrolpoint=jingjichang_patrolpoint.ini
+eventfile=jingjichang_area.ini

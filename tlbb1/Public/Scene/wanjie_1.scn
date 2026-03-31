@@ -1,0 +1,5 @@
+[System]
+pathmapname=wanjie_1.path
+monsterfile=wanjie_1_monster.ini
+patrolpoint=wanjie_1_patrolpoint.ini
+eventfile=wanjie_1_area.ini

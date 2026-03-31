@@ -1,0 +1,5 @@
+[System]
+pathmapname=mingjiao_3.path
+monsterfile=mingjiao_3_monster.ini
+patrolpoint=mingjiao_3_patrolpoint.ini
+eventfile=mingjiao_3_area.ini

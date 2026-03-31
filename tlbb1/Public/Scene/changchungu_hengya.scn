@@ -1,0 +1,8 @@
+[System]
+pathmapname=changchungu_hengya.path
+monsterfile=changchungu_hengya_monster.ini
+patrolpoint=changchungu_hengya_patrolpoint.ini
+growpointdata=changchungu_hengya_growpoint.txt
+growpointsetup=changchungu_hengya_growpointsetup.txt
+eventfile=changchungu_hengya_area.ini
+

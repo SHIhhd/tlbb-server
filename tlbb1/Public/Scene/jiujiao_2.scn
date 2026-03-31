@@ -1,0 +1,5 @@
+[System]
+pathmapname=jiujiao_2.path
+monsterfile=jiujiao_2_monster.ini
+patrolpoint=jiujiao_2_patrolpoint.ini
+eventfile=jiujiao_2_area.ini

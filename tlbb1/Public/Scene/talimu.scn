@@ -1,0 +1,7 @@
+[System]
+pathmapname=talimu.path
+monsterfile=talimu_monster.ini
+patrolpoint=talimu_patrolpoint.ini
+eventfile=talimu_area.ini
+growpointdata=talimu_growpoint.txt
+growpointsetup=talimu_growpointsetup.txt

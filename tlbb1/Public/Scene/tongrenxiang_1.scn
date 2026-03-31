@@ -1,0 +1,5 @@
+[System]
+pathmapname=tongrenxiang_1.path
+monsterfile=tongrenxiang_1_monster.ini
+patrolpoint=tongrenxiang_1_patrolpoint.ini
+eventfile=tongrenxiang_1_area.ini

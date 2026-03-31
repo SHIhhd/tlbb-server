@@ -1,0 +1,5 @@
+[System]
+pathmapname=shaolin_1.path
+monsterfile=shaolin_1_monster.ini
+patrolpoint=shaolin_1_patrolpoint.ini
+eventfile=shaolin_1_area.ini

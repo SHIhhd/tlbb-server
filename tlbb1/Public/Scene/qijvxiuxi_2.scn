@@ -1,0 +1,5 @@
+[System]
+pathmapname=qijvxiuxi_2.path
+monsterfile=qijvxiuxi_2_monster.ini
+patrolpoint=qijvxiuxi_2_patrolpoint.ini
+eventfile=qijvxiuxi_2_area.ini

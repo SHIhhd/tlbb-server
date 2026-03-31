@@ -1,0 +1,5 @@
+[System]
+pathmapname=miaoren.path
+monsterfile=miaoren_monster.ini
+patrolpoint=miaoren_patrolpoint.ini
+eventfile=miaoren_area.ini

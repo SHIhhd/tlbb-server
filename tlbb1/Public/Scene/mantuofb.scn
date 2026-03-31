@@ -1,0 +1,8 @@
+[System]
+pathmapname=mantuofb.path
+monsterfile=mantuofb_monster.ini
+patrolpoint=mantuofb_patrolpoint.ini
+growpointdata=mantuofb_growpoint.txt
+growpointsetup=mantuofb_growpointsetup.txt
+eventfile=mantuofb_area.ini
+petfile=mantuofb_pet.ini

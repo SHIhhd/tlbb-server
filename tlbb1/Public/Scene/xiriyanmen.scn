@@ -1,0 +1,6 @@
+[System]
+pathmapname=xiriyanmen.path
+monsterfile=xiriyanmen_monster.ini
+patrolpoint=xiriyanmen_patrolpoint.ini
+growpointdata=xiriyanmen_growpoint.txt
+eventfile=xiriyanmen_area.ini

@@ -1,0 +1,5 @@
+[System]
+pathmapname=caoliao.path
+monsterfile=caoliao_monster.ini
+patrolpoint=caoliao_patrolpoint.ini
+eventfile=caoliao_area.ini

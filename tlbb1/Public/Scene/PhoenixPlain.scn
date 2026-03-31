@@ -1,0 +1,5 @@
+[System]
+pathmapname=PhoenixPlain.path
+monsterfile=PhoenixPlain_monster.ini
+patrolpoint=PhoenixPlain_patrolpoint.ini
+eventfile=PhoenixPlain_area.ini

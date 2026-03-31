@@ -1,0 +1,5 @@
+[System]
+pathmapname=muchang.path
+monsterfile=muchang_monster.ini
+patrolpoint=muchang_patrolpoint.ini
+eventfile=muchang_area.ini

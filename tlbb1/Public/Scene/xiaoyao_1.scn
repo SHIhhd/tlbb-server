@@ -1,0 +1,5 @@
+[System]
+pathmapname=xiaoyao_1.path
+monsterfile=xiaoyao_1_monster.ini
+patrolpoint=xiaoyao_1_patrolpoint.ini
+eventfile=xiaoyao_1_area.ini

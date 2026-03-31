@@ -1,0 +1,8 @@
+[System]
+pathmapname=shunanzhuhai.path
+monsterfile=shunanzhuhai_monster.ini
+patrolpoint=shunanzhuhai_patrolpoint.ini
+growpointdata=shunanzhuhai_growpoint.txt
+growpointsetup=shunanzhuhai_growpointsetup.txt
+eventfile=shunanzhuhai_area.ini
+

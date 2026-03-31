@@ -1,0 +1,8 @@
+[System]
+pathmapname=songliao_dazhan.path
+monsterfile=songliao_dazhan_monster.ini
+patrolpoint=songliao_dazhan_patrolpoint.ini
+growpointdata=songliao_dazhan_growpoint.txt
+growpointsetup=songliao_dazhan_growpointsetup.txt
+eventfile=songliao_dazhan_area.ini
+petfile=songliao_dazhan_pet.ini

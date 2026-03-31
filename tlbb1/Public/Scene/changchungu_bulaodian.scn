@@ -1,0 +1,5 @@
+[System]
+pathmapname=changchungu_bulaodian.path
+monsterfile=changchungu_bulaodian_monster.ini
+patrolpoint=changchungu_bulaodian_patrolpoint.ini
+eventfile=changchungu_bulaodian_area.ini

@@ -1,0 +1,5 @@
+[System]
+pathmapname=xingxiu_3.path
+monsterfile=xingxiu_3_monster.ini
+patrolpoint=xingxiu_3_patrolpoint.ini
+eventfile=xingxiu_3_area.ini

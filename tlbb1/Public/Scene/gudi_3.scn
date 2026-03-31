@@ -1,0 +1,5 @@
+[System]
+pathmapname=gudi_3.path
+monsterfile=gudi_3_monster.ini
+patrolpoint=gudi_3_patrolpoint.ini
+eventfile=gudi_3_area.ini

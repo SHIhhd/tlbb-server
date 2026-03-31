@@ -1,0 +1,5 @@
+[System]
+pathmapname=baozang_1.path
+monsterfile=baozang_1_monster.ini
+patrolpoint=baozang_1_patrolpoint.ini
+eventfile=baozang_1_area.ini

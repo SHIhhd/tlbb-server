@@ -1,0 +1,7 @@
+[System]
+pathmapname=baixihu.path
+monsterfile=baixihu_monster.ini
+patrolpoint=baixihu_patrolpoint.ini
+growpointdata=baixihu_growpoint.txt
+growpointsetup=baixihu_growpointsetup.txt
+eventfile=baixihu_area.ini

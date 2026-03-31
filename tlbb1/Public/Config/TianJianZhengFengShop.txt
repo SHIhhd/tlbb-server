@@ -1,0 +1,8 @@
+INT	INT	INT	STRING	INT	INT	INT	INT	INT
+idx	itemid	预留	名称	isbind	bagtype	oncenum	maxnum	daibi
+1	20600002	-1	高级长春玉	1	2	1	2	25
+2	20600045	-1	地阶漱玉泉	1	2	1	4	15
+3	20600003	-1	超级长春玉	1	2	1	1	110
+4	20600046	-1	天阶漱玉泉	1	2	1	2	60
+5	38002818	-1	天阶解绑令	1	1	1	1	80
+6	38002817	-1	地阶解绑令	1	1	1	1	40

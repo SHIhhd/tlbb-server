@@ -1,0 +1,7 @@
+[System]
+pathmapname=HJZBS_Xiuxi3.path
+monsterfile=HJZBS_Xiuxi3_monster.ini
+patrolpoint=HJZBS_Xiuxi3_patrolpoint.ini
+growpointdata=HJZBS_Xiuxi3_growpoint.txt
+growpointsetup=HJZBS_Xiuxi3_growpointsetup.txt
+eventfile=HJZBS_Xiuxi3_area.ini

@@ -1,0 +1,8 @@
+[System]
+pathmapname=leitai_3.path
+monsterfile=leitai_3_monster.ini
+patrolpoint=leitai_3_patrolpoint.ini
+growpointdata=leitai_3_growpoint.txt
+growpointsetup=leitai_3_growpointsetup.txt
+eventfile=leitai_3_area.ini
+petfile=leitai_3_pet.ini

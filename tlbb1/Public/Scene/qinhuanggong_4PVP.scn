@@ -1,0 +1,8 @@
+[System]
+pathmapname=qinhuanggong_4PVP.path
+monsterfile=qinhuanggong_4PVP_monster.ini
+patrolpoint=qinhuanggong_4PVP_patrolpoint.ini
+growpointdata=qinhuanggong_4PVP_growpoint.txt
+growpointsetup=qinhuanggong_4PVP_growpointsetup.txt
+eventfile=qinhuanggong_4PVP_area.ini
+platformfile=qinhuanggong_4PVP_platform.ini

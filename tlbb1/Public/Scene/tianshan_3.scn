@@ -1,0 +1,5 @@
+[System]
+pathmapname=tianshan_3.path
+monsterfile=tianshan_3_monster.ini
+patrolpoint=tianshan_3_patrolpoint.ini
+eventfile=tianshan_3_area.ini

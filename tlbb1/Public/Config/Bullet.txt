@@ -1,0 +1,141 @@
+INT	INT	FLOAT	STRING	STRING	FLOAT	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING	STRING
+ID	轨迹类型	序号	子弹飞行特效ID	飞行音效ID	速度(m/s)	子弹爆炸特效ID	爆炸音效ID	击中特效的绑定点	预留1	预留2	预留3	预留4	预留5	描述
+1	0	0	npc_anqi_zd		15	npc_anqi_zdo		身体受击点						月落西山
+2	0	0	g01_zd_huanpeiguihun		15	g01_zdo_huanpeiguihun		身体受击点						环佩归魂
+3	2	0			15	g01_zdo_tiesuohengjiang	Skills\Wd\Wd_三环套月.wav	身体受击点						铁索横江
+6	1	0	g01_zd_baihongguanri		15	g01_zdo_baihongguanri		脚下光圈点						白虹贯日
+7	0	0	g01_zd_dakuixing		15	all_bj07		身体受击点						大魁星
+8	0	0	g01_zd_danfengchaoyang		15	g01_dl_zdo_shaozejian		身体受击点						丹凤朝阳
+9	0	0	g01_zd_gaotanma		15	all_bj06		身体受击点						高探马
+10	0	0	g01_zd_haoyueqianli		15	g01_zdo_huanpeiguihun		身体受击点						皓月千里
+11	0	0	g01_zd_huifengbiliu		15	g01_dl_zdo_yiyangzhi		身体受击点						回风拂柳
+13	0	0	g01_zd_kuaihuosan		15	all_bj06		身体受击点						快活三
+14	1	0			15									揽雀尾
+15	0	0	g01_zd_lanshadu		15	g01_zdo_lanshadu		身体受击点						蓝砂毒
+16	0	0	g01_zd_lvshuangbingzhi	Skills\Common\bullet_fly_by2.wav	15	all_bj04	Skills\Xy\Xy_潇湘夜雨.wav	身体受击点						履霜冰至
+18	0	0	g01_zd_sanhuantaoyue		15	all_bj06		身体受击点						三环套月
+19	0	0	秘籍_xy_zd		15	秘籍_xy_zdo		身体受击点						鲲跃北溟
+20	0	0	g01_zd_shaungfengguaner		15	g01_zdo_shuangfengguaner		身体受击点						双峰灌耳
+22	0	0	g01_zd_tuonidaishui		15	g01_zdo_tuonidaishui		身体受击点						拖泥带水
+23	0	0	g01_zd_wangyangxingtan		15	all_bj06		身体受击点						望洋兴叹
+24	0	0	g01_zd_xianrenzhilu		15	g01_zdo_xianrenzhilu		身体受击点						仙人指路
+25	0	0	g01_zd_xiaokouchangkai		15	g01_zdo_xiaokouchangkai		身体受击点						笑口常开
+26	0	0	g01_zd_yanaimangmang		15	g01_zdo_shuangfengguaner		身体受击点						烟霭茫茫
+27	0	0			0									野马分鬃
+28	2	0			15	g01_zdo_fushidu		脚下光圈点						腐尸毒
+29	2	0			15	g01_zdo_eguangmanying		身体受击点						恶贯满盈
+30	2	0			15	g01_zdo_lianzhufushidu		脚下光圈点						连珠腐尸毒
+35	0	0	g01_zd_lvshuangbingzhi		15	npc_all_danbing_zdo	Skills\Common\ice_explode_1.wav	身体受击点						寒冰咒
+36	0	0	g01_zd_gaotanma		15	npc_all_danhuo_zdo	Skills\Common\fire_explode_1.wav	身体受击点						烈火咒
+37	0	0	npc_all_dandu_zd		15	g01_zdo_jiuyinbaiguzhua	Skills\Common\poison_3.wav	身体受击点						血毒咒
+38	0	0	npc_all_danxuan_zd		15	npc_all_danxuan_zdo	Skills\Common\lighting_1.wav	身体受击点						霹雷咒
+39	2	0			15	cw_zd_jibingningsha		身体受击点						极冰凝杀
+40	2	0			15	cw_zd_jiehuofensha		身体受击点						劫火焚杀
+41	2	0			15	cw_zd_jiuleijisha		身体受击点						九雷击杀
+42	2	0			15	cw_zd_fudushisha		身体受击点						腐毒蚀杀
+43	0	0	npc_yuancheng		15	all_bj06		身体受击点						NPC远程
+80	0	0	g01_ts_zd_shengsifu		15	g01_ts_zdo_shengsifu		身体受击点						生死符
+81	0	0	g01_wd_zd_pikongzhang		15	all_bj00030		身体受击点						劈空掌
+82	0	0	g01_wd_zd_tianmafeipu		15	g01_wd_zdo_tianmafeipu	Skills\Wd\Wd_天马飞瀑_击中.wav	身体受击点						天马飞瀑
+83	0	0	g01_wd_zd_xianrenzhilu		15	g01_wd_zdo_xianrenzhilu		身体受击点						仙人指路
+84	0	0	g01_wd_zd_rufengsibi		15	g01_wd_zdo_rufengsibi		身体受击点						玉女穿梭
+85	0	0	g01_zd_jiuyinbaiguzhua		15	g01_em_zdo_jiuyinbaiguzhua		身体受击点						西子捧心
+86	0	0	g01_em_zd_jindingmianzhang		15	g01_em_zdo_jindingmianzhang		身体受击点						障眼法
+87	0	0			15	g01_em_zd_jiuyingshehun		身体受击点						九影摄魂
+88	0	0	g01_xx_zd_bingcanzhang		15	g01_xx_zdo_bingcanzhang		身体受击点						冰蚕掌
+89	0	0			15	g01_dl_zdo_yuqinguzong		身体受击点						金玉拳
+90	0	0	g01_zd_kuaihuosan		15	g01_dl_zdo_kuxinzhi		身体受击点						雪拥蓝关
+91	0	0	g01_xy_zd_lingyanshibagong	Skills\Common\bullet_fly_by1.wav	15	g01_xy_zdo_lingyanshibagong	Skills\Common\bullet_explode1.wav	身体受击点						溪山行旅
+92	0	0	a_y_wudang_zd		10	a_y_wudang_zdo	Skills\Wd\Wd_八卦掌_击中.wav	身体受击点						八卦掌
+93	0	0	a_y_emei_zd		10	a_y_emei_zdo	Skills\Em\Em_貂蝉拜月_击中.wav	身体受击点						貂蝉拜月
+94	0	0	a_y_xingxiu_zd		10	a_y_xingxiu_zdo	Skills\Xx\Xx_蓝砂手_击中.wav	身体受击点						蓝砂手
+95	0	0	a_y_dali_zd		10	a_y_dali_zdo	Skills\Common\bullet_explode1.wav	身体受击点						正阳手
+96	0	0	a_y_xiaoyao_zd		10	a_y_xiaoyao_zdo	Skills\Weapon\sword_hit_light_4.wav	身体受击点						落英剑
+97	0	0	g01_xy_zd_beimingshenquan	Skills\Common\bullet_fly_by4.wav	15	g01_xy_zdo_beimingshenquan	Skills\Xy\Xy_惊涛骇浪.wav	身体受击点						北冥神拳
+98	0	0	g01_wd_zd_sanweizhenhuo		15	g01_wd_zdo_sanweizhenhuo		身体受击点						三味真火
+99	0	0	g01_zd_yemafenzong		15	g01_dl_zdo_wanyuechaozong		身体受击点						万岳朝宗
+100	0	0	g01_xy_sf_zd_高山留水		15	g01_xy_sf_zdo_高山留水		头顶状态点						高山流水
+101	0	0	g01_xy_sf_zd_花开縻荼		15	g01_xy_sf_zdo_花开縻荼		身体受击点						花开縻荼
+102	0	0	g01_xx_jq_zd_玄冥神掌		15	g01_xx_jq_zdo_玄冥神掌		身体受击点						玄冥神掌
+103	0	0	g01_xx_sf_zd_化骨绵掌		15	g01_xx_sf_zdo_化骨绵掌		身体受击点						化骨绵掌
+104	0	0	g01_wd_zd_yinyangjue	Skills\Common\item_flyby_1.wav	15	g01_wd_zdo_yinyangjue		身体受击点						揽雀尾
+105	0	0	g01_xx_sf_zd_青蛇掌		15	g01_xx_zdo_qingshezhang		身体受击点						青蛇毒掌
+106	0	0	g01_xx_jq_zt_蛤蟆功		15	g01_xx_zdo_蛤蟆功		身体受击点						蛤蟆功
+107	0	0	g01_xy_sf_zd_高山留水		15	g01_xy_sf_zdo_高山留水		身体受击点						潇湘夜雨
+108	0	0	秘籍_ts_zd		15	秘籍_ts_zdo		身体受击点						同生共死
+109	0	0	秘籍_wd_zd		15	秘籍_wd_zdo		身体受击点						天外飞仙
+110	0	0	秘籍_em_zd		15	秘籍_em_mj_zdo		身体受击点						九阴白骨爪
+111	0	0	秘籍_xx_zd		15	秘籍_xx_zdo		身体受击点						化骨绵掌
+112	0	0	cw_danbing_zd		15	cw_danbing_zdo		身体受击点						宠冰
+113	0	0	cw_danhuo_zd		15	cw_danhuo_zdo		身体受击点						宠火
+114	0	0	cw_danxuan_zd		15	cw_danxuan_zdo		身体受击点						宠玄
+115	0	0	cw_dandu_zd		15	cw_dandu_zdo		身体受击点						宠毒
+116	0	0	特效雪球		12	特效雪球_zdo	Skills\interface\sound_jiaru.wav	身体受击点						雪球
+117	0	0	落马技能_zd		15	落马技能_zdo		身体受击点						落马技
+118	0	0	go1_爱神之箭_zd_01		10	go1_爱神之箭_zdo_01		身体受击点						爱神之箭
+119	0	0	g01_zd_斩妖剑01		10	g01_zdo_斩妖剑01	Skills\Common\Zyj_爆炸雷电.wav	身体受击点						斩妖剑
+120	0	0	g01_暗器投掷01		15	g01_zdo_暗器投掷01		身体受击点						暗器投掷
+121	0	0	g01_暗器打穴01		15	g01_zdo_暗器打穴01		身体受击点						暗器打穴
+122	0	0	g01_慈航普度_子弹01		15	g01_慈航普度_被击01		身体受击点						慈航普度
+123	0	0	g01_dl_天龙80级技能01		15	g01_dl_天龙80级技能_被击01	Skills\Dl\天龙中冲_受击.wav	身体受击点						中冲剑
+124	0	0	g01_xx_尸爆_子弹		15	g01_wd_zdo_tianmafeipu	Skills\Wd\Wd_天马飞瀑_击中.wav	身体受击点						
+125	2	0			15	m01_wd_七星聚首_伤害	Skills\Wd\Wd_三环套月.wav	身体受击点						
+126	0	0	buff_武魂_子弹紫色		15	buff_武魂_子弹紫色_zdo		身体受击点						武魂单紫
+127	0	0	buff_武魂_子弹银白		15	buff_武魂_子弹银白_zdo		身体受击点						武魂单银白
+128	0	0	buff_武魂_子弹红色		15	buff_武魂_子弹红色_zdo		身体受击点						武魂单红
+129	0	0	buff_武魂_子弹黄色		15	buff_武魂_子弹黄色_zdo		身体受击点						武魂单黄
+130	0	0	buff_武魂_子弹绿色		15	buff_武魂_子弹绿色_zdo		身体受击点						武魂单绿
+131	0	0	buff_武魂_子弹黑色		15	buff_武魂_子弹黑色_zdo		身体受击点						武魂单黑
+132	0	0	buff_武魂_子弹紫色		15	buff_武魂_子弹紫色_zdo放大		身体受击点						武魂群紫
+133	0	0	buff_武魂_子弹银白		15	buff_武魂_子弹银白_zdo放大		身体受击点						武魂群银白
+134	0	0	buff_武魂_子弹红色		15	buff_武魂_子弹红色_zdo放大		身体受击点						武魂群红
+135	0	0	buff_武魂_子弹黄色		15	buff_武魂_子弹黄色_zdo放大		身体受击点						武魂群黄
+136	0	0	buff_武魂_子弹绿色		15	buff_武魂_子弹绿色_zdo放大		身体受击点						武魂群绿
+137	0	0	buff_武魂_子弹黑色		15	buff_武魂_子弹黑色_zdo放大		身体受击点						武魂群黑
+138	0	0	buff_福香包_子弹		15	buff_福香包_被击		身体受击点						武魂群黑
+139	0	0	g01_闪耀圣诞星_子弹		15	g01_闪耀圣诞星_被击		身体受击点						闪耀圣诞星
+140	0	0	m01_捆仙索_子弹sl		15			身体受击点						捆仙绳（少林）
+141	0	0	m01_石破天惊_子弹_sl		15	m01_石破天惊_被击_sl		身体受击点						石破天惊（少林）
+142	0	0	m01_捆仙索_子弹mj		15			身体受击点						捆仙索（明教）
+143	0	0	m01_石破天惊_子弹_mj		15	m01_石破天惊_被击_mj		身体受击点						石破天惊（明教）
+144	0	0	m01_捆仙索_子弹gb		15			身体受击点						捆仙索（丐帮）
+145	0	0	m01_石破天惊_子弹_gb		15	m01_石破天惊_被击_gb		身体受击点						石破天惊（丐帮）
+146	0	0	m01_捆仙索_子弹wd		15			身体受击点						捆仙索（武当）
+147	0	0	m01_石破天惊_子弹_wd		15	m01_石破天惊_被击_wd		身体受击点						石破天惊（武当）
+148	0	0	m01_捆仙索_子弹em		15			身体受击点						捆仙索（峨嵋）
+149	0	0	m01_石破天惊_子弹_em		15	m01_石破天惊_被击_em		身体受击点						石破天惊（峨嵋）
+150	0	0	m01_捆仙索_子弹xx		15			身体受击点						捆仙索（星宿）
+151	0	0	m01_石破天惊_子弹_xx		15	m01_石破天惊_被击_xx		身体受击点						石破天惊（星宿）
+152	0	0	m01_捆仙索_子弹dl		15			身体受击点						捆仙索（天龙）
+153	0	0	m01_石破天惊_子弹_dl		15	m01_石破天惊_被击_dl		身体受击点						石破天惊（天龙）
+154	0	0	m01_捆仙索_子弹ts		15			身体受击点						捆仙索（天山）
+155	0	0	m01_石破天惊_子弹_ts		15	m01_石破天惊_被击_ts		身体受击点						石破天惊（天山）
+156	0	0	m01_捆仙索_子弹xy		15			身体受击点						捆仙索（逍遥）
+157	0	0	m01_石破天惊_子弹_xy		15	m01_石破天惊_被击_xy		身体受击点						石破天惊（逍遥）
+158	0	0	m01_捆仙索_子弹gs		15			身体受击点						捆仙索（慕容）
+159	0	0	m01_石破天惊_子弹_gs		15	m01_石破天惊_被击_gs		身体受击点						石破天惊（慕容）
+160	0	0	m01_gs_彼行我释_子弹		15	m01_gs_彼行我释_被击		身体受击点						彼行我释
+161	0	0	m01_gs_彼行我释_子弹		15	m01_gs_借力返施_被击		身体受击点						借力返施
+162	0	0	npc_箭塔_万箭齐发_金		15									宋辽箭塔
+163	0	0	m01_少林远程攻击_被动_子弹		15	m01_少林远程攻击_被动_受击		身体受击点						伏虎拳（自动战斗）
+164	0	0	m01_丐帮远程攻击_被动_子弹		15	m01_丐帮远程攻击_被动_受击		身体受击点						蟠龙击（自动战斗）
+165	0	0	m01_天山远程攻击_被动_子弹		15	m01_天山远程攻击_被动_受击		身体受击点						雁南飞（自动战斗）
+166	0	0	m01_明教远程攻击_被动_子弹		15	m01_明教远程攻击_被动_受击		身体受击点						摧心掌（自动战斗）
+167	0	0	HJ_npc年兽17_技能_子弹		15	HJ_npc年兽17_技能_子弹受击		身体受击点						打年兽1技能
+168	0	0	hj_buff_风卷行云_子弹A		15			身体受击点						风卷行云
+169	0	0	hj_曼陀山庄_余音袅袅_波子弹		15	hj_曼陀山庄_余音袅袅_子弹受击		身体受击点						余音袅袅
+170	3	1	hj_曼陀山庄_余音袅袅_波子弹		15	hj_曼陀山庄_余音袅袅_子弹受击		身体受击点						余音袅袅
+171	3	3	hj_曼陀山庄_余音袅袅_波子弹		15	hj_曼陀山庄_余音袅袅_子弹受击		身体受击点						余音袅袅
+172	3	2	hj_曼陀山庄_余音袅袅_波子弹		15	hj_曼陀山庄_余音袅袅_子弹受击		身体受击点						余音袅袅
+173	0	2	hj_曼陀山庄_子弹05		15	hj_曼陀山庄_寒江雪命中爆炸		身体受击点						寒江雪（内功攻击增加）
+174	0	0	hj_曼陀山庄_余音袅袅_小子弹		15	hj_曼陀山庄_余音袅袅_子弹受击		身体受击点						通用琴音技
+175	0	1	hj_曼陀山庄_蝴蝶子弹		15	hj_曼陀山庄_受击特效		身体受击点						通用山茶技
+176	0	0	hj_曼陀山庄_葬花暮春吟_子弹		15	hj_曼陀山庄_葬花暮春吟_子弹受击		身体受击点						暮春吟（会心玄攻击）
+177	0	0	hj_曼陀山庄_醉花芳菲时麻痹buff_子弹		15	hj_曼陀山庄_醉花芳菲时麻痹buff_子弹受击		身体受击点						醉花·芳菲时（内功攻击）
+178	0	0	hj_曼陀山庄_子弹04		15	hj_曼陀山庄_受击特效		身体受击点						碣石调
+179	0	0	hj_曼陀山庄_子弹03		15	hj_曼陀山庄_受击特效		身体受击点						拈花·眼儿媚
+180	0	0	hj_曼陀山庄_子弹02		15	hj_曼陀山庄_受击特效		身体受击点						凉风有信
+181	0	0	hj_曼陀山庄_长相思_子弹		15	hj_曼陀山庄_受击特效		身体受击点						长相思
+182	0	0	hj_曼陀山庄_如梦令_子弹		15	hj_曼陀山庄_受击特效		身体受击点						如梦令
+183	0	0	hj_曼陀山庄_子弹01		15	hj_曼陀山庄_受击特效		身体受击点						问花·无计留春
+184	0	0	hj_曼陀山庄_弦弄花影_子弹		15	hj_曼陀山庄_受击特效		身体受击点						弦弄花影

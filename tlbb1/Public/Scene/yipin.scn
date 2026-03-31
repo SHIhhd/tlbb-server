@@ -1,0 +1,5 @@
+[System]
+pathmapname=yipin.path
+monsterfile=yipin_monster.ini
+patrolpoint=yipin_patrolpoint.ini
+eventfile=yipin_area.ini

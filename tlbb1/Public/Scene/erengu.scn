@@ -1,0 +1,9 @@
+[System]
+pathmapname=erengu.path
+monsterfile=erengu_monster.ini
+patrolpoint=erengu_patrolpoint.ini
+growpointdata=erengu_growpoint.txt
+growpointsetup=erengu_growpointsetup.txt
+eventfile=erengu_area.ini
+petfile=erengu_pet.ini
+platformfile=erengu_platform.ini

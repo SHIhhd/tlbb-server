@@ -1,0 +1,6 @@
+[System]
+pathmapname=jinghu.path
+monsterfile=jinghu_hj_monster.ini
+eventfile=jinghu_hj_area.ini
+platformfile=jinghu_hj_platform.ini
+patrolpoint=jinghu_patrolpoint.ini

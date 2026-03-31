@@ -1,0 +1,5 @@
+[System]
+pathmapname=gongdi.path
+monsterfile=gongdi_monster.ini
+patrolpoint=gongdi_patrolpoint.ini
+eventfile=gongdi_area.ini

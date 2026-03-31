@@ -1,0 +1,5 @@
+[System]
+pathmapname=PCity.path
+monsterfile=PCity_monster_xihuzhengxi.ini
+patrolpoint=PCity_patrolpoint.ini
+eventfile=PCity_area.ini

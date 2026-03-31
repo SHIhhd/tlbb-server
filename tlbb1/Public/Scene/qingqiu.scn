@@ -1,0 +1,5 @@
+[System]
+pathmapname=qingqiu.path
+monsterfile=qingqiu_monster.ini
+patrolpoint=qingqiu_patrolpoint.ini
+eventfile=qingqiu_area.ini

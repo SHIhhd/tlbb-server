@@ -1,0 +1,5 @@
+[System]
+pathmapname=huashan.path
+monsterfile=huashan_monster.ini
+patrolpoint=huashan_patrolpoint.ini
+eventfile=huashan_area.ini

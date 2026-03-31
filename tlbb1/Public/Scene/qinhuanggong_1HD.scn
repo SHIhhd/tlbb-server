@@ -1,0 +1,8 @@
+[System]
+pathmapname=qinhuanggong_1.path
+monsterfile=qinhuanggong_1HD_monster.ini
+patrolpoint=qinhuanggong_1HD_patrolpoint.ini
+growpointdata=qinhuanggong_1HD_growpoint.txt
+growpointsetup=qinhuanggong_1HD_growpointsetup.txt
+eventfile=qinhuanggong_1HD_area.ini
+petfile=qinhuanggong_1HD_pet.ini

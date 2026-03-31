@@ -1,0 +1,5 @@
+[System]
+pathmapname=juxian.path
+monsterfile=juxian_monster.ini
+patrolpoint=juxian_patrolpoint.ini
+eventfile=juxian_area.ini

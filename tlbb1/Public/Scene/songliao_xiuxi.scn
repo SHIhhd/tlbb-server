@@ -1,0 +1,8 @@
+[System]
+pathmapname=songliao_xiuxi.path
+monsterfile=songliao_xiuxi_monster.ini
+patrolpoint=songliao_xiuxi_patrolpoint.ini
+growpointdata=songliao_xiuxi_growpoint.txt
+growpointsetup=songliao_xiuxi_growpointsetup.txt
+eventfile=songliao_xiuxi_area.ini
+petfile=songliao_xiuxi_pet.ini

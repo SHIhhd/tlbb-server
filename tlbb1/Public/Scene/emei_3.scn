@@ -1,0 +1,5 @@
+[System]
+pathmapname=emei_3.path
+monsterfile=emei_3_monster.ini
+patrolpoint=emei_3_patrolpoint.ini
+eventfile=emei_3_area.ini

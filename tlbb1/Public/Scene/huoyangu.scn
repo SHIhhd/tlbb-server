@@ -1,0 +1,6 @@
+[System]
+pathmapname=huoyangu.path
+monsterfile=huoyangu_monster.ini
+patrolpoint=huoyangu_patrolpoint.ini
+eventfile=huoyangu_area.ini
+

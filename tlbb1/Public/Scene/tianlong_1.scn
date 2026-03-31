@@ -1,0 +1,5 @@
+[System]
+pathmapname=tianlong_1.path
+monsterfile=tianlong_1_monster.ini
+patrolpoint=tianlong_1_patrolpoint.ini
+eventfile=tianlong_1_area.ini

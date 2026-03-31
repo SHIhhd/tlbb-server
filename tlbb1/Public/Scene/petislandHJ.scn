@@ -1,0 +1,8 @@
+[System]
+pathmapname=petislandHJ.path
+monsterfile=petislandHJ_monster.ini
+patrolpoint=petislandHJ_patrolpoint.ini
+growpointdata=petislandHJ_growpoint.txt
+growpointsetup=petislandHJ_growpointsetup.txt
+eventfile=petislandHJ_area.ini
+petfile=petislandHJ_pet.ini

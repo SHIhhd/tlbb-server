@@ -1,0 +1,5 @@
+[System]
+pathmapname=mantuofb_3.path
+monsterfile=mantuofb_3_monster.ini
+patrolpoint=mantuofb_3_patrolpoint.ini
+eventfile=mantuofb_3_area.ini

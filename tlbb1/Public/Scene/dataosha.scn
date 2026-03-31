@@ -1,0 +1,5 @@
+[System]
+pathmapname=dataosha.path
+monsterfile=dataosha_monster.ini
+patrolpoint=dataosha_patrolpoint.ini
+eventfile=dataosha_area.ini

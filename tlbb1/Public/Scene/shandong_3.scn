@@ -1,0 +1,5 @@
+[System]
+pathmapname=shandong_3.path
+monsterfile=shandong_3_monster.ini
+patrolpoint=shandong_3_patrolpoint.ini
+eventfile=shandong_3_area.ini

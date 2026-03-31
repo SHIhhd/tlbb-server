@@ -1,0 +1,8 @@
+[System]
+pathmapname=mantuoshanzhuang.path
+monsterfile=mantuoshanzhuang_monster.ini
+patrolpoint=mantuoshanzhuang_patrolpoint.ini
+growpointdata=mantuoshanzhuang_growpoint.txt
+growpointsetup=mantuoshanzhuang_growpointsetup.txt
+eventfile=mantuoshanzhuang_area.ini
+petfile=mantuoshanzhuang_pet.ini

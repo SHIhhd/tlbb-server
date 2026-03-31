@@ -1,0 +1,7 @@
+[System]
+pathmapname=silindao.path
+monsterfile=silindao_monster.ini
+patrolpoint=silindao_patrolpoint.ini
+growpointdata=silindao_growpoint.txt
+growpointsetup=silindao_growpointsetup.txt
+eventfile=silindao_area.ini

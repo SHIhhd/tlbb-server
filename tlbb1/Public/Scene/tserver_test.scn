@@ -1,0 +1,8 @@
+[System]
+pathmapname=tserver_test.path
+monsterfile=tserver_test_monster.ini
+patrolpoint=tserver_test_patrolpoint.ini
+growpointdata=tserver_test_growpoint.txt
+growpointsetup=tserver_test_growpointsetup.txt
+eventfile=tserver_test_area.ini
+petfile=tserver_test_pet.ini

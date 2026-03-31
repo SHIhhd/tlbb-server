@@ -1,0 +1,5 @@
+[System]
+pathmapname=shuangyegu.path
+monsterfile=shuangyegu_monster.ini
+patrolpoint=shuangyegu_patrolpoint.ini
+eventfile=shuangyegu_area.ini

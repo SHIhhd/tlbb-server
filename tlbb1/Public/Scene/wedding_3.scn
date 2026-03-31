@@ -1,0 +1,5 @@
+[System]
+pathmapname=wedding_3.path
+monsterfile=wedding_3_monster.ini
+patrolpoint=wedding_3_patrolpoint.ini
+eventfile=wedding_3_area.ini

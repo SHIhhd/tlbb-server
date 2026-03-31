@@ -1,0 +1,5 @@
+[System]
+pathmapname=zhemeifeng_3.path
+monsterfile=zhemeifeng_3_monster.ini
+patrolpoint=zhemeifeng_3_patrolpoint.ini
+eventfile=zhemeifeng_3_area.ini

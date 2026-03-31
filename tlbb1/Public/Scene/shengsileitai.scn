@@ -1,0 +1,5 @@
+[System]
+pathmapname=shengsileitai.path
+monsterfile=shengsileitai_monster.ini
+patrolpoint=shengsileitai_patrolpoint.ini
+eventfile=shengsileitai_area.ini

@@ -1,0 +1,5 @@
+[System]
+pathmapname=mantuo_3.path
+monsterfile=mantuo_3_monster.ini
+patrolpoint=mantuo_3_patrolpoint.ini
+eventfile=mantuo_3_area.ini

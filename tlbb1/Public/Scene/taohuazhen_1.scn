@@ -1,0 +1,5 @@
+[System]
+pathmapname=taohuazhen_1.path
+monsterfile=taohuazhen_1_monster.ini
+patrolpoint=taohuazhen_1_patrolpoint.ini
+eventfile=taohuazhen_1_area.ini

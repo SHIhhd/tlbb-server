@@ -1,0 +1,7 @@
+# TLBB Server
+*.log
+*.core
+assert_core.log
+Server/Log/
+Server/Users/
+Server/shm/

@@ -1,0 +1,6 @@
+[System]
+pathmapname=gaochangmigong.path
+monsterfile=gaochangmigong_monster.ini
+patrolpoint=gaochangmigong_patrolpoint.ini
+eventfile=gaochangmigong_area.ini
+

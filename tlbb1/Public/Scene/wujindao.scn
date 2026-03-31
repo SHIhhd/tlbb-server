@@ -1,0 +1,7 @@
+[System]
+pathmapname=wujindao.path
+monsterfile=wujindao_monster.ini
+patrolpoint=wujindao_patrolpoint.ini
+growpointdata=wujindao_growpoint.txt
+growpointsetup=wujindao_growpointsetup.txt
+eventfile=wujindao_area.ini

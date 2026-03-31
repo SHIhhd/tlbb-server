@@ -1,0 +1,5 @@
+[System]
+pathmapname=leigu_1.path
+monsterfile=leigu_1_monster.ini
+patrolpoint=leigu_1_patrolpoint.ini
+eventfile=leigu_1_area.ini

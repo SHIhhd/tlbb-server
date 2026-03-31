@@ -1,0 +1,5 @@
+[System]
+pathmapname=homezhong_1.path
+monsterfile=homezhong_1_monster.ini
+patrolpoint=homezhong_1_patrolpoint.ini
+eventfile=homezhong_1_area.ini

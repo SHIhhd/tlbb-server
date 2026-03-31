@@ -1,0 +1,5 @@
+[System]
+pathmapname=bianguan_2.path
+monsterfile=bianguan_2_monster.ini
+patrolpoint=bianguan_2_patrolpoint.ini
+eventfile=bianguan_2_area.ini

@@ -1,0 +1,5 @@
+[System]
+pathmapname=changchungu_wuyixiang.path
+monsterfile=changchungu_wuyixiang_monster.ini
+patrolpoint=changchungu_wuyixiang_patrolpoint.ini
+eventfile=changchungu_wuyixiang_area.ini

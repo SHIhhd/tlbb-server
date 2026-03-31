@@ -1,0 +1,5 @@
+[System]
+pathmapname=PhoenixMaze.path
+monsterfile=PhoenixMaze_monster.ini
+patrolpoint=PhoenixMaze_patrolpoint.ini
+eventfile=PhoenixMaze_area.ini

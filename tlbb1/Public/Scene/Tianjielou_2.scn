@@ -1,0 +1,7 @@
+[System]
+pathmapname=Tianjielou_2.path
+monsterfile=Tianjielou_2_monster.ini
+patrolpoint=Tianjielou_2_patrolpoint.ini
+growpointdata=Tianjielou_2_growpoint.txt
+growpointsetup=Tianjielou_2_growpointsetup.txt
+eventfile=Tianjielou_2_area.ini

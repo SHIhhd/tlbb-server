@@ -1,0 +1,7 @@
+[System]
+pathmapname=shenjing_huo.path
+monsterfile=shenjing_huo_monster.ini
+patrolpoint=shenjing_huo_patrolpoint.ini
+growpointdata=shenjing_huo_growpoint.txt
+growpointsetup=shenjing_huo_growpointsetup.txt
+eventfile=shenjing_huo_area.ini

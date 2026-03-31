@@ -1,0 +1,5 @@
+[System]
+pathmapname=shuge.path
+monsterfile=shuge_monster.ini
+patrolpoint=shuge_patrolpoint.ini
+eventfile=shuge_area.ini

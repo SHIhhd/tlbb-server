@@ -1,0 +1,5 @@
+[System]
+pathmapname=protectguild.path
+monsterfile=protectguild_monster.ini
+patrolpoint=PCity_patrolpoint.ini
+eventfile=protectguild_area.ini

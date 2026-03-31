@@ -1,0 +1,5 @@
+[System]
+pathmapname=gaibang_3.path
+monsterfile=gaibang_3_monster.ini
+patrolpoint=gaibang_3_patrolpoint.ini
+eventfile=gaibang_3_area.ini

@@ -1,0 +1,5 @@
+[System]
+pathmapname=youhuangli.path
+monsterfile=youhuangli_monster.ini
+patrolpoint=youhuangli_patrolpoint.ini
+eventfile=youhuangli_area.ini

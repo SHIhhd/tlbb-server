@@ -1,0 +1,5 @@
+[System]
+pathmapname=shiji_1.path
+monsterfile=shiji_1_monster.ini
+patrolpoint=shiji_1_patrolpoint.ini
+eventfile=shiji_1_area.ini

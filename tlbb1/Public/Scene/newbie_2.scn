@@ -1,0 +1,5 @@
+[System]
+pathmapname=newbie_2.path
+monsterfile=newbie_2_monster.ini
+patrolpoint=newbie_2_patrolpoint.ini
+eventfile=newbie_2_area.ini

@@ -1,0 +1,5 @@
+[System]
+pathmapname=kuangchang.path
+monsterfile=kuangchang_monster.ini
+patrolpoint=kuangchang_patrolpoint.ini
+eventfile=kuangchang_area.ini

@@ -1,0 +1,5 @@
+[System]
+pathmapname=lingxingfeng_3.path
+monsterfile=lingxingfeng_3_monster.ini
+patrolpoint=lingxingfeng_3_patrolpoint.ini
+eventfile=lingxingfeng_3_area.ini

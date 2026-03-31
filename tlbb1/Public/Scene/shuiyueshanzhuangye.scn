@@ -1,0 +1,9 @@
+[System]
+pathmapname=shuiyueshanzhuangye.path
+monsterfile=shuiyueshanzhuangye_monster.ini
+patrolpoint=shuiyueshanzhuangye_patrolpoint.ini
+growpointdata=shuiyueshanzhuangye_growpoint.txt
+growpointsetup=shuiyueshanzhuangye_growpointsetup.txt
+eventfile=shuiyueshanzhuangye_area.ini
+petfile=shuiyueshanzhuangye_pet.ini
+platformfile=shuiyueshanzhuangye_platform.ini

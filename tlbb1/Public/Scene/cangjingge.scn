@@ -1,0 +1,5 @@
+[System]
+pathmapname=cangjingge.path
+monsterfile=cangjingge_monster.ini
+patrolpoint=cangjingge_patrolpoint.ini
+eventfile=cangjingge_area.ini

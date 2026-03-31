@@ -1,0 +1,5 @@
+[System]
+pathmapname=cangjing_1.path
+monsterfile=cangjing_1_monster.ini
+patrolpoint=cangjing_1_patrolpoint.ini
+eventfile=cangjing_1_area.ini

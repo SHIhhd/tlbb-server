@@ -1,0 +1,7 @@
+[System]
+pathmapname=TChallenge_xiuxi.path
+monsterfile=TChallenge_xiuxi_monster.ini
+patrolpoint=TChallenge_xiuxi_patrolpoint.ini
+growpointdata=TChallenge_xiuxi_growpoint.txt
+growpointsetup=TChallenge_xiuxi_growpointsetup.txt
+eventfile=TChallenge_xiuxi_area.ini

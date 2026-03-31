@@ -1,0 +1,5 @@
+[System]
+pathmapname=zeiying.path
+monsterfile=zeiying_monster.ini
+patrolpoint=zeiying_patrolpoint.ini
+eventfile=zeiying_area.ini

@@ -1,0 +1,7 @@
+[System]
+pathmapname=fujingdao.path
+monsterfile=fujingdao_monster.ini
+patrolpoint=fujingdao_patrolpoint.ini
+growpointdata=fujingdao_growpoint.txt
+growpointsetup=fujingdao_growpointsetup.txt
+eventfile=fujingdao_area.ini

@@ -1,0 +1,5 @@
+[System]
+pathmapname=guangmingdong_3.path
+monsterfile=guangmingdong_3_monster.ini
+patrolpoint=guangmingdong_3_patrolpoint.ini
+eventfile=guangmingdong_3_area.ini

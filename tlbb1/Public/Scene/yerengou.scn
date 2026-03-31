@@ -1,0 +1,5 @@
+[System]
+pathmapname=yerengou.path
+monsterfile=yerengou_monster.ini
+patrolpoint=yerengou_patrolpoint.ini
+eventfile=yerengou_area.ini

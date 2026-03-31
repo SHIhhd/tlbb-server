@@ -1,0 +1,5 @@
+[System]
+pathmapname=mantuoshanzhuang_2.path
+monsterfile=mantuoshanzhuang_2_monster.ini
+patrolpoint=mantuoshanzhuang_2_patrolpoint.ini
+eventfile=mantuoshanzhuang_2_area.ini

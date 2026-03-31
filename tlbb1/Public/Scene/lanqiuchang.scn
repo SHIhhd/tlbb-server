@@ -1,0 +1,5 @@
+[System]
+pathmapname=lanqiuchang.path
+monsterfile=lanqiuchang_monster.ini
+patrolpoint=lanqiuchang_patrolpoint.ini
+eventfile=lanqiuchang_area.ini

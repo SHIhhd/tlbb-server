@@ -1,0 +1,5 @@
+[System]
+pathmapname=yanziwu.path
+monsterfile=yanziwu_monster.ini
+patrolpoint=yanziwu_patrolpoint.ini
+eventfile=yanziwu_area.ini
