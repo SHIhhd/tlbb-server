@@ -1,0 +1,14 @@
+{
+    // 设置该文件夹下所有文件的默认编码为 GBK
+    "files.encoding": "gbk",
+    
+    // 开启自动猜测，双重保险
+    "files.autoGuessEncoding": true,
+
+    // 针对天龙八部常见的 .txt 配置文件，禁用“空格代替 Tab”
+    // 因为 TLBB 服务端配置对 Tab 极其敏感
+    "[plaintext]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 4
+    }
+}
