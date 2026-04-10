@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(iconv -f GBK -t UTF-8 CommonItem.txt)",
+      "Bash(python3 -c \" import sys sys.stdout.reconfigure\\(encoding='utf-8'\\) with open\\(r'C:/Users/Administrator/Desktop/TLBB修改/tlbb/tlbb1/Public/Config/CommonItem.txt', 'rb'\\) as f: raw = f.read\\(\\) text = raw.decode\\('gbk', errors='replace'\\) for i, line in enumerate\\(text.split\\('\\\\n'\\), 1\\): if any\\(kw in line for kw in ['御赐', '万灵石', '雕纹图样', '金蚕丝', '宝石', '元宝票', '银票', '门派套装']\\): print\\(f'Line {i}: {line[:120].strip\\(\\)}'\\) \")",
+      "Bash(python:*)",
+      "Bash(cp \"C:/Users/Administrator/Desktop/TLBB修改/tlbb/tlbb1/Public/Config/ShopTable.txt\" \"C:/Users/Administrator/Desktop/TLBB修改/\")",
+      "Bash(cp \"C:/Users/Administrator/Desktop/TLBB修改/tlbb/tlbb1/Server/Config/DropBoxContent.txt\" \"C:/Users/Administrator/Desktop/TLBB修改/\")",
+      "Bash(cp \"C:/Users/Administrator/Desktop/TLBB修改/tlbb/tlbb1/Server/Config/MonsterDropBoxs.txt\" \"C:/Users/Administrator/Desktop/TLBB修改/\")"
+    ]
+  }
+}
