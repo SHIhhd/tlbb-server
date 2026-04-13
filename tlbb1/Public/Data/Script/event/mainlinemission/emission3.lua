@@ -36,7 +36,7 @@ x890156_g_ContinueInfo = ""
 x890156_g_MissionComplete = ""
 
 --MisDescEnd
-x890156_g_ExpBonus = 200000
+x890156_g_ExpBonus = 2000000
 x890156_g_SpecialItem = {40005093,40005094}
 --**********************************
 --任务入口函数

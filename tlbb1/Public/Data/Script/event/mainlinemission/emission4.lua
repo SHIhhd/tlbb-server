@@ -36,7 +36,7 @@ x890157_g_ContinueInfo = ""
 x890157_g_MissionComplete = ""
 
 --MisDescEnd
-x890157_g_ExpBonus = 300000
+x890157_g_ExpBonus = 3000000
 --枫林舆图、分山石斧
 x890157_g_SpecialItem = {40005095,40005104}
 --**********************************

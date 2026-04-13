@@ -37,7 +37,7 @@ x210275_g_MissionComplete="#{XSRW_100111_29}"
 x210275_g_SignPost = {x = 160, z = 156, tip = "’‘ÃÏ ¶"}
 
 x210275_g_MoneyJZBonus=30
-x210275_g_ExpBonus = 800
+x210275_g_ExpBonus = 8000
 x210275_g_RadioItemBonus={}
 x210275_g_ItemBonus={}
 

@@ -48,7 +48,7 @@ x893243_g_MissionPaopao = 3
 x893243_g_NpcDist = 5
 
 x893243_g_MoneyJZBonus = 10000
-x893243_g_ExpBonus = 80000
+x893243_g_ExpBonus = 800000
 
 --MisDescEnd
 x893243_g_MissionItemID = 40005037

@@ -37,7 +37,7 @@ x210263_g_MissionTarget="#{XSRW_100111_86}"
 x210263_g_MissionContinue="#{XSRW_100111_94}"
 x210263_g_MissionComplete="#{XSRW_100111_13}"
 x210263_g_MoneyJZBonus=30
-x210263_g_ExpBonus=400
+x210263_g_ExpBonus=4000
 x210263_g_SignPost = {x = 144, z = 138, tip = "钱龙"}
 
 x210263_g_IsMissionOkFail = 0		--变量的第0位

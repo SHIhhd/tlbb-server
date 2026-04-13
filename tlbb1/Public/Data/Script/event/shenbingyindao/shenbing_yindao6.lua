@@ -17,7 +17,7 @@ x890288_g_IsMissionOkFail = 0
 x890288_g_Custom = { { id = "使用七情残片或七情石进行一次七情刃兑换", num = 1 } }
 --任务奖励
 --x890288_g_ItemBonus={{id=38002946,num=1},{id=38002948,num=1}}
-x890288_g_ExpBonus = 400000
+x890288_g_ExpBonus = 4000000
 x890288_g_MoneyJZBonus = 100000
 
 --MisDescEnd

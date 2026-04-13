@@ -34,7 +34,7 @@ x891086_g_ContinueInfo = "#{YXDHYD_20210207_159}"
 x891086_g_MissionComplete = "#{YXDHYD_20210207_162}"
 
 x891086_g_MoneyJZBonus = 10000
-x891086_g_ExpBonus = 100000 
+x891086_g_ExpBonus = 1000000 
 x891086_g_MissionItem = 40005015 --任务道具密函
 --MisDescEnd
 --**********************************

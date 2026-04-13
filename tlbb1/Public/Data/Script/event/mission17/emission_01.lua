@@ -35,7 +35,7 @@ x891080_g_ContinueInfo = ""
 x891080_g_MissionComplete = "#{YXDHYD_20210207_26}"
 
 x891080_g_MoneyJZBonus = 10000
-x891080_g_ExpBonus = 100000
+x891080_g_ExpBonus = 1000000
 
 --MisDescEnd
 --**********************************

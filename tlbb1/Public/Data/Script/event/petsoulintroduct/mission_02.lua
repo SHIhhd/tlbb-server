@@ -33,7 +33,7 @@ x893041_g_ContinueInfo = ""
 x893041_g_MissionComplete = "#{SHYD_20211227_65}"
 
 x893041_g_MoneyJZBonus = 10000
-x893041_g_ExpBonus = 80000
+x893041_g_ExpBonus = 800000
 
 --MisDescEnd
 x893041_g_AcceptNPC_Name="‘∆…Ó…Ó"

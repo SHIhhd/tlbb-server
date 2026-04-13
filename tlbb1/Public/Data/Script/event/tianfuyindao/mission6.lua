@@ -49,7 +49,7 @@ x891223_g_ContinueInfo = ""
 x891223_g_MissionComplete = ""
 
 x891223_g_MoneyJZBonus = 45000
-x891223_g_ExpBonus = 420000
+x891223_g_ExpBonus = 4200000
 
 --MisDescEnd
 x891223_g_AcceptInfo	= {

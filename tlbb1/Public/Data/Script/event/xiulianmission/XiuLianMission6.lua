@@ -35,7 +35,7 @@ x891279_g_BagSpace = 1
 
 --½±Àø
 --x891279_g_MoneyJZBonus					= 30000
---x891279_g_ExpBonus						= 250000
+--x891279_g_ExpBonus						= 2500000
 
 --MisDescEnd
 x891279_g_MenPaiTargetNpc = { 

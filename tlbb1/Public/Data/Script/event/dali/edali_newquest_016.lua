@@ -44,7 +44,7 @@ x210265_g_Custom	= { {id="抓住飘飘鸭",num=1} }
 
 --任务奖励
 x210265_g_MoneyJZBonus = 100
-x210265_g_ExpBonus = 800
+x210265_g_ExpBonus = 8000
 
 
 --MisDescEnd

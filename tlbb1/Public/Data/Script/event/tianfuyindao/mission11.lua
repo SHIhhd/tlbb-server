@@ -29,7 +29,7 @@ x998353_g_ContinueInfo = ""
 x998353_g_MissionComplete = ""
 
 x998353_g_MoneyJZBonus = 20000
-x998353_g_ExpBonus = 100000
+x998353_g_ExpBonus = 1000000
 
 
 --MisDescEnd

@@ -82,7 +82,7 @@ x891275_g_NPCStr = {
 
 --½±Àø
 --x891275_g_MoneyJZBonus					=	30000
---x891275_g_ExpBonus						= 250000
+--x891275_g_ExpBonus						= 2500000
 
 --MisDescEnd
 

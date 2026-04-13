@@ -71,7 +71,7 @@ x500604_g_PlayerSlow_LVL					 = 32		-- 接受任务的最低等级
 
 --奖励
 x500604_g_MoneyBonus					=	8121
-x500604_g_ExpBonus						= 32487
+x500604_g_ExpBonus						= 324870
 x500604_g_ItemBonus_List 	 	  = { id=40004449,num=1 }
 
 --副本场景ID_贼寇营地

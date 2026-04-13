@@ -71,7 +71,7 @@ x500607_g_PlayerSlow_LVL					 = 35		-- 接受任务的最低等级
 
 --奖励
 x500607_g_MoneyBonus					=	11122
-x500607_g_ExpBonus						= 44490
+x500607_g_ExpBonus						= 444900
 x500607_g_ItemBonus_List 	 	  = { id=30505701,num=1 }
 
 --副本场景ID_门派

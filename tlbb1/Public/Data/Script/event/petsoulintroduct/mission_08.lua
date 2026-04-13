@@ -33,7 +33,7 @@ x893047_g_ContinueInfo = ""
 x893047_g_MissionComplete = "#{SHYD_20211227_309}"
 
 x893047_g_MoneyJZBonus = 30000
-x893047_g_ExpBonus = 150000
+x893047_g_ExpBonus = 1500000
 
 x893047_g_ItemBonus={{id=38002530,num=4}}
 

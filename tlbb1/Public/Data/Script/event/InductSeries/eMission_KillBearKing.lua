@@ -73,7 +73,7 @@ x500610_g_PlayerSlow_LVL					 = 38		-- 接受任务的最低等级
 
 --奖励
 x500610_g_MoneyBonus					=	9475
-x500610_g_ExpBonus						= 37902
+x500610_g_ExpBonus						= 379020
 x500610_g_ItemBonus_List 	 	  = { id=30505701,num=1 }
 
 --副本场景ID_竹林

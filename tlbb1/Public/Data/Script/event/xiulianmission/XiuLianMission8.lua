@@ -30,7 +30,7 @@ x891281_g_BagSpace = 1
 
 --奖励
 --x891281_g_MoneyJZBonus					= 30000
---x891281_g_ExpBonus						= 250000
+--x891281_g_ExpBonus						= 2500000
 
 --MisDescEnd
 --目标NPC：接任务、交任务，都是这个

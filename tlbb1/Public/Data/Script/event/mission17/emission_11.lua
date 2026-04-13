@@ -33,7 +33,7 @@ x891090_g_AccomplishNPC_Name="蔡京"
 x891090_g_Name="赵天师"
 --奖励
 x891090_g_MoneyJZBonus					=10000
-x891090_g_ExpBonus						=100000
+x891090_g_ExpBonus						=1000000
 x891090_g_MissionItem = 40005017 --任务道具密函
 
 --MisDescEnd

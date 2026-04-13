@@ -618,31 +618,31 @@ function x402040_OnCopySceneTimer( sceneId, nowTime )
 	end
 	
 	-- 每间隔10秒提示玩家，“蹴鞠比赛将在AA秒后正式开始”
-	if nStep==0 and nCurTime-nPreTime>=10  then
+	if nStep==0 and nCurTime-nPreTime>=1  then
 		x402040_TipAllHuman( sceneId, "蹴鞠比赛将在50秒后正式开始" )
 		LuaFnSetCopySceneData_Param(sceneId, 16, nStep+1)
 		LuaFnSetCopySceneData_Param(sceneId, 15, nCurTime)
 		return
 	end
-	if nStep==1 and nCurTime-nPreTime>=10  then
+	if nStep==1 and nCurTime-nPreTime>=1  then
 		x402040_TipAllHuman( sceneId, "蹴鞠比赛将在40秒后正式开始" )
 		LuaFnSetCopySceneData_Param(sceneId, 16, nStep+1)
 		LuaFnSetCopySceneData_Param(sceneId, 15, nCurTime)
 		return
 	end
-	if nStep==2 and nCurTime-nPreTime>=10  then
+	if nStep==2 and nCurTime-nPreTime>=1  then
 		x402040_TipAllHuman( sceneId, "蹴鞠比赛将在30秒后正式开始" )
 		LuaFnSetCopySceneData_Param(sceneId, 16, nStep+1)
 		LuaFnSetCopySceneData_Param(sceneId, 15, nCurTime)
 		return
 	end
-	if nStep==3 and nCurTime-nPreTime>=10  then
+	if nStep==3 and nCurTime-nPreTime>=1  then
 		x402040_TipAllHuman( sceneId, "蹴鞠比赛将在20秒后正式开始" )
 		LuaFnSetCopySceneData_Param(sceneId, 16, nStep+1)
 		LuaFnSetCopySceneData_Param(sceneId, 15, nCurTime)
 		return
 	end
-	if nStep==4 and nCurTime-nPreTime>=10  then
+	if nStep==4 and nCurTime-nPreTime>=1  then
 		x402040_TipAllHuman( sceneId, "蹴鞠比赛将在10秒后正式开始" )
 		LuaFnSetCopySceneData_Param(sceneId, 16, nStep+1)
 		LuaFnSetCopySceneData_Param(sceneId, 15, nCurTime+5)
@@ -741,7 +741,7 @@ function x402040_OnCopySceneTimer( sceneId, nowTime )
 			x402040_TipAllHuman( sceneId, "孙美美请求换人，30秒之后比赛继续进行。" )
 			
 		elseif nStep_1 == 1  then
-			if nCurTime-nStep_1_T >= 10 then
+			if nCurTime-nStep_1_T >= 1 then
 				x402040_TipAllHuman( sceneId, "孙美美请求换人，20秒之后比赛继续进行。" )
 				
 				LuaFnSetCopySceneData_Param(sceneId, 25, nStep_1+1)
@@ -749,7 +749,7 @@ function x402040_OnCopySceneTimer( sceneId, nowTime )
 			end
 			
 		elseif nStep_1 == 2  then
-			if nCurTime-nStep_1_T >= 10 then
+			if nCurTime-nStep_1_T >= 1 then
 				x402040_TipAllHuman( sceneId, "孙美美请求换人，10秒之后比赛继续进行。" )
 				
 				LuaFnSetCopySceneData_Param(sceneId, 25, nStep_1+1)
@@ -757,7 +757,7 @@ function x402040_OnCopySceneTimer( sceneId, nowTime )
 			end
 			
 		elseif nStep_1 == 3  then
-			if nCurTime-nStep_1_T >= 10 then
+			if nCurTime-nStep_1_T >= 1 then
 				x402040_TipAllHuman( sceneId, "比赛重新开始。" )
 				
 				LuaFnSetCopySceneData_Param(sceneId, 25, nStep_1+1)
@@ -800,10 +800,10 @@ function x402040_OnCopySceneTimer( sceneId, nowTime )
 	end
 
 	-- 现按照简单的每10秒刷一次怪
-	if 	(nStep>=5   and nStep<24  and nCurTime-nPreTime >= 15) or
-			(nStep>=25  and nStep<54  and nCurTime-nPreTime >= 12) or
-			(nStep>=55  and nStep<124 and nCurTime-nPreTime >= 10) or
-			(nStep>=125 and nStep<154	and nCurTime-nPreTime >= 5)   then
+	if 	(nStep>=5   and nStep<24  and nCurTime-nPreTime >= 3) or
+			(nStep>=25  and nStep<54  and nCurTime-nPreTime >= 3) or
+			(nStep>=55  and nStep<124 and nCurTime-nPreTime >= 3) or
+			(nStep>=125 and nStep<154	and nCurTime-nPreTime >= 3)   then
 		
 		-- 怪物生成点
 		if nStep == 5  then

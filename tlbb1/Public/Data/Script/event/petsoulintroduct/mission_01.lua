@@ -29,7 +29,7 @@ x893040_g_ContinueInfo = ""
 x893040_g_MissionComplete = "#{SHYD_20211227_29}"
 
 x893040_g_MoneyJZBonus = 10000
-x893040_g_ExpBonus = 80000
+x893040_g_ExpBonus = 800000
 
 --MisDescEnd
 x893040_g_Name = "ÔÆÆ®Æ®"

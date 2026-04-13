@@ -30,7 +30,7 @@ x998789_g_ContinueInfo = ""
 x998789_g_MissionComplete = "#{QEYD_240402_37}"
 
 --MisDescEnd
-x998789_g_ExpBonus = 100000
+x998789_g_ExpBonus = 1000000
 
 --**********************************
 --任务入口函数

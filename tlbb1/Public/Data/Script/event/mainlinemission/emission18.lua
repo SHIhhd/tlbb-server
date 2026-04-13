@@ -36,7 +36,7 @@ x890171_g_Custom2 = {{id = "送信到西凉枫林阮枫眠处", num = 1}}
 x890171_g_ContinueInfo = ""
 x890171_g_MissionComplete = ""
 
-x890171_g_ExpBonus = 350000
+x890171_g_ExpBonus = 3500000
 --奖励道具
 x890171_g_ItemBonus={{id=38002772,num=1},{id=38002774,num=1}}
 

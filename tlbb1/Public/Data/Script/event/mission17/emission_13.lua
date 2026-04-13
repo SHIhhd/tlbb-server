@@ -33,7 +33,7 @@ x891092_g_SceneID=1
 x891092_g_AccomplishNPC_Name="÷÷ ¶µ¿"
 --Ω±¿¯
 x891092_g_MoneyJZBonus					=15000
-x891092_g_ExpBonus						=120000
+x891092_g_ExpBonus						=1200000
 
 --MisDescEnd
 --**********************************

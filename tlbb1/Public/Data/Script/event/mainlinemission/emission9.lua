@@ -34,7 +34,7 @@ x890162_g_ContinueInfo = ""
 x890162_g_MissionComplete = ""
 
 --MisDescEnd
-x890162_g_ExpBonus = 280000
+x890162_g_ExpBonus = 2800000
 x890162_g_Learn = 1
 x890162_g_MissionCamp = 2
 --½±ÀøµÀ¾ß

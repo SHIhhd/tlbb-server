@@ -34,7 +34,7 @@ x210262_g_MissionTarget = "#{XSRW_100111_1}"
 x210262_g_ContinueInfo = ""
 x210262_g_MissionComplete = "#{XSRW_100111_2}"
 x210262_g_MoneyJZBonus = 1
-x210262_g_ExpBonus = 50
+x210262_g_ExpBonus = 500
 x210262_g_SignPost = {x = 160, z = 156, tip = "赵天师"}
 
 x210262_g_Custom	= { {id="已找到赵天师",num=1} }

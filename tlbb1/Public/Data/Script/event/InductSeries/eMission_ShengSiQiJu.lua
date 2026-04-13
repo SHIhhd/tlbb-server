@@ -71,7 +71,7 @@ x500601_g_PlayerSlow_LVL					 = 28		-- 接受任务的最低等级
 
 --奖励
 x500601_g_MoneyBonus					=	7969
-x500601_g_ExpBonus						= 31877
+x500601_g_ExpBonus						= 318770
 
 --副本场景ID_珍珑棋局
 x500601_g_TargetSceneId				= 44

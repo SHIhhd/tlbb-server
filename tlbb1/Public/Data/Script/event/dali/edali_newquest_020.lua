@@ -47,7 +47,7 @@ x210267_g_MissionTarget="#{XSRW_100111_92}"
 x210267_g_ContinueInfo="#{XSRW_100111_44}"		--未完成任务的npc对话
 x210267_g_MissionComplete="#{XSRW_100111_45}"
 x210267_g_MoneyJZBonus=100
-x210267_g_ExpBonus=600
+x210267_g_ExpBonus=6000
 x210267_g_SignPost = {x = 145, z = 138, tip = "钱龙"}
 x210267_g_ItemBonus={{id=10111000,num=1}}
 

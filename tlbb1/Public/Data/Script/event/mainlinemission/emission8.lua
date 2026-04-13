@@ -29,12 +29,12 @@ x890161_g_Custom = {{ id = "了解三人境况，择一人相助", num = 1}}
 x890161_g_ContinueInfo = ""
 x890161_g_MissionComplete = ""
 
-x890161_g_ExpBonus = 280000
+x890161_g_ExpBonus = 2800000
 --奖励道具
 x890161_g_ItemBonus={{id=20600000,num=1}}
 
 --MisDescEnd
-x890161_g_ExpBonus = 280000
+x890161_g_ExpBonus = 2800000
 --交任务npc
 x890161_g_Position_X=63--完成任务NPC属性
 x890161_g_Position_Z=53

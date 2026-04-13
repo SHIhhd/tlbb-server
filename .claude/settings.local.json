@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(python3 -c ':*)",
+      "Bash(iconv -f gbk -t utf-8)"
     ]
   }
 }

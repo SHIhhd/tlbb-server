@@ -36,7 +36,7 @@ x890155_g_ContinueInfo = ""
 x890155_g_MissionComplete = ""
 
 --MisDescEnd
-x890155_g_ExpBonus = 400000
+x890155_g_ExpBonus = 4000000
 x890155_g_MissionItemID = 40005093
 x890155_g_MissionItemNeed = 2
 x890155_g_MissionParam_ItemNum = 1

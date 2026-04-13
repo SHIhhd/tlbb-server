@@ -45,7 +45,7 @@ x210264_g_Custom	= { {id="小兔子升到2级",num=1} }
 
 --任务奖励
 x210264_g_MoneyJZBonus=100
-x210264_g_ExpBonus=1000
+x210264_g_ExpBonus=10000
 x210264_g_ItemBonus={{id = 30603001,num = 20}}
 
 --MisDescEnd

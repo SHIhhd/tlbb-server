@@ -48,7 +48,7 @@ x891278_g_BagSpace = 1
 
 --½±Àø
 --x891278_g_MoneyJZBonus					=	30000
---x891278_g_ExpBonus						= 250000
+--x891278_g_ExpBonus						= 2500000
 
 --MisDescEnd
 x891278_g_mpList = {

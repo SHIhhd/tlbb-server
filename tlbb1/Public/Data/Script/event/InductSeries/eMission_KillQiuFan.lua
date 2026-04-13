@@ -73,7 +73,7 @@ x500618_g_PlayerSlow_LVL					 = 45		-- 接受任务的最低等级
 
 --奖励
 x500618_g_MoneyBonus					=	16520
-x500618_g_ExpBonus						= 66083
+x500618_g_ExpBonus						= 660830
 x500618_g_ItemBonus_List 	 	  = { id=30505701,num=1 }
 
 --副本场景ID_水牢

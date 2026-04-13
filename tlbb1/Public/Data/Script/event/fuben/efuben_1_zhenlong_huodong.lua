@@ -14,7 +14,7 @@ x401001_g_CopySceneType = FUBEN_ZHENGLONG;	--∏±±æ¿‡–Õ£¨∂®“Â‘⁄ScriptGlobal.lua¿Ô√
 x401001_g_limitMembers = 1;					--ø…“‘Ω¯∏±±æµƒ◊Ó–°∂”ŒÈ»À ˝
 x401001_g_tickDiffTime = 1;					--ªÿµ˜Ω≈±æµƒ ±÷” ±º‰£®µ•Œª£∫√Î/¥Œ£©
 x401001_g_closeTickCount = 30;				--∏±±æπÿ±’«∞µπº∆ ±£®µ•Œª£∫¥Œ£©
-x401001_g_startTickCount = 30;				--ø™ º≥ˆπ÷µƒ ±º‰£®µ•Œª£∫¥Œ£©
+x401001_g_startTickCount = 5;				--ø™ º≥ˆπ÷µƒ ±º‰£®µ•Œª£∫¥Œ£©
 x401001_g_tipsIntervalTickCount = 5;		--Ã· æ–≈œ¢µƒº‰∏Ù ±º‰
 
 x401001_g_NoUserTime = 300;					--∏±±æ÷–√ª”–»À∫Ûø…“‘ºÃ–¯±£¥Êµƒ ±º‰£®µ•Œª£∫√Î£©
@@ -53,11 +53,11 @@ x401001_g_LastBoss_XinShou6 = {12090, 12091, 12092, 12093, 12094, 12095, 12096, 
 
 --¥¥Ω®π÷ŒÔµƒΩ⁄◊‡
 x401001_g_createMonsterIntervalInfoList = {
-										{topPressStep=40, intervalTickCount=9},
-										{topPressStep=80, intervalTickCount=8},
-										{topPressStep=120, intervalTickCount=7},
-										{topPressStep=160, intervalTickCount=6},
-										{topPressStep=200, intervalTickCount=5}
+										{topPressStep=40, intervalTickCount=3},
+										{topPressStep=80, intervalTickCount=3},
+										{topPressStep=120, intervalTickCount=3},
+										{topPressStep=160, intervalTickCount=3},
+										{topPressStep=200, intervalTickCount=3}
 										};
 
 --∆Â∆◊ ˝æ›
@@ -352,24 +352,27 @@ function x401001_CheckAndEnterScene(sceneId, selfId, targetId, eventId)
 		return
 	end
 	
-	local checkCurDayMsg = "∂”ŒÈµ±÷–µƒ£®";
+	-- √øÃÏœﬁ÷∆2¥Œ (¥Ê¥¢∏Ò Ω: day*100+count)
+	local checkCurDayMsg = "";
 	local checkCurDaycount = 0;
 	for	i=0,nearMemberCount-1 do
 		local memId = GetNearTeamMember(sceneId, selfId, i)
-		local lastDay = GetMissionData(sceneId, memId, MD_LAST_QIJU_DAY);
-		if lastDay == day then
+		local savedVal = GetMissionData(sceneId, memId, MD_LAST_QIJU_DAY);
+		local savedDay = floor(savedVal / 100);
+		local savedCount = mod(savedVal, 100);
+		if savedDay == day and savedCount >= 2 then
 			memName = GetName(sceneId, memId);
 			if checkCurDaycount == 0 then
 				checkCurDayMsg = checkCurDayMsg..memName;
 			else
-				checkCurDayMsg = checkCurDayMsg.."°¢"..memName;
+				checkCurDayMsg = checkCurDayMsg..""..memName;
 			end
 			checkCurDaycount = checkCurDaycount + 1;
 		end
 	end
 	
-	if checkCurDaycount > 99 then
-		checkCurDayMsg = checkCurDayMsg.."£©“—æ≠ÕÍ≥…¡À¥À¥Œ∆Âæ÷ªÓ∂Ø°¢“Ú¥Àƒ˙µƒ∂”ŒÈŒﬁ∑®Ω¯»Î°£";
+	if checkCurDaycount > 0 then
+		checkCurDayMsg = checkCurDayMsg.."";
 		if x401001_enumerate == eventId then
 			AddText(sceneId, checkCurDayMsg);
 		else
@@ -525,7 +528,14 @@ function x401001_OnCopySceneReady(sceneId, destsceneId)
 	local memId;
 	for	i = 0, nearMemberCount - 1 do
 		memId = GetNearTeamMember(sceneId, leaderObjId, i);
-		SetMissionData(sceneId, memId, MD_LAST_QIJU_DAY, day);
+		-- º«¬º√ø¥ŒΩ¯»Î¥Œ ˝ (day*100+count)
+		local savedVal = GetMissionData(sceneId, memId, MD_LAST_QIJU_DAY);
+		local savedDay2 = floor(savedVal / 100);
+		local savedCount2 = 0;
+		if savedDay2 == day then
+			savedCount2 = mod(savedVal, 100);
+		end
+		SetMissionData(sceneId, memId, MD_LAST_QIJU_DAY, day * 100 + savedCount2 + 1);
 		NewWorld(sceneId, memId, destsceneId, x401001_g_Fuben_X, x401001_g_Fuben_Z);
 		--ªÓ∂ØÕ≥º∆
 		LuaFnAuditQuest(sceneId, memId, "’‰ÁÁ∆Âæ÷");
@@ -599,42 +609,6 @@ function x401001_OnCopySceneTimer(sceneId, nowTime)
 	--∏±±æ ±÷”∂¡»°º∞…Ë÷√
 	local curTickCount = LuaFnGetCopySceneData_Param(sceneId, 2);		--»°µ√“—æ≠÷¥––µƒ∂® ±¥Œ ˝
 	
-	if curTickCount == 2 then
-		local nHour = GetHour();
-		local nMinute = GetMinute();
-		local nCurTempTime = nHour * 60 + nMinute;
-		
-		local tempTimes = 0;
-		if nCurTempTime < x401001_g_endTime1 then
-			tempTimes = x401001_g_endTime1 - nCurTempTime;
-		else
-			tempTimes = x401001_g_endTime2 - nCurTempTime;
-		end
-		
-		if tempTimes > 0 then
-			local tempH = floor(tempTimes / 60);
-			local tempM = floor(tempTimes - tempH * 60);
-	  		local strText = format("∏±±æΩ´‘⁄");
-			if tempH > 0 then
-				strText = strText .. tempH .. "–° ±";
-			end
-
-			if tempM > 0 then
-				strText = strText .. tempM .. "∑÷÷”";
-			end
-
-			strText = strText .. "∫Ûπÿ±’£°";
-
-			local membercount = LuaFnGetCopyScene_HumanCount(sceneId);
-			local memId;
-			for	i = 0, membercount - 1 do
-				memId = LuaFnGetCopyScene_HumanObjId(sceneId, i);
-				if LuaFnIsObjValid(sceneId, memId) == 1 and LuaFnIsCanDoScriptLogic(sceneId, memId) == 1 then
- 					x401001_NotifyFailTips(sceneId, memId, strText);
- 				end
-			end
-		end
-	end
 		
 	--∏±±æπÿ±’±Í÷æ
 	local leaveFlag = LuaFnGetCopySceneData_Param(sceneId, 4);
@@ -677,14 +651,6 @@ function x401001_OnCopySceneTimer(sceneId, nowTime)
 		closeTickCount = closeTickCount + 1;
 		LuaFnSetCopySceneData_Param(sceneId, 5, closeTickCount);
 	else
-		--ºÏ≤‚ªÓ∂Ø ±º‰ «∑ÒΩ· ¯
-		local bActive = x401001_IsActivityOpen(sceneId);
-		if bActive and bActive == 1 then
-		else
-			--…Ë÷√∏±±æπÿ±’±Í÷æ
-			LuaFnSetCopySceneData_Param(sceneId, 4, 1);
-			return
-		end
 
 		--ø™ º ±µƒÃ· æ
 		if curTickCount < x401001_g_startTickCount then
@@ -766,14 +732,6 @@ function x401001_OnCopySceneTimer(sceneId, nowTime)
 								SetLevel(sceneId, monsterObjId, monsterLevel);
 							end
 						end
-					elseif monstertype == Black_B[mgroup] then
-						if nowTime >= mcreatetime + x401001_g_aToBInterval + x401001_g_bToCInterval then --–Ë“™Ω´π÷ŒÔ±‰≥…C◊¥Ã¨¡À
-							LuaFnDeleteMonster(sceneId, monsterObjId);
-							--PrintStr("Black_C ="..Black_C[mgroup])
-							monsterObjId = LuaFnCreateMonster(sceneId, Black_C[mgroup], PosX, PosZ, 5, 0, 401001);
-							if monsterObjId and monsterObjId > -1 then
-								SetLevel(sceneId, monsterObjId, monsterLevel);
-							end
 						end
 					elseif monstertype == White_A[mgroup] then
 						if nowTime >= mcreatetime + x401001_g_aToBInterval then --–Ë“™Ω´π÷ŒÔ±‰≥…B◊¥Ã¨¡À
@@ -784,14 +742,6 @@ function x401001_OnCopySceneTimer(sceneId, nowTime)
 								SetLevel(sceneId, monsterObjId, monsterLevel);
 							end
 						end
-					elseif monstertype == White_B[mgroup] then
-						if nowTime >= mcreatetime + x401001_g_aToBInterval + x401001_g_bToCInterval then --–Ë“™Ω´π÷ŒÔ±‰≥…C◊¥Ã¨¡À
-							LuaFnDeleteMonster(sceneId, monsterObjId)
-							--PrintStr("White_C ="..White_C[mgroup])
-							monsterObjId = LuaFnCreateMonster(sceneId, White_C[mgroup], PosX, PosZ, 5, 0, 401001);
-							if monsterObjId and monsterObjId > -1 then
-								SetLevel(sceneId, monsterObjId, monsterLevel);
-							end
 						end
 					else
 					end
@@ -908,16 +858,7 @@ function x401001_NotifyFailTips(sceneId, selfId, Tip)
 end
 
 function x401001_IsActivityOpen(sceneId)
-	local nHour = GetHour();
-	local nMinute = GetMinute();
-	local nCurTempTime = nHour * 60 + nMinute;
-	if nCurTempTime >= x401001_g_beginTime1 and nCurTempTime < x401001_g_endTime1 then
-		return 1;
-	end
-	if nCurTempTime >= x401001_g_beginTime2 and nCurTempTime < x401001_g_endTime2 then
-		return 1;
-	end
-	return 0;
+	return 1;
 end
 
 function x401001_OnDie(sceneId, selfId, killerId)						-- ≥°æ∞ID, ±ª…±µƒObjId, …± ÷ObjId

@@ -35,7 +35,7 @@ x210258_g_MissionInfo="#{XSRW_100111_10}"
 x210258_g_ContinueInfo ="#{XSRW_100111_69}"
 x210258_g_MissionComplete="#{XSRW_100111_11}"
 x210258_g_MoneyJZBonus=30
-x210258_g_ExpBonus = 300
+x210258_g_ExpBonus = 3000
 x210258_g_SignPost = {x = 160, z = 156, tip = "’‘ÃÏ ¶"}
 
 x210258_g_RadioItemBonus={}

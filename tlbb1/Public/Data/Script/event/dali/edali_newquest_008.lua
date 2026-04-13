@@ -37,7 +37,7 @@ x210273_g_MissionComplete="#{XSRW_100111_19}"	--完成任务npc说话的话
 x210273_g_SignPost = {x = 58, z = 133, tip = "高升祥"}
 --任务奖励
 x210273_g_MoneyJZBonus=30
-x210273_g_ExpBonus=1140
+x210273_g_ExpBonus=11400
 x210273_g_RadioItemBonus={}
 x210273_g_RadioItemBonus={{id=10401072,num=1},{id=10402082,num=1},{id=10403072,num=1},{id=10404077,num=1}}
 

@@ -16,7 +16,7 @@ x890277_g_IsMissionOkFail = 0
 -- 任务完成情况,占用任务参数的第1位
 x890277_g_Custom = { { id = "已将长恨刀交还", num = 1 } }
 --任务奖励
-x890277_g_ExpBonus = 500000
+x890277_g_ExpBonus = 5000000
 x890277_g_ItemBonus={{id=38002946,num=1},{id=38002987,num=1}}
 
 --MisDescEnd

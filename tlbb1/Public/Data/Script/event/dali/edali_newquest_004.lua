@@ -37,7 +37,7 @@ x210257_g_MissionComplete="#{XSRW_100111_9}"	--完成任务npc说话的话
 x210257_g_SignPost = {x = 238, z = 172, tip = "黄公道"}
 --任务奖励
 x210257_g_MoneyJZBonus=30
-x210257_g_ExpBonus=390
+x210257_g_ExpBonus=3900
 x210257_g_ItemBonus={{id=10110000,num=1}}
 x210257_g_RadioItemBonus={}
 

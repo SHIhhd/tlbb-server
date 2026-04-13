@@ -36,7 +36,7 @@ x891091_g_MissionItem = 40005016 --任务道具伪造的密函
 x891091_g_ImapactId = 10515  --变装用ID
 --奖励
 x891091_g_MoneyJZBonus					=15000
-x891091_g_ExpBonus						=120000
+x891091_g_ExpBonus						=1200000
 
 --MisDescEnd
 

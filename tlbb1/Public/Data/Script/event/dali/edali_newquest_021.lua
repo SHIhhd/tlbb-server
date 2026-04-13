@@ -37,7 +37,7 @@ x210269_g_MissionComplete="#{XSRW_100111_47}"	--完成任务npc说话的话
 x210269_g_SignPost = {x = 160, z = 157, tip = "赵天师"}
 --任务奖励
 x210269_g_MoneyJZBonus=100
-x210269_g_ExpBonus=3215
+x210269_g_ExpBonus=32150
 x210269_g_ItemBonus={}
 x210269_g_RadioItemBonus={}
 

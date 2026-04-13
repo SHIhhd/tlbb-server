@@ -35,7 +35,7 @@ x890163_g_MissionComplete = ""
 
 
 --MisDescEnd
-x890163_g_ExpBonus = 500000
+x890163_g_ExpBonus = 5000000
 x890163_g_DoEquip = 1
 x890163_g_MissionCamp = 2
 --**********************************

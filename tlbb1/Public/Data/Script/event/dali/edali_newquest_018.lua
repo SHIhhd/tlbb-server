@@ -43,7 +43,7 @@ x210266_g_MissionComplete="#{XSRW_100111_40}"					--完成任务npc说话的话
 --x210266_g_ItemBonus={{id=10111000,num=1}}
 x210266_g_SignPost = {x = 160, z = 157, tip = "赵天师"}
 x210266_g_MoneyJZBonus=100
-x210266_g_ExpBonus = 600
+x210266_g_ExpBonus = 6000
 x210266_g_SignPost_1 = {x = 139, z = 169, tip = "焰火燃放点"}
 
 x210266_g_Custom	= { {id="已燃放焰火",num=1} }

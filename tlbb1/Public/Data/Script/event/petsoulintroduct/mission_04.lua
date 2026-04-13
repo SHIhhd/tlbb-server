@@ -33,7 +33,7 @@ x893043_g_ContinueInfo = ""
 x893043_g_MissionComplete = "#{SHYD_20211227_203}"
 
 x893043_g_MoneyJZBonus = 20000
-x893043_g_ExpBonus = 120000
+x893043_g_ExpBonus = 1200000
 
 
 --MisDescEnd

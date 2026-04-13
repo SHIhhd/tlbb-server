@@ -34,7 +34,7 @@ x210255_g_MissionTarget="#{XSRW_100111_55}"
 x210255_g_ContinueInfo ="#{XSRW_100111_67}"
 x210255_g_MissionComplete="#{XSRW_100111_5}"
 x210255_g_MoneyJZBonus=1
-x210255_g_ExpBonus = 50
+x210255_g_ExpBonus = 500
 x210255_g_SignPost = {x = 216, z = 135, tip = "ÆÑÁ¼"}
 
 x210255_g_RadioItemBonus={{id=10101000 ,num=1},{id=10102000,num=1},{id=10104000,num=1},{id=10103000,num=1}}
