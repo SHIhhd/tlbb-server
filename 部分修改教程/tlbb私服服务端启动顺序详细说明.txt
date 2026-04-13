@@ -1,0 +1,34 @@
+前一段时间发布本了本站的商业版服务端，但是很多新手仍然不会启动服务端。主要的原因是启动顺序不对。今天在这里详细说一下。
+
+只要你按照以下顺序启动，就完全可以，当然前提是你必须把Oracle数据库环境变量设置正确。否则服务端是启动不了的。
+
+第一步：先运行MYSQL ，这里如何懂点技术的话，可以把该服务设置为随机启动
+1、/usr/local/mysql/bin/mysqld_safe --user=root & 
+
+2、启动billing服务
+  cd /home/tlbb/billing/tlbb
+./tlbb start
+
+3、启动shm,这一步很重要，启动不了它的话，整个天龙八部私服根本进不了。
+  
+cd /home/tlbb/shm/Server
+./shm start
+
+4、启动World 这是主游戏服务器。
+
+cd /home/tlbb/World/Server
+./World
+
+5、启动Login
+
+cd /home/tlbb/Login/Server
+./Login
+
+6、启动Server
+
+cd /home/tlbb/Server/Server
+./Server -loadscriptonce
+
+完成这六步以后。看一下有没有报错。除非有ODBC方面的报错，因为ODBC报错会导致GM命令无法使用和玩家账号无法登陆。
+
+一般有个一行两行的报错是没有事的。

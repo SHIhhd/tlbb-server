@@ -1,0 +1,17 @@
+加一个可消耗的技能，如：石灰包，好处你懂的。使用物品时，无法显示技能名称。。不爽
+
+1   Public\config\CommonItem.txt           ---物品文件，物品使用脚本不动。技能换一个。30501376
+2   skilltemplate_v1.txt                   ---技能文件，物品文件指定的技能.2016
+3   SkillData_V1.txt                       ---技能对应的实际技能ID。cd时间在这.30030
+4   Server\config\StandardImpact.txt       ---效果文件.32711
+5   补丁\Config\ImpactSEData_V1.txt        ---客户端的BUFF文件。。SED的BUFF图标 
+
+
+
+给人物加一个技能
+1   Public\config\CommonItem.txt          ---物品文件，在这里加一本技能书放到商店卖。
+2                                         ---物品ID对应的技能ID
+3   SkillTemplate_V1.txt                  ---技能文件，有冷却ID，无CD时间。指定实际技能ID。使用时显示文字
+4   SkillData_V1.txt                      ---实际技能ID 。有CD时间。消耗，指定实际效果。不显示
+5   Server\config\StandardImpact.txt      ---效果文件。（不显示）指定BUFF在客户端SED
+6   补丁\Config\ImpactSEData_V1.txt       ---客户端的BUFF文件。。

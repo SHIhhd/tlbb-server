@@ -1,0 +1,14 @@
+--Ç¿»¯
+        local ret,arg0 = LuaFnEquipEnhance( sceneId, selfId, itemidx1, itemidx2 )
+
+        if ret == 0 then
+                if arg0 >= 8 then
+                        local        szTranItm1        = GetBagItemTransfer( sceneId, selfId, itemidx1 )
+                        local        szTranItm2        = GetBagItemTransfer( sceneId, selfId, itemidx2 )
+                        local        szMsg                                = format( "#W#{_INFOUSR%s}#{EQ_1}#{_INFOMSG%s}#{EQ_2}%d#{EQ_3}#{_INFOMSG%s}#{EQ_4}",
+                                                                                                                LuaFnGetName( sceneId, selfId ), szTranItm2, arg0, szTranItm1 )
+                        
+                        AddGlobalCountNews( sceneId, szMsg )
+                end
+
+if arg0 >= 8 then 

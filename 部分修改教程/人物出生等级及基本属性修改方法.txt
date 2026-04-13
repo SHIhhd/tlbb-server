@@ -1,0 +1,24 @@
+来到天龙八部服务端Server\Config目录下,找到文件DefaultChar.ini用写字板打开,人物的基本属性数据都在里面了,可根据自己的需要进行特色修改.
+
+[baseinfo]
+name=天龙八部;角色名称
+scene=2　　;起始场景,默认是大理
+pos_x=165.0　　;起始位置X
+pos_z=169.0　　;起始位置Z
+sex=0　　;性别
+hp=999　　;
+mp=999　　;
+level=35　　;这里修改出生等级
+exp=0　　;
+vigor=10　　;活力
+max_vigor=50　　;活力最大值
+vigor_regenerate=0　　;活力恢复速度
+energy=10　　;精力
+max_energy=50　　;精力最大值
+energy_regenerate=0　　;精力恢复速度
+camp=0　　;
+menpai=9　　;
+money=1000000　　;
+actualAge=0　　;真实年龄，决定受不受防沉迷限制
+
+　　还有一些基本属性可以自己修改,例如:人物出生坐标;hp,mp默认数值;角色身上可以使用的技能和数量;角色身上已经学会的配方和数量;

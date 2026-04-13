@@ -1,0 +1,16 @@
+这种方法是直接在后台运行，看不到运行过程的信息，所以你要确定它们在后台能正常运行。全部运行后可直接关闭SecureCRT。
+
+cd /home/tlbb/Billing
+nohup ./tlbb31 start &
+
+cd /home/tlbb/Server
+nohup ./shm start &
+
+cd /home/tlbb/Server
+nohup ./Login_fix &
+
+cd /home/tlbb/Server
+nohup ./World_fix &
+
+cd /home/tlbb/Server
+nohup ./Server_fix -loadscriptonce &

@@ -1,0 +1,18 @@
+\home\tlbb\Public\Config\ConfigInfo.ini
+[Exp]
+ExpParam=100.0                                        ;全局经验修正参数
+ExpSpouseAddRate=0.04                        ;队中有配偶的经验加成
+ExpBrotherAddRate=0.02                        ;队中有兄弟的经验加成
+ExpMasterInTeamAddRate=0.2                ;有师傅并在队中的经验加成
+ExpMasterNotInTeamAddRate=0.1        ;有师傅但不在队中的经验加成
+ExpPrenticeAddRate=0.05                ;收徒后的经验加成
+
+
+[Human]
+CanGetExpRange=30                        ;杀死角色后可以得到EXP的范围
+OutGhostTime=300000                        ;玩家释放灵魂的时间
+DefaultMoveSpeed=6000                ;缺省角色移动速度
+DefaultAttackSpeed=2000                ;缺省角色攻击速度，没有武器时候的攻击速度
+DefaultRefreshRate=60000                ;角色自动增长数据的刷新速度
+HumanVERecoverInterval=300000                ;精力与活力的恢复时间间隔（毫秒）
+HumanMaxDefaultLevel=151                 ;玩家可以通过经验升到的最高等级modi:lby从100升到119.玩家最大等级是配置值-1的值

@@ -1,0 +1,179 @@
+教程说明：添加一个合理的定时刷新怪（误差1分钟）
+
+首先在需要刷怪的场景添加一个npc 调用刷怪脚本
+
+[monster1]  
+guid=91231782
+type=0
+pos_x=0
+pos_z=0
+dir=27
+script_id=900099
+respawn_time=1800000
+base_ai=3
+scripttimer=60000       
+group_id=-1
+team_id=-1
+patrol_id=-1
+shop0=-1
+shop1=-1
+shop2=-1
+shop3=-1
+ReputationID=-1
+
+script_id=900099  这个是脚本号自己定义一个唯一脚本号
+
+scripttimer=60000 这个是脚本调用时间 自己定义
+
+[monster1]   这个是npc号  需要总数加1
+
+添加好了以后 打开
+
+Script.dat 文件
+
+添加一行
+900099=\目录\脚本
+比如900099=\jingmeng\boss.lua
+
+然后 去新建这个目录
+
+在这个目录里面新建一个脚本
+名字叫boss.lua
+
+
+
+脚本内容
+--脚本号
+x900099_g_scriptId = 900099 –脚本号自己全部替换
+
+x900099_g_AllBoss = {333} –这里是刷新场景号 参考SceneInfo.ini
+--##18是场景ID，参考SceneInfo.ini
+
+--##这里是系统公告，根据分组ID发布公告，同一组BOSS只发布一次
+x900099_g_BossSysMsgByGroupID={}
+x900099_g_BossSysMsgByGroupID[1]={Msg="#cFF0000仙兽坛：#cff99ff终极BOSS已经在仙兽坛中间出现,还不速速前往剿灭,掉落成品重楼,红包卡!#r#Y坐标不用我多说了吧?",isSended=0}
+x900099_g_AllBoss[333]=
+{       
+        { ID=50044, GroupId=1, Title="重楼使者", PosX=50,  PosY=50, BaseAI=21, ExtAIScript=17, ScriptID=900099 },
+        { ID=44000, GroupId=1, Title="重楼使者", PosX=29,  PosY=147, BaseAI=21, ExtAIScript=202, ScriptID=900099 },
+        { ID=44000, GroupId=1, Title="重楼使者", PosX=33,  PosY=257, BaseAI=21, ExtAIScript=202, ScriptID=900099 },
+        { ID=50044, GroupId=1, Title="重楼使者", PosX=282,  PosY=120, BaseAI=21, ExtAIScript=202, ScriptID=900099 },
+}
+
+--##场景地图要加一个NPC，来触发脚本,如yannan_monster.ini，scripttimer是脚本回调时间，60000为60秒调用一次脚本
+-- [monster142]
+-- guid=9913082
+-- type=0
+-- pos_x=0
+-- pos_z=0
+-- dir=27
+-- script_id=900099
+-- respawn_time=1800000
+-- base_ai=3
+-- scripttimer=60000               
+-- group_id=-1
+-- team_id=-1
+-- patrol_id=-1
+-- shop0=-1
+-- shop1=-1
+-- shop2=-1
+-- shop3=-1
+-- ReputationID=-1
+--**********************************
+--刷怪逻辑
+--**********************************
+function x900099_OnCharacterTimer( sceneId, objId, dataId, uTime )
+        local nHour         = GetHour()--小时
+        local nMinute = GetMinute()--分钟
+       
+        if sceneId==333 then        --##玄海01:20 04:20 07:20 10:20 13:20 16:20 19:20 22:20
+                if (nHour==12 and nMinute==00) or (nHour==16 and nMinute==00)or (nHour==18 and nMinute==00)or (nHour==20 and nMinute==00)or (nHour==22 and nMinute==00) then --##21点半和12点半刷雁南的怪
+                        x900099_CreateMonster( sceneId )        --刷怪
+                end
+        end
+        --AddGlobalCountNews( sceneId, nMinute )
+        --取消时钟
+        --SetCharacterTimer( sceneId, objId, 0 )
+end
+
+--**********************************
+--刷BOSS
+--**********************************
+function x900099_CreateMonster( sceneId )
+        --##重置公告标识
+        --for j,msgData in x900099_g_BossSysMsgByGroupID do
+        --        msgData.isSended=0
+        --end
+        --刷怪前如果怪存在的话全部清空，再刷
+        for i,data in x900099_g_AllBoss[sceneId] do
+                local nMonsterNum = GetMonsterCount(sceneId)
+                for i=0, nMonsterNum-1 do
+                        local MonsterId = GetMonsterObjID(sceneId,i)
+                        local MosDataID = GetMonsterDataID( sceneId, MonsterId )
+                        if MosDataID == data.ID then
+                                --清怪
+                                LuaFnDeleteMonster(sceneId, MonsterId)
+                        end               
+                end
+        end
+        --刷怪
+        for i,data in x900099_g_AllBoss[sceneId] do
+                local MstId = LuaFnCreateMonster(sceneId, data.ID, data.PosX, data.PosY, data.BaseAI, data.ExtAIScript, data.ScriptID )
+                SetCharacterTitle(sceneId, MstId, data.Title)
+                --x900099_SysMsg( sceneId, data.GroupId )
+               
+               
+               
+        end
+        local message = format("@*;SrvMsg;SCA:#W#{_INFOUSR%s}#P正对着礼包喃喃不语,突然一个金光闪现，从礼包里掉出"..GiftTable.GiftList[key].conut.."个#G#{_INFOMSG%s}#P 他高兴的哈哈大笑起说：“今天真是踩狗屎运了！”", GetName(sceneId,selfId), transfer1 );
+        AddGlobalCountNews( sceneId, message )
+
+end
+
+--**********************************
+--系统公告
+--**********************************
+function x900099_SysMsg( sceneId, groupId )
+        if x900099_g_BossSysMsgByGroupID[groupId].isSended==0 then
+                --BroadMsgByChatPipe( sceneId, 0, x900099_g_BossSysMsgByGroupID[groupId].Msg, 4 )
+                AddGlobalCountNews( sceneId, x900099_g_BossSysMsgByGroupID[groupId].Msg )
+                x900099_g_BossSysMsgByGroupID[groupId].isSended=1
+        end
+end
+
+--**********************************
+--对话窗口信息提示
+--**********************************
+function x900099_MsgBox( sceneId, selfId, msg )
+        BeginEvent( sceneId )
+                AddText( sceneId, msg )
+        EndEvent( sceneId )
+        DispatchEventList( sceneId, selfId, -1 )
+end
+
+
+--**********************************
+--醒目提示
+--**********************************
+function x900099_NotifyTip( sceneId, selfId, Msg )
+        BeginEvent( sceneId )
+                AddText( sceneId, Msg )
+        EndEvent( sceneId )
+        DispatchMissionTips( sceneId, selfId )
+end
+
+--**********************************
+--关闭对话框
+--**********************************
+function x900099_CloseMe(sceneId, selfId)
+        BeginUICommand(sceneId)
+        EndUICommand(sceneId)
+        DispatchUICommand(sceneId,selfId, 1000)
+end
+
+--到这里结束
+
+
+
+
+然后重启端 等待到时间

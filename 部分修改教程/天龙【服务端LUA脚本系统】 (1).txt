@@ -1,0 +1,127 @@
+一、Lua脚本功能接口
+1. LuaInterface.h/.cpp声明和实现LuaInterface。
+LuaInterface成员如下：
+//脚本引擎
+FoxLuaScript mLua ;
+//注册器
+LuaCFuncRegister mFuncRegister;
+//场景关联
+Scene* mOwner;
+//已经读取的脚本表
+IDTable m_ScriptTable ;
+
+主要方法：
+VOID Init(Scene* pScene);//完成Lua脚本环境的初始化和C导出函数的注册
+
+Scene* GetOwner();
+
+执行Lua脚本的C++接口，提供多达8个参数支持。
+INT ExeScript( ScriptID_t scriptid, CHAR* funcname ) ;
+INT ExeScript_D( ScriptID_t scriptid, CHAR* funcname, INT Param0 ) ;
+INT ExeScript_DD( ScriptID_t scriptid, CHAR* funcname, INT Param0, INT Param1 ) ;
+INT ExeScript_DDD( ScriptID_t scriptid, CHAR* funcname, INT Param0, INT Param1, INT Param2 ) ;
+INT ExeScript_DDDD( ScriptID_t scriptid, CHAR* funcname, INT Param0, INT Param1, INT Param2, INT Param3 ) ;
+
+LuaInterface::Init里面会初始化mLua引擎，注册C++提供给Lua脚本的函数(LuaCFuncRegister)，并加载ScriptGlobal.lua脚本。
+2. LuaCFuncRegister.cpp里面对所有导出到Lua的C++函数进行注册。
+struct _Str2Func functbl[] =
+{
+{"AddEventList",FuncProto(LuaFnAddNumText)},
+{"GetMission", FuncProto(LuaFnGetMission)},
+{"GetMissionCount", FuncProto(LuaFnGetMissionCount)},
+{"SetMissionByIndex", FuncProto(LuaFnSetMissionByIndex)},
+{"AddMission", FuncProto(LuaFnAddMission)},
+{"AddMissionEx", FuncProto(LuaFnAddMissionEx)},
+{"SetMissionEvent", FuncProto(LuaFnSetMissionEvent)},
+...
+};
+
+这些C++函数的实现是在下列头文件中进行的：
+#include "LuaFnTbl_Mission.h"
+#include "LuaFnTbl_Misc.h"
+#include "LuaFnTbl_Ability.h"
+#include "LuaFnTbl_Attr.h"
+#include "LuaFnTbl_Pet.h"
+#include "LuaFnTbl_Battle.h"
+#include "LuaFnTbl_Shop.h"
+#include "LuaFnTbl_PetPlacard.h"
+#include "LuaFnTbl_Scene.h"
+#include "LuaFnTbl_Team.h"
+#include "LuaFnTbl_DoAction.h"
+#include "LuaFnTbl_Relation.h"
+#include "LuaFnTbl_Guild.h"
+#include "LuaFnTbl_City.h"
+这些函数并不是功能的真正实现地方，真正的实现代码在Scene、Obj_Human等地方。这里只是集中转调而已。
+3. 注册完成后，在Lua脚本中就可以使用类似AddMission接口调用C++里面功能。
+二、Lua脚本位置
+所有脚本在Bin\Public\Data\Script子目录中。
+Bin\Public\Data\Script.dat是索引，里面保存了ScriptID和对应的脚本文件名。如：
+888888=\scene.lua
+888889=\mail.lua
+888890=\player_login.lua
+...
+脚本ID是6位的。
+三、脚本索引的初始化
+每个场景都会进行脚本初始化，具体是在Scene:oad里面，在在m_pLuaInterface初始化之后。
+m_pLuaInterface->Init(this);
+
+if( !m_pScriptFileMgr->IsInit() )
+{
+m_pScriptFileMgr->Init( FILE_SCRIPT, FALSE);
+}
+Log::SaveLog( SERVER_LOGFILE, "Load ../Public/Data/script.dat OK!" );
+m_pScriptFileMgr->Init将"888888=\scene.lua"拆开，保存ID和文件名到SFileData里面。所有的SFileData用SFileDataLink串起来。
+四、脚本加载和调用
+每个脚本的调用都是通过INT LuaFnCallScriptFunction(Lua_State* L);来进行的。该函数是一个C++函数，脚本里面调用名是CallScriptFunction，注册如下：
+{"CallScriptFunction", FuncProto(LuaFnCallScriptFunction)},
+LuaFnCallScriptFunction的实现在文件LuaFnTbl_Misc.h里。
+可以看到在，此函数：
+把SFileData添加到pScene->GetLuaInterface()->m_ScriptTable表里面;
+pSFileData = pScene->GetLuaInterface()->GetOwner()->GetScriptFileMgr()->GetFileData(scriptId);
+pScene->GetLuaInterface()->m_ScriptTable.Add( scriptId, pSFileData ) ;
+然后加载脚本;
+pScene->GetLuaInterface()->mLua.Load( const_cast<CHAR*>(filename) ) ;
+最后调用脚本。
+
+五、典型脚本的结构
+见ScriptDef.h，定义了一些脚本接口函数，如OnDefaultEvent，对于脚本805007，就是：
+function x805007_OnDefaultEvent( sceneId, selfId,targetId );
+有一些调用没有在这里定义宏，直接写在C++代码里面，如OnScenePlayerLogin。
+
+#define DEF_EVENT_ENTRY_FUNC_NAME ("OnDefaultEvent") //脚本进入函数
+#define DEF_ON_KILL_OBJECT_FUNC_NAME ("OnKillObject")
+#define DEF_ON_ITEM_CHANGED_FUNC_NAME ("OnItemChanged")
+#define DEF_ON_PET_CHANGED_FUNC_NAME ("OnPetChanged")
+#define DEF_ON_ENTER_AREA_FUNC_NAME ("OnEnterArea")
+#define DEF_ON_LEAVE_AREA_FUNC_NAME ("OnLeaveArea")
+#define DEF_EVENT_ON_TIMER ("OnTimer")
+
+#define DEF_MISSION_ACCEPT ("OnMissionAccept") //接受任务
+#define DEF_MISSION_ABANDON ("OnAbandon") //放弃任务
+#define DEF_MISSION_REFUSE ("OnMissionRefuse") // 拒绝接受任务
+#define DEF_MISSION_SUBMIT ("OnMissionSubmit") //任务完成后，提交任务
+#define DEF_MISSION_CHECK ("OnMissionCheck") //任务完成条件检查
+#define DEF_MISSION_CONTINUE ("OnMissionContinue") //任务没完成，继续
+六、样例分析
+大理NPC赵天师脚本分析
+脚本名：Script\obj\dali\odali_xinshoutian.lua，汗，居然叫这个名字，找了半天，一般的命名都是拼音。
+--赵天师
+--脚本号
+x002030_g_scriptId = 002030
+
+--所拥有的事件ID列表
+x002030_g_eventList={210200,210204,210205,210208,210210,210212,210213,210214,210216,210217,210220,210223, 210224, 210225, 210229, 210230, 210232, 210238, 210239, 210237, 210240, 200080, 200083, 200086, 200091, 200094,200095,210241,050022}
+
+一般情况，每个event对于一个任务，也是一段脚本实现的。如210200对于：
+;大理城新手指导任务
+210200=\event\dali\edali_zhidao_0200.lua
+--找人任务
+--赵天师寻找蒲良
+NPC脚本触发接口函数是xxx_OnDefaultEvent，在AI_Human的PushCommand_DefaultEvent里面触发。
+ORESULT PushCommand_DefaultEvent( ObjID_t idNPC );
+pCharacter->getScene()->GetLuaInterface()->ExeScript_DDD(
+idScript,
+DEF_EVENT_ENTRY_FUNC_NAME,
+(INT)pCharacter->getScene()->SceneID(),
+(INT)pCharacter->GetID(),
+(INT)pNPC->GetID() ) ;

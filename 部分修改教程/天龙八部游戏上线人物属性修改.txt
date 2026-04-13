@@ -1,0 +1,37 @@
+打开Server/config/Defaultchar.ini 
+[baseinfo] 
+name=天龙八部;角色名称 
+scene=2   ;起始场景 
+pos_x=165.0   ;起始位置X 
+pos_z=169.0   ;起始位置Z 
+edu=0    ;性别 
+hp=999    ;初始血最大值 
+mp=999    ;初始气最大值 
+level=1    ;初始等级 
+exp=0   ; 初始经验 
+vigor=10   ;初始活力 
+max_vigor=50   ;初始活力最大值 
+vigor_regenerate=0  ;活力恢复速度 
+energy=10   ;初始精力 
+max_energy=50   ;初始精力最大值 
+energy_regenerate=0  ;精力恢复速度 
+camp=0    ; 
+menpai=9   ; 
+money=100000000   ;初始金币 5 uwl. net
+actualAge=18  ;真实年龄，决定受不受防沉迷限制 
+[attribute] 
+str=7    ; 
+spr=6    ; 
+con=5    ; 
+int=5    ; 
+dex=2    ; 
+[skill] 
+number=6  ;初始角色身上可以使用的技能数量（下面几个技能，就在这里填几） 
+id0=0(这个是技能ID，前面的id0顺次向下写) 
+id1=1 
+id2=21 
+id3=22 
+id4=34 
+id5=35 
+[xinfa]     
+number=0   初始角色身上心法数量和技能相同

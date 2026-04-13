@@ -1,0 +1,18 @@
+本人经过几天的努力，看了n多的视频，转了n多的论坛，总算把天龙私服建设起来了。总结了一下常见错误。
+只针对单机，我也就是弄弄玩玩，windows xp + linux 虚拟机！如果你也只是建设一下单机玩玩，建议下载完整版的vmtools 然后安装上，就用winscp和另外一个windows机连linux工具了，支持文件直接复制！
+一点小建议，先多看几个视频，不要一开始就建，那样弄不好就得重新装系统，呵呵，不划算。
+建设过程中基本上不会出现什么错误，只要你按照视频的说明，复制完全的代码，基本没问题。主要说启动服务器的问题。
+1. 启动 /tlbb start 出db error
+密码或者数据源不对
+2. 启动 /tlbb start 提示找不到librvary 等文件
+需要把instantclient10.0.2中的文件复制到 linux机的usr\lib文件夹中
+3 启动/tlbb start 提示 5 pool err , passlen
+数据源有问题，就是instantclient10.0.2有问题，换一个
+4 启动/tlbb start 提示 5 pool err ,passelen ，启动 /tlbb31 start 提示一长串字符 最后 exist
+这个是iernei37这个密码有问题，我经过测试，你要是用/tlbb start 密码就用iernei37d 要是用/tlbb31 start 就用那个长的加过密的密码，就不会有错误提示了
+5 点击注册提示conn2等的错误，经过换代码和数据库密码还解决不了的
+把conn.Open "Provider=XXXXXXX.1 改成 conn.Open "Provider=MSDAORA.1 就可以了
+6 输入账号和密码后，点登陆，提示服务器无法连接
+客户端里边ip后的端口不对，要改成 7737
+7 创建人物后，无法登陆，提示 未知错误
+客户端和login不对应，换一个就好了，前提是你配置都没问题

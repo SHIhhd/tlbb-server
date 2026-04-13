@@ -1,0 +1,34 @@
+打开 tlbb\Public\Data\Script\event\equip\judge_aptitude.lua
+屏蔽以下语句, 就是在语句前面加上两个减号
+-- 扣金刚砂....
+--local ShaInfo = GetBagItemTransfer( sceneId, selfId, ShaPos )
+--ret = LuaFnEraseItem(sceneId, selfId, ShaPos)
+--if ret ~= 1 then
+--BeginEvent(sceneId)
+--AddText(sceneId,"金刚砂不可用。");
+--EndEvent(sceneId)
+--DispatchMissionTips(sceneId,selfId)
+--return
+--end
+这样就不扣金刚砂了,重新鉴定的时候包里有一个金刚砂就行了
+如果你还嫌不过瘾的话,那么你再把
+-- 检测是否有金刚砂....
+itemCount = LuaFnGetAvailableItemCount(sceneId, selfId, 30008034)
+if itemCount < 1 then
+BeginEvent(sceneId)
+AddText(sceneId,"您缺少金刚砂。");
+EndEvent(sceneId)
+DispatchMissionTips(sceneId,selfId)
+return
+end
+改成:
+-- 检测是否有金刚砂....
+itemCount = LuaFnGetAvailableItemCount(sceneId, selfId, 30008034)
+if itemCount = 100 then
+BeginEvent(sceneId)
+AddText(sceneId,"您缺少金刚砂。");
+EndEvent(sceneId)
+DispatchMissionTips(sceneId,selfId)
+return
+end
+这样改完之后,再重新鉴定装备的时候,连金刚砂都不用了

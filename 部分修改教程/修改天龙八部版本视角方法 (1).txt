@@ -1,0 +1,18 @@
+进入游戏目录，找到BIN文件夹，找到SYSTEM.CFG，文件，用记事本打开，找到#------------------------------- 
+# Camera
+#-------------------------------
+Camera_MinDistance =6.0
+Camera_MaxDistance =17.5
+Camera_Pitch  =40.0
+Camera_FOV   =35.0
+
+    6 18.39 43.5 35 都是视角方面的相关设置，根据本人的修改经验，建议将17.5 40 35 各自变为加15的数字就可以了，配置不好的同学就不要改了···
+
+修改为
+
+# Camera
+#-------------------------------
+Camera_MinDistance =6.0
+Camera_MaxDistance =32.5
+Camera_Pitch  =55
+Camera_FOV   =50

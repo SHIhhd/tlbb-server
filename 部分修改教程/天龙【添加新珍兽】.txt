@@ -1,0 +1,10 @@
+在天龙八部中添加一个自己看上眼的珍兽玩玩，下面把添加的方法介绍如下：
+       (1)涉及到的文件：MonsterAttrExTable.txt ， PetAttrTable.txt ，PetTypeAttr.txt
+      (2)添加步骤：先在MonsterAttrExTable.txt文件中添加一个怪物，注意怪物编号不能重复，其它参数值可仿照已经有的怪物设定，可以用某个怪物的数据复制过去再修改。然后打开PetTypeAttr.txt文件在最后一行增加一个怪物的类型号，类型号不要与已经有的类型号重复，名字与MonsterAttrExTable.txt中添加的名字一致，最后打开 PetAttrTable.txt 文件，在后面添加一行数据，为要增加的珍兽的数据，注意编号要与MonsterAttrExTable.txt新增加的怪物的编号一致，类型号要与PetTypeAttr.txt文件中新增加的珍兽的类型号一致。其它各项根据自己的喜好设定。下面是增加的珍兽吞火神兽的数据举例图：
+MonsterAttrExTable.txt中的添加：
+
+PetTypeAttr.txt文件中的添加：
+
+PetAttrTable.txt  的添加：
+
+最后要说明的是，修改的三个文件不要忘了同步于客户端中。

@@ -1,0 +1,22 @@
+Server\Config\DropBoxContent.txt      这个文件是控制掉包里出哪种编号的物品
+
+MonsterDropBoxs.txt   这个文件是控制每种怪物掉哪种编号的包
+
+
+打开 DropBoxContent.txt     第二列是BoxValue(掉落包价值)   
+
+对应 MonsterDropBoxs.txt    第二列 Mvalue(怪物价值)
+
+例如: 
+
+MonsterDropBoxs.txt    里ID号为807的怪物 Mvalue 是166  如果掉落包的BoxValue也是166的时候
+
+那么这个包基本上是有90%以上的机率掉了
+
+如果掉落包的BoxValue是300多的话,那么这个包有大概40%左右的机率掉
+
+也就是说掉包的价值小于或等于怪物价值的时候,掉率差不多是100% 当然偶尔也有不掉的时候
+
+如果掉包价值大于怪物价值的时候,掉包价价值越大,暴率越低
+
+同时还要注意一点,掉包价值如果设置太低或都大大低于怪物价值的话,暴出来的东西也会增多

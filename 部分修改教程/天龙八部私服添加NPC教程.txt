@@ -1,0 +1,54 @@
+这里我详细讲解一下
+NPC模型在tlbb\Public\Scene这个目录里面
+你打开以后 会发现有各个城市的NPC脚本
+例子：
+现在我们要在大理 加一个卖东西的NPC
+找到 dali_monster.ini  打开
+
+[info]
+monstercount=160
+代表着NPC总数
+现在我们要多加1个 就 写161
+[monster159]
+guid=3897821
+type=189
+name=元宝小富翁
+title=元宝领取
+pos_x=162.0
+pos_z=164.0
+dir=27
+script_id=2093
+respawn_time=1000
+group_id=-1
+team_id=-1
+base_ai=3
+ai_file=0
+patrol_id=-1
+shop0=-1
+shop1=-1
+shop2=-1
+shop3=-1
+ReputationID=-1
+level=5
+这些显而易见
+pos_x=162.0
+pos_z=164.0
+代表着坐标
+name=元宝小富翁
+title=元宝领取
+称谓和名字
+script_id=2093 脚本所调用的ID
+我们按照上面的 继续往下加一个 就可以的
+
+然后打开
+tlbb\Public\Data下面的
+Script.dat
+002090=\obj\dali\odali_ruisi.lua
+002093=\obj\dali\odali_liuzhongfu.lua
+我们将相应的ID加上 对应好
+然后 打开
+\tlbb\Public\Data\Script\obj\dali
+这个目录下面的
+odali_liuzhongfu.lua
+里面的脚本--脚本号 都要一一对应
+然后重启服务器  NPC加入成功

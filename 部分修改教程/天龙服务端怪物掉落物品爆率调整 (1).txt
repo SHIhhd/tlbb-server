@@ -1,0 +1,16 @@
+首先在这里\tlbb\Public\Config\MonsterAttrExTable.txt
+
+
+找到怪物编号，然后使用怪物编号到\tlbb\Server\Config\MonsterDropBoxs.txt
+
+
+这个文件里找到此怪物掉落的包的编号，然后使用
+
+
+掉落的包的编号到\tlbb\Server\Config\DropBoxContent.txt
+
+
+就可以查到此怪物掉落的所有物品
+
+
+可以添加或减少物品！！！

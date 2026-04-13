@@ -1,0 +1,5 @@
+
+1、impactsedata_v1.txt——BUFF总控（客户端）
+2、StandardImpact.txt  ——BUFF外形总控（服务端技能）
+3、EquipBase.txt      ——装备总控（客户端+服务端）
+一、物品调用BUFF特效教程：（武器添加七夕桃心buff特效）

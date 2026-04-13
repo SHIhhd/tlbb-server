@@ -1,0 +1,1 @@
+先修改EquipBase文件，里面你想要添加什么属性就把那个属性改成1，后面有属性条数min是最少有多少条属性，属性条数max是最多几条属性，最小最大可以一样，你添加了多少个属性就写多少，前面属性改了多少个1，比如改了20个，属性条数min和属性条数max改成20，品质规则是几星装备，最重要是起始数值段，它对应了ItemSegValue文件，这个文件是控制你添加的属性多少点。你在EquipBase里面把想要的属性改成1是为你修改的装备添了一个属性，然后到ItemSegValue改你添加的属性的点数。改完之后要覆盖tlbb/server/config/EquipBase和tlbb/public/config/EquipBase，客服端也要同步改EquipBase，ItemSegValue同样。

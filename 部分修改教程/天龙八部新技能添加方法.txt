@@ -1,0 +1,25 @@
+天龙八部新技能发布
+在\tlbb\Public\Data\Script\obj\book下的skillbook.lua文件打开。
+加入：
+x338000_g_SkillBooks[30308026] = { type = 2, id = 303, menpaiId = MP_SHAOLIN, needLevel = 35, needXinfa = -1, needXinfaLevel = -1, specialEffectID = 18 }
+x338000_g_SkillBooks[30308027] = { type = 2, id = 333, menpaiId = MP_MINGJIAO, needLevel = 35, needXinfa = -1, needXinfaLevel = -1, specialEffectID = 18 }
+x338000_g_SkillBooks[30308028] = { type = 2, id = 363, menpaiId = MP_GAIBANG, needLevel = 35, needXinfa = -1, needXinfaLevel = -1, specialEffectID = 18 }
+x338000_g_SkillBooks[30308029] = { type = 2, id = 393, menpaiId = MP_WUDANG, needLevel = 35, needXinfa = -1, needXinfaLevel = -1, specialEffectID = 18 }
+x338000_g_SkillBooks[30308030] = { type = 2, id = 425, menpaiId = MP_EMEI, needLevel = 35, needXinfa = -1, needXinfaLevel = -1, specialEffectID = 18 }
+x338000_g_SkillBooks[30308031] = { type = 2, id = 453, menpaiId = MP_XINGSU, needLevel = 35, needXinfa = -1, needXinfaLevel = -1, specialEffectID = 18 }
+x338000_g_SkillBooks[30308032] = { type = 2, id = 483, menpaiId = MP_DALI, needLevel = 35, needXinfa = -1, needXinfaLevel = -1, specialEffectID = 18 }
+x338000_g_SkillBooks[30308033] = { type = 2, id = 513, menpaiId = MP_TIANSHAN, needLevel = 35, needXinfa = -1, needXinfaLevel = -1, specialEffectID = 18 }
+x338000_g_SkillBooks[30308034] = { type = 2, id = 543, menpaiId = MP_XIAOYAO, needLevel = 35, needXinfa = -1, needXinfaLevel = -1, specialEffectID = 18 }
+就可以了。
+书籍ID：
+30308026 要诀:倒转干坤
+30308027 要诀:举火烧天
+30308028 要诀:拨草寻蛇
+30308029 要诀:空明式
+30308030 要诀:九阴毒龙功
+30308031 要诀:化血神毒
+30308032 要诀:商阳剑
+30308033 要诀:天地明灭
+30308034 要诀:颠动沧溟
+ 
+自己加到商店文件里面或者随便那里！就可以买了

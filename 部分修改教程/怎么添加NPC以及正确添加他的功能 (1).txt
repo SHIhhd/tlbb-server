@@ -1,0 +1,126 @@
+1：在游戏内把需要加的NPC  位置确认好  什么地图  什么坐标  NPC名字   等基本资料确认完  记录下来
+
+2：准备好一个你需要的脚本  （这个不要我说了。随便你是自己写的。改的。偷的。还是买的 ） 记录起来
+
+开始填加
+
+举例来讲解吧！
+
+我需要在  大理  138 159  坐标 加一个 传送员  名字叫 牛B王  
+
+我的脚本改好了一个  脚本名是  odali_chuansong.lua
+
+首先我们打开  tlbb\Public\Data 下的Script.dat文件  
+
+找到大理的NPC的那段
+
+在大理那段一个位置任意拷贝一段
+例如：
+002014=\obj\dali\odali_huahegen.lua
+然后粘贴在大理那段的最后一段粘贴
+
+在修改
+002014=\obj\dali\odali_huahegen.lua
+最后一段的编号是多少加1就好了
+例如我的大理最后一个是002099   那我加的就改成 0020100
+=号后面的 要把脚本的名称一定改对！
+那这样我需要加的NPC就改成
+0020100=\obj\dali\odali_chuansong.lua
+
+OK 保存
+
+在 打开自己的 脚本文件
+把脚本里的所有脚本号全部改成我们上面修改的脚本号
+也就是我们刚加的0020100=\obj\dali\odali_chuansong.lua这段的 0020100 
+
+注意脚本里的全部脚本号全部修改！
+
+保存  在把脚本 以2进制方式通过SCP 传诵到 
+tlbb\Public\Data\Script\obj\dali  目录下！5uwl
+
+（注意！如果你是添加的脚本！遇到目录下有同名文件 不可以替换 
+
+需要把你的脚本名修改 在回到前面tlbb\Public\Data 下的Script.dat 重新修改脚本名）
+
+传送好了之后接着下一步
+
+使用CRT  VI 打开 tlbb\Public\Scene打开需要填家NPC城市的_monster.ini文件
+
+我现在是在大理加NPC 就打开 dali_monster.ini
+
+把最上面的第一个数值加上1
+也就是monstercount=  后面的数字加1
+例如：
+[info]
+monstercount=170
+
+[monster0]
+
+我们就改成
+[info]
+monstercount=171
+
+[monster0]
+
+在移动到文件的最下面
+
+回车2次后拷贝如下一段进去（也可以在填家的时候随意在脚本内拷贝一段）
+
+[monster100]
+guid=1986877
+type=163
+name=
+title=
+pos_x=211.1401
+pos_z=172.6344
+dir=9
+script_id=2025
+respawn_time=1000
+group_id=-1
+team_id=-1
+base_ai=3
+ai_file=0
+patrol_id=-1
+shop0=-1
+shop1=-1
+shop2=-1
+shop3=-1
+ReputationID=-1
+level=-1
+拷贝好之后我们在进行手工修改
+
+[monster170]  ←把编号改成我们上面修改 monstercount=170的原来的数字 原来是170我就写170
+guid=1986877
+type=163  ←←←这里是NPC的外貌 自己选择性的修改
+name=牛B王  ←←←←NPC的名字 VI里可以随便用什么输入法
+title=传送员  ←←←这里随便你加什么 就是NPC名字上面显示的文字
+pos_x=138.1401 ←←←←  =号之后.之前改成坐标位置
+pos_z=159.6344 ←←←←   同上
+dir=9
+script_id=0020100 ←←←←这里改成tlbb\Public\Data 下的Script.dat下面我们刚加的那编号
+respawn_time=1000
+group_id=-1
+team_id=-1
+base_ai=3
+ai_file=0
+patrol_id=-1
+shop0=-1
+shop1=-1
+shop2=-1
+shop3=-1
+ReputationID=-1
+level=-1  ←←←←NPC等级  随便你高兴改还是不改
+
+OK 保存
+
+重启游戏之后你就可以在游戏看到你加的NPC了
+
+如果点不开---4个方面 
+
+第一 脚本号你加错了
+第二 你的脚本根本就没用
+第三 你的脚本内的脚本号没替换完全
+第四 脚本的路径
+
+
+请大家上下参照的看明白了之后来自行填加

@@ -1,0 +1,29 @@
+每个商店，包括元宝商店如果控制文字，显示信息呢？当然在pubilc的脚本内。比如 元宝商店 就是
+\tlbb\Public\Data\Script\obj\qianzhuang\oqianzhuang_suishenyuanbao.lua
+
+你可以打开看下。从事件交互入口
+
+我想购买商品 然后有列表 等等。当然你可以修改。也当然可以添加。如何添加，其实非常简单，好好看看这个脚本即可。
+默认的列表是个数组。
+比如 [8]= { name = "天扬发艺馆", id = 145, key = 109 },
+其中 id 145 在下面有如下表示
+x181003_NewDispatchShopItem( sceneId, selfId, targetId, x181003_g_YBShop.id )
+
+用循环输出 其中ID 就是数组中的每条ID
+可以这么表示
+x181003_NewDispatchShopItem( sceneId, selfId,targetId, 200)
+看到上面的200了吧。
+
+就是点击某个商店列表，如果是 XXX什么馆 弹出商品列表，商品列表是什么呢 是 shoptable.txt 中 索引是200的
+
+默认的商品列表 好像 180多个。
+
+说到这里，是不是很明白了？
+如果想自己增加店，就是这么增加。
+
+按照顺序，在shoptable.txt 增加一行。
+在脚本中 弹出这个ID。
+
+shoptable.txt 请用EXCEL2007打开。。2003无法打开 会超出256列。
+这样就可以轻松编辑商店。一行，最多添加50个商品。这是死的。
+也就是说，点开一个点，列表最多50个物品。不可能多。

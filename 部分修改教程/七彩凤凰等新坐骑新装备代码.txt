@@ -1,0 +1,15 @@
+#define item_ÖÙ»ğ°ÔÎÆ½£    58 
+#define item_ÃÍ»¢¼âÑÀÇ¹    482 
+#define item_°×»¢³àÑÀÇ¹    483 
+#define item_ÁúÎäĞıÀ×Ç¹    484 
+#define item_²ÜÃÏµÂÎä»ê    3993 
+#define item_ÁõĞşµÂÎä»ê    3994 
+#define item_Ëï²®·ûÎä»ê    3995 
+#define item_Æß²Ê·ï»Ë    4096 
+#define item_±ùÓñ÷è÷ë    4097 
+#define item_ÖËÑ×¿ñÁú    4098 
+#define item_½ğ¼×Áú    4099 
+#define item_…Ş…ŞÅ£    11079 
+#define item_ÑòÍÕ(°×)    11085 
+#define item_ÑòÍÕ(¿§·È)    11086 
+#define item_½ğÃ«Ê¨Íõ    11087

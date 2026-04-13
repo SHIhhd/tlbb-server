@@ -1,0 +1,129 @@
+首先，打开你们的Linux上的：home\tlbb\Billing\etc
+找到：db_hash.conf   gbs.conf  这两个文件
+用写字板打开。
+找到
+#散列表
+MAXDBCONNS0  = 5
+
+DBUSER_DB0  = tlbb
+DBPASS_DB0 = c46234f7081f7555cffa62686d02e809015551d0ac640c55f6008d8cbbf1662'
+
+DBTNS_DB0 = orcl10g
+
+两个文件上都有的！！你们直接把DBTNS_DB0 = orcl10g这里的orcl10g换成你们装ORACLE是时候登陆ORACLE的时候的那个实例名。比如我的ORACLE的实例名为orcl
+
+那么修改成
+#散列表
+
+MAXDBCONNS0  = 5 
+DBUSER_DB0  = tlbb
+
+DBPASS_DB0 = c46234f7081f7555cffa62686d02e809015551d0ac640c55f6008d8cbbf1662
+
+DBTNS_DB0 = orcl
+
+这样就可以了。其他的不要修改。
+
+然后打开home\tlbb\Server\Config目录下的这些INI文件
+
+logininfo.ini文件
+
+[System] 
+LoginID=2  
+DBIP=127.0.0.1(这里设置LIUNX的IP)        
+DBPort=3306
+
+DBName=tlbbdb
+
+DBUser=root 
+
+DBPassword=123456 
+ClientVersion=1005        
+DBConnectCount=10 
+TurnPlayerCount=100
+
+CryptPwd=0       
+
+ProxyConnect=1        
+这个就是MYSQL的ID和密码配置文件。
+
+我的是LIUNX的IP为：127.0.0.1  MYSQL的登陆ID和名字 root  1234567
+
+继续打开home\tlbb\Server\Config目录下的
+serverinfo.ini文件！
+
+
+[Mother]
+
+IP=192.168.0.1
+Port=1014
+
+把192.168.0.1这个IP换成你WIN服务器的IP;
+然后把其他IP换成LIUNX的IP
+可乐端的IP我忘了。0.0.0.0这些IP不用管！也不替换。
+然后打开sharememinfo.ini文件
+[System]
+DBIP=127.0.1                ;数据库ip
+DBPort=3306                ;数据库端口*
+DBName=tlbbdb                ;数据库名称
+DBUser=root                ;用户名"
+DBPassword=123456                ;密码; 
+SMUInterval=1200000                ;world数据存盘时间（毫秒）
+, ]9 L0 [+ I. d: ^; {
+DATAInterval=900000                ;Human数据存盘时间(毫秒）
+CryptPwd=0                ;密码是否加密
+把127.0.0.1换成LIUNX的IP！然后把root和123456替换成你LIUNX上安装的MYSQL的ID和密码
+其他的都不动。
+然后再打开LIUNX系统的主目录。找etc文件夹！注意不是是tlbb里面那个ETC文件夹。是LIUNX系统本身就有的ETC这个文件夹
+
+找到odbc.ini文件！打开
+[tlbbdb]
+
+Driver          = /usr/lib/libmyodbc3.so
+Description     = MyODBC 3.51 Driver DSN
+SERVER          = 127.0.0.1
+
+PORT            = 3306
+
+USER            = root
+
+Password        = 123456
+
+Database        = tlbbdb1
+
+OPTION          = 3
+
+SOCKET          =
+这个只把root和123456改成你的MYSQL的ID和密码。
+再打开
+odbcinst.ini文件夹
+显示的是：
+# Example driver definitinions
+
+# Included in the unixODBC package2
+[PostgreSQL]
+Description     = ODBC for PostgreSQL
+
+Driver          = /usr/lib/libodbcpsql.so
+
+Setup           = /usr/lib/libodbcpsqlS.so
+FileUsage       = 1
+
+ 
+# Driver from the MyODBC package
+# Setup from the unixODBC package
+[MySQL]
+
+Description     = ODBC for MySQL
+
+Driver          = /usr/lib/libmyodbc3.so
+Setup           = /usr/lib/libodbcmyS.so
+
+FileUsage       = 1
+
+这样的就不用管它！如果是空白！就添加上我这个。
+！现在配置就算完成了。
+WIN的ORACL连接LIUNX的ORACLE！需要把WIN下的
+
+/oracle/product/10.2.0/db_1/network/admin这个目录下的tnsnames.ora文件用写字版打开，
+把HOST = XXXX   xxxx是字母！具体是什么字母我忘了替换成WIN的IP！然后复制这个tnsnames.ora文件到LIUNX上的/oracle/product/10.2.0/db_1/network/admin目录下就可以了!

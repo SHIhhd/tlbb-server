@@ -1,0 +1,35 @@
+现在基本上所有的完美私服都以上线送元宝来拉拢玩家.但是很多GM不会设置,千篇一律的设置为上线十分钟送元宝,让玩家感觉无聊.
+
+今天本人发个上线五分钟送元宝,并且自动送元宝的方法,玩家不用下线,即可得到元宝.
+
+使用此方法保证你的天龙八部私服上人非常多....
+
+其实方法也不难就是:利用SQL SERVER 2000 触发器完成！
+只需将下列代码在查询分析器中执行即可，无需更改注册网页。
+
+请严格按以下步骤操作:
+use gamedb
+--gamedb 修改为你的完美数据库名称
+go
+
+Drop TRIGGER user_insert
+go
+
+CREATE TRIGGER [user_insert] ON [dbo].[users] 
+FOR INSERT
+AS
+declare @id int
+declare @yb int
+declare @yb_1 int
+declare @yb_2 int
+-----此处设置你要送的元宝，如我送100金，这里填100-----
+set @yb = 100
+-----这里就是说明五分钟自动冲了.---------
+
+set @yb_1 = 900 * @yb
+set @yb_2 = 100 * @yb
+select @id = max(id) from users
+exec adduserpoint @id,1, @yb_1
+exec usecash @id,1,0,1, @yb_1, @yb_2,1,0
+
+好了.让它自动执行就可以了.

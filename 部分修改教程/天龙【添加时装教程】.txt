@@ -1,0 +1,28 @@
+添加时装问题出一个时装教程
+
+首先我们需要整理的文件有一下几个
+以下文件在游戏补丁位置Config目录下
+EquipBase
+EquipDress
+ItemVisualChar
+以下文件在游戏补丁位置Material目录下
+all.material
+以下文件在游戏补丁位置Model目录下
+首先先打开文件EquipBase找到时装的模型代码
+
+然后在打开EquipDress
+
+在打开ItemVisualChar这个是控制模型
+
+添加模型
+
+然后然后复制   女主角天龙浴衣20170516       女主角天龙浴衣20170516      在打开Material目录的all.material 女主角天龙浴衣20170516  女主角天龙浴衣20170516            查找并粘贴 
+
+这些都添加好以后我们开始添加模型和贴图
+模型在Model  贴图在Material目录下怎么查找呢
+
+在补丁文件找到这个模型
+
+在补丁文件找到贴图
+
+修改好以后装备文件要同步服务器

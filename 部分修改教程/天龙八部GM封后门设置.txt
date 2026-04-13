@@ -1,0 +1,13 @@
+打开 /home/tlbb/Billing/ect
+修改 gmip.lst
+填入IP 随便写个美国IP
+打开 /home/tlbb/Server/
+修改 GMList.ini
+去掉所有修改为
+[gm]
+count=0
+修改 Account.txt 修改为
+STRING STRING
+用户名 密码
+
+清空所有账号

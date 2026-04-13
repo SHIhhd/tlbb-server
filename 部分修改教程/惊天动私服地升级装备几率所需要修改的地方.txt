@@ -1,0 +1,20 @@
+在服务器etc\cabal\Data下的Const.scp
+
+[UpgradeCore] Grade_Value E_Default Enhance
+0 1 100 100
+1 2 100 100
+2 3 52.5 100
+3 4 41.25 100
+4 5 30 60
+5 6 18.75 30
+6 7 8 15                     
+修改后
+[UpgradeCore] Grade_Value E_Default Enhance
+0 1 100 100
+1 2 100 100
+2 3 100 100
+3 4 100 100      升高等级的几率都是100%了
+4 5 100 100
+5 6 100 100
+6 7 100 100
+看到了没，就是这里了

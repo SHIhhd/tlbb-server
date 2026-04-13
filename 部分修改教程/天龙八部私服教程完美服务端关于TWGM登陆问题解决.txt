@@ -1,0 +1,59 @@
+【天龙八部私服教程】PWNEW服务端自定义修改
+
+2.如果没看过,恩,那么...
+  对照那个帖子里的第3部分.
+  把dbserver修改成明码IP
+  把web用户,就是username修改为root
+  把密码,就是password修改为MYSQL的root用户密码
+
+  为什么要这样呢?
+  因为我是保留原始设置,使用的web用户.有些朋友可能创建的web用户根本就不成功..
+  成功不成功,可以在LINUX系统下用MYSQL的客户端命令测试：  
+  mysql -u web -p"$RFVBGT%" -h192.168.1.104
+  如果这步能成功，那么继续：
+  mysql> show databases;
+  +--------------------+
+  | Database          |
+  +--------------------+
+  | information_schema |
+  | csm                |
+  | csmbak            |
+  | gunbound          |
+  | mysql              |
+  | test              |
+  | world2            |
+  +--------------------+
+  
+  如果能显示出csm,csmbak,world2这3个数据库，那么你的web用户就是成功的。否则，就用root吧！
+
+3.你使用的不管是root还是web，必须具有远程访问权限。废话，不然LINUX怎么访问？对吧
+  好看看步骤：
+  mysql -uroot -pchenqi
+  mysql>use mysql;
+  mysql> select user,password,host from user;
+  +------+-------------------------------------------+------+
+  | user | password                                  | host |
+  +------+-------------------------------------------+------+
+  | root | 239aefb6776c5f2c                          | %    |
+  | web  | *2673DA0258B605FE0D720AA482B0F1D522AD5138 | %    |
+  +------+-------------------------------------------+------+  
+  
+  如果你的host列显示的是%，那就是有远程访问权限的，否则就执行代码：
+  update user set host="%" where user="root";  
+  
+  具体是web还是root，自己根据情况吧。
+
+4.twgm里GM帐号设置，密码修改
+  mysql -uroot -pchenqi
+  mysql>use csm;
+  mysql>update USERS set password="md5加密码" where userid="admin";
+  
+  具体怎么弄，自己根据实际情况吧。
+  MD5码怎么产生？OK，打开这个：
+  输入你的密码，加密后就可以得到32位的md5代码，比如：chenqi对应的md5代码是： 4215f767906526dcf77f3f95bd08a86e
+
+  怎么增加GM帐号呢？
+  这个就不用详细说了吧。懂SQL的朋友应该都会INSERT吧，插入记录，删除记录，修改记录。或者用一些好用的MYSQL客户端工具吧。 
+  推荐：mysql-front,navicat
+
+OK，如果你都按照我说的这样检查并且做一遍，你的TWGM，完全是没问题的！

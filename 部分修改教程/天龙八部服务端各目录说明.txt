@@ -1,0 +1,121 @@
+天龙八部服务端Server目录脚本功能说明：
+
+/Server/Config Account.txt 测试帐号
+/Server/Config AllowableScriptFunc.txt 脚本ID与函数对照表
+/Server/Config AttrLevelUpTable.txt 各门派升级资质上升比例
+/Server/Config AttrRefixTable.txt 生活技能升级fix
+/Server/Config BaseValueTable.ini 各门派基础值系数表 
+/Server/Config boxdroplist.txt 宝盒掉落参数列表
+/Server/Config ConfigInfo.ini 全局配置参数 
+/Server/Config CopyScene.ini 副本参数 
+/Server/Config CreateQualityOfVaryPetTbl.txt 产生宝宝质量几率
+/Server/Config CreateSkillOfVaryPetTbl.txt 产生宝宝继承技能的几率 
+/Server/Config DefaultChar.ini 缺省角色参数
+/Server/Config DiePenalty.txt 死亡惩罚杀气设置
+/Server/Config DropAttenuation.txt 掉落物品衰减值
+/Server/Config DropBoxContent.txt 掉落包设定
+/Server/Config DropRateOfItemTable.txt 掉落概率表
+/Server/Config ExpAttenuation.txt 经验衰减(死亡)
+/Server/Config GMList.ini    GM设置
+/Server/Config GuildMemberAccess.ini 
+/Server/Config IPRange.ini  禁充IP设置
+/Server/Config ItemAuditFilter.txt 物品模板ID
+/Server/Config ItemQuality.txt 物品质量
+/Server/Config ItemSegAffect.txt 物品品质分布
+/Server/Config ItemSegQuality.txt 物品质量分布
+/Server/Config ItemSegRate.txt 物品品质效果
+/Server/Config ItemSerial.ini  物品效果定议
+/Server/Config ItemValue.txt 物品价值(出卖)
+/Server/Config LoginInfo.ini Login服务器端程序配置
+/Server/Config MachineInfo.ini 服务器的开启标示
+/Server/Config MasterExpBounty.txt 徒弟升级后给师傅的经验设置
+/Server/Config MenPaiAttackRefix.txt 各门派可学新手技能
+/Server/Config MergeConfig.txt  描述
+/Server/Config MonsterDropBoxs.txt 怪物掉落包设定
+/Server/Config NotifyDate.txt 定期通告设定
+/Server/Config NotifyOnline.txt 上线通告
+/Server/Config NotifyWeek.txt 每周通告设定
+/Server/Config NpcAuditFilter.txt 怪物模板ID
+/Server/Config NPCChat.txt NPC的自言自语
+/Server/Config NPCPaoPaoIndexTable.txt NPC的乱溜达
+/Server/Config PetAIStrategyTbl.txt 自动技与宝宝性格的激发关系
+/Server/Config PetApperceiveSkillTable.txt 宝宝技能领悟概率
+/Server/Config PetAttrPointDistribute.txt 宝宝属性方案概率
+/Server/Config PetConfigTable.ini 宝宝概率配置表
+/Server/Config PetDieLoss.txt 宝宝快乐损耗
+/Server/Config PetDomesticationMoney.txt 宝宝
+/Server/Config PetExpAttenuation.txt 宝宝
+/Server/Config PetSkillDistribute.txt 宝宝自身技能表
+/Server/Config PetSkillIndexTable.txt 宝宝技能对照表
+/Server/Config PetStudySkllTable.txt 宝宝被动技能打造机率
+/Server/Config PunishByLevel.txt 人物死亡扣除
+/Server/Config PunishByPkValue.txt 人物死亡扣除设定
+/Server/Config PunishByState.txt 人物设定
+/Server/Config PvpRuler.txt PK地点设定
+/Server/Config Questions.txt 考题设定
+/Server/Config SceneInfo.ini 全局地图场景索引
+/Server/Config ServerInfo.ini 服务器端程序的相关情况
+/Server/Config ShareMemInfo.ini 数据库ip
+/Server/Config ShimenLevelMoneyBonusTable.txt连环任务金钱倍率        经验倍率
+/Server/Config ShimenRoundMultipleTable.txt连环任务        经验倍率
+/Server/Config SkillObjData_V1.txt 特效绑定
+/Server/Config StandardImpact.txt        人物技能说明
+/Server/Config StringTable.txt 系统确发公告说明
+/Server/Config SystemInfo.ini 系统确发公告配置
+/Server/Config WorldInfo.ini 说名当前世界的相关配置
+
+天龙八部服务端Public目录脚本功能说明5uwl.net
+
+Public\Data\AIScript文件夹中 script(0~210).ai怪物AI脚本设定如是否主动攻击是否使用技能
+Public\Data\Script文件夹中\event\bossgroup\bg_BossAI_CreateMonster.lua 是BOSS群 刷小怪通用脚本
+Public\Data\Script文件夹中\event\bossgroup\bg_CangShan.lua 苍山 BOSS群刷新脚本
+Public\Data\Script文件夹中\event\bossgroup\bg_CaoYuan.lua 草原 BOSS群刷新脚本
+Public\Data\Script文件夹中\event\bossgroup\bg_WuYi.lua 武夷 BOSS群刷新脚本
+Public\Data\Script文件夹中\event\bossgroup\bg_XuanWu.lua 玄武岛 BOSS群刷新脚本
+Public\Data\Script文件夹中\event\bus\marry_huajiao_01.lua 结婚花娇（普通级）（高级）（豪华）脚本
+Public\Data\Script文件夹中\event\caoyun\ecaoyun.lua 漕运
+Public\Data\Script文件夹中\event\caoyun\ocaoyun_limiti.lua漕运，的一些限制
+Public\Data\Script文件夹中\event\challenge\challenge.lua 挑战相关脚本
+Public\Data\Script文件夹中\event\challenge\edali_challenge.lua 各擂台对应的 脚本
+Public\Data\Script文件夹中\event\challenge\edali_leitai.lua 擂台的事件区域脚本
+Public\Data\Script文件夹中\event\challenge\eluoyang_challenge.lua各擂台对应的 脚本
+Public\Data\Script文件夹中\event\challenge\eluoyang_leitai.lua擂台的事件区域脚本
+Public\Data\Script文件夹中\event\dali\*.lua为大理任务脚本
+Public\Data\Script文件夹中\event\EventScript\*.lua宝石合成杀怪护送等通用任务脚本
+Public\Data\Script文件夹中\event\gaibang\*.lua丐帮任务脚本
+Public\Data\Script文件夹中\event\huodong\*.lua活动抽奖脚本副本任务
+Public\Data\Script文件夹中\event\juing\*.lua苍茫山等剧情循环任务脚本
+Public\Data\Script文件夹中\event\menpai\*.lua门派奖励装备与珍兽脚本
+Public\Data\Script文件夹中\event\peifang\*.lua技能配方脚本
+Public\Data\Script文件夹中\event\petprocreate\*.lua珍兽繁殖
+Public\Data\Script文件夹中\event\prize\*.lua随身元宝相关
+Public\Data\Script文件夹中\event\revenge\*.lua九大门派特色
+Public\Data\Script文件夹中\event\shimen\*.lua师门任务
+Public\Data\Script文件夹中\event\test\*.lua雁北任务
+Public\Data\Script文件夹中\event\wudang\*.lua武当任务
+Public\Data\Script文件夹中\event\xunhuan\*.lua连环副本任务（钱宏宇，除害，惩凶打图等）
+Public\Data\Script文件夹中\event\chuansong\*.lua场景触发，骑乘
+Public\Data\Script文件夹中\event\emei\*.lua副本任务
+Public\Data\Script文件夹中\event\festival\*.lua节元旦活动
+Public\Data\Script文件夹中\event\guild\*.lua帮会相关
+Public\Data\Script文件夹中\event\jinghu\*.lua镜湖BOSS
+Public\Data\Script文件夹中\event\liveabilityevent\*.lua各技能生活技能，门派商店
+Public\Data\Script文件夹中\event\mingjiao\*.lua光明顶任务
+Public\Data\Script文件夹中\event\pet\*.lua兽丹
+以上因为太多了所以例举这些。
+Public\Data\Script\obj中NPC脚本
+Public\Data\Script.dat 指定哪个NPC使用哪个Public\Data\Script\obj下的脚本PC的脚本
+Public\Data\Script\*.lua城市NPC脚本ScriptGlobal.lua最重要的一个全局脚本
+Public\Data\AIScript.dat 指定哪个怪物使用哪个\tlbb\Public\Data\AIScript下的脚本
+Public\Scene 怪物头目的脚本
+Public\Config\AbilityLevelUp\生活技能提升要求
+Public\Config\RandShop\固定商店的商品数量
+Public\Config\Ability.txt生活技能说明
+Public\Config\AbilityExpTable.txt生活技能损耗
+Public\Config\ActivityNotice.txt活动通告说明
+Public\Config\ActivityRuler.txt活动编号
+Public\Config\AttackTraits.txt生活技能说明
+Public\Config\BlueEuipBase.txt物品装备说明
+Public\Config\Bullet.txt技能声音和效果
+Public\Config\BusInfo.txt飞行NPC设置
+Public\Config\者是TXT文件可以自己打开看看吧

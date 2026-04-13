@@ -1,0 +1,29 @@
+以大理NPC“崔逢九”为例讲解相关的文件和修改方法。
+
+　　在天龙八部服务端Public\Scene文件夹下找到dali_monster.ini文件，用写字板打开，大理NPC熟悉的名称出现在文件里，截取代码来分析：
+[info]
+monstercount=170 （大理NPC总数，增加或减少NPC必须修改）
+
+[monster0] （大理NPC唯一编号）
+guid=1986678 （唯一标识符）
+type=193 （NPC模型编号，可在Public\Config\目录下MonsterAttrExTable.txt文件中找到）
+name=崔逢九 （NPC名称）
+title=驿站老板 （NPC称号）
+pos_x=241.3763 （坐标x）
+pos_z=136.5375 （坐标z）
+dir=27 （NPC朝向，在游戏里面对的方向）
+script_id=2026 （脚本id，很重要）
+respawn_time=1000 （刷新时间）
+group_id=-1 
+team_id=-1
+base_ai=3 （触发动作）
+ai_file=0
+patrol_id=-1
+shop0=-1
+shop1=-1
+shop2=-1
+shop3=-1
+ReputationID=-1
+level=-1 （NPC等级）
+
+　　通过上面的代码分析，我想大家应该很清楚天龙八部NPC的基本配置了，如果想修改可根据注释修改。上面的东西都是死的，NPC的功能和作用在对应的脚本文件上。找到脚本调用ID：script_id=2026，崔逢九对应的脚本调用ID是2026，找到服务端Public\Data目录下Script.dat文件，使用16进制文件编辑器（UE）打开，查找2026，002026=\obj\dali\odali_cuifengjiu.lua，代码显示id为2026的脚本文件是\obj\dali\odali_cuifengjiu.lua，想要修改功能就修改odali_cuifengjiu.lua文件。

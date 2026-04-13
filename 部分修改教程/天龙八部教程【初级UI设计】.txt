@@ -1,0 +1,249 @@
+<div style="text-align: center;"><font size="5">UI制作教程</font></div>以下是点击 开始游戏 按钮后出现的活动界面：
+
+
+    在游戏工程根目录下，建立data\UI，制作需要的Font、imageset、scheme等资源文件，然后利用CELayoutEditor制作Layout文件，载入layout文件。
+一、基本资源文件制作。
+   我们常用的窗口类型有FrameWindow、Button、StaticText、StaticImage、Checkbox、RadioButton、ProgressBar、EditBox、ImageButton、TabControl、Listbox、Tooltip等；因此，你需要一张基本类型带有Alpha通道的TGA图片集、与其相对应的图片信息XML文件(imageset)、皮肤配置文件(looknfeel)。
+二、配置有关资源文件
+在工程根目录下，建立data\UI。
+1.将需要的字体文件拷贝到UI下(本例中使用simsun)，在UI下建立字体对应的Font文件，simsun格式如下：
+<?xml version="1.0" ?>
+<Font Name="simsun" Filename="simsun.ttc" Type="FreeType" Size="10" NativeHorzRes="800" NativeVertRes="600" AutoScaled="true"/>
+如果需要其他字体，格式基本相同。
+2.制作背景图片(bg.jpg)和对应的Imageset文件(bg.imageset)。
+在data下建立Material\ui，将制作的背景图片(800*600像素)拷贝到Material\ui下，将制作bg.imageset拷贝到data\ui\imagesets下。
+其bg.imageset文件如下：
+<?xml version="1.0" ?>
+<Imageset Name="bgimg" Imagefile="bg.jpg" NativeHorzRes="800" NativeVertRes="600" AutoScaled="true">
+<Image Name="bg" XPos="0" YPos="0" Width="800" Height="600" />
+</Imageset>
+
+3.配置SCHEME文件，在工程中使用的各种资源(字体/皮肤/图片等)在这个文件中一次性加载。
+简单介绍如下：
+<?xml version="1.0" ?>
+<GUIScheme Name="Le3dLook">
+<Imageset Name="Le3dLook" Filename="Le3dLook.imageset" />
+<LookNFeel Filename="Le3dLook.looknfeel" />
+<Imageset Name="bgimg" Filename="imagesets/bg.imageset" />
+<Font Name="simsun" Filename="simsun.font" />
+        ... 使用的各种资源...
+<WindowRendererSet Filename="CEGUIFalagardWRBase" />
+<FalagardMapping WindowType="Le3dLook/Button"      TargetType="CEGUI/PushButton" Renderer="Falagard/Button"    LookNFeel="Le3dLook/Button" />
+        ......
+</GUIScheme>
+
+三、制作布局文件layout。
+在UI下建立huodong，在其下建立活动页面layout文件。
+基本格式：
+<?xml version="1.0" ?>
+<GUILayout>
+<Window Type="DefaultWindow" Name="huodong" >
+<;Property Name="UnifiedPosition" Value="{{0.0,0.0},{0.0,0.0}" />
+<;Property Name="UnifiedSize" Value="{{1.0,0.0},{1.0,0.0}" />
+......窗口布局......
+
+   </Window>
+</GUILayout>
+
+四、在LightEngine中载入layout文件。
+
+.....引擎的初始化......
+    CEGUI::Renderer* my_renderer = new CEGUI::OpenGLRenderer(1024);
+    new CEGUI::System(my_renderer);
+    CEGUI::DefaultResourceProvider* rp = static_cast<CEGUI::DefaultResourceProvider*>
+        (CEGUI::System::getSingleton().getResourceProvider());
+    rp->setResourceGroupDirectory("schemes", "../data/ui/");
+    rp->setResourceGroupDirectory("imagesets", "../data/ui/");
+    rp->setResourceGroupDirectory("fonts", "../data/ui/");
+    rp->setResourceGroupDirectory("layouts", "../data/ui/");
+    rp->setResourceGroupDirectory("looknfeels", "../data/ui/");
+    CEGUI::Imageset::setDefaultResourceGroup("imagesets");
+    CEGUI::Font::setDefaultResourceGroup("fonts");
+    CEGUI::Scheme::setDefaultResourceGroup("schemes");
+    CEGUI::WidgetLookManager::setDefaultResourceGroup("looknfeels");
+    CEGUI::WindowManager::setDefaultResourceGroup("layouts");
+
+using namespace CEGUI;   
+WindowManager&winMgr=WindowManager::getSingleton();
+SchemeManager::getSingleton().loadScheme((utf8*)"LookSkin.scheme");
+System::getSingleton().setDefaultFont((utf8*)"simsun");
+System::getSingleton().setDefaultMouseCursor((utf8*)"Le3dLook",(utf8*)"MouseArrow");
+
+Window* root=winMgr.loadWindowLayout((utf8*)"huodong/huodong.layout");
+System::getSingleton().setGUISheet(root);
+
+engine->WindowMessageProc( &CEGUIWindowMessageProc );
+do
+{
+   engine->Clear( LIGHT_COLOR_BUFFER_BIT | LIGHT_DEPTH_BUFFER_BIT );
+   System::getSingleton().renderGUI();
+        
+   engine->SwapBuffers(); // 更新显示
+}while( engine->DispatchMessage() );
+
+    delete CEGUI::System::getSingletonPtr();
+    delete my_renderer;
+
+return 0;
+}
+
+
+
+Layout 文件：
+<?xml version="1.0" ?>
+<GUILayout>
+<Window Type="DefaultWindow" Name="jieshao" >
+<;Property Name="UnifiedPosition" Value="{{0.0,0.0},{0.0,0.0}" />
+<;Property Name="UnifiedSize" Value="{{1.0,0.0},{1.0,0.0}" />
+       <Window Type="Le3dLook/StaticImage" Name="bg" >
+        <;Property Name="FrameEnabled" Value="False" />
+        <;Property Name="BackgroundEnabled" Value="true" />
+        <;Property Name="UnifiedPosition" Value="{{0.0,0.0},{0.0,0.0}" />
+        <;Property Name="UnifiedSize" Value="{{0.0,800.0},{0.0,600.0}" />
+        <;Property Name="Image" Value="set:bgimg image:bg" />
+       </Window>
+       <Window Type="Le3dLook/StaticText" Name="riqi">
+         <;Property Name="BackgroundEnabled" Value="False" />
+         <;Property Name="FrameEnabled" Value="False" />
+         <;Property Name="UnifiedMaxSize" Value="{{1.0,0},{1.0,0}}" />
+         <;Property Name="UnifiedPosition" Value="{{0,248},{0,526}}" />
+         <;Property Name="UnifiedSize" Value="{{0,600.0},{0,28.0}}" />
+         <;Property Name="Text" Value="公元 二零零八年 二月十七日 星期日" />
+         <;Property Name="Font" Value="zhunyuan-12" />
+         <;Property Name="TextColours" Value="tl:ffffee11 tr:ffffee11 bl:FFffaa00 br:FFffaa00" />
+         <;Property Name="Alpha" Value="0.9" /> 
+         <;Property Name="AlwaysOnTop" Value="True" />
+       </Window>
+   </Window>
+</GUILayout>
+
+
+直接载入我们制作的Layout文件即可，载入代码如下：
+......
+Window* root=winMgr.loadWindowLayout((utf8*)"login/login.layout");
+System::getSingleton().setGUISheet(root);
+......
+其实作为初学者，我还是建议手工写Layout布局文件，最起码可以了解到各种参数的作用，等熟练后再使用CELayoutEditor。
+下面是Layout布局文件：
+<?xml version="1.0" ?>
+<GUILayout>
+<Window Type="DefaultWindow" Name="Login_Frame" >
+<;Property Name="UnifiedPosition" Value="{{0.0,0.0},{0.0,0.0}" />
+<;Property Name="UnifiedSize" Value="{{1.0,0.0},{1.0,0.0}" />
+       <Window Type="DefaultWindow" Name="Login_bg" >
+       <;Property Name="UnifiedPosition" Value="{{0.0,0.0},{0.0,0.0}" />
+       <;Property Name="UnifiedSize" Value="{{1.0,0.0},{1.0,0.0}" />
+             <Window Type="Le3dLook/StaticImage" Name="Login_A" >
+               <;Property Name="FrameEnabled" Value="False" />
+               <;Property Name="BackgroundEnabled" Value="true" />
+               <;Property Name="UnifiedPosition" Value="{{0.0,0.0},{0.0,0.0}" />
+               <;Property Name="UnifiedSize" Value="{{0.0,800.0},{0.0,600.0}" />
+               <;Property Name="Image" Value="set:login1 image:login1" />
+             </Window>
+       </Window>
+       <Window Type="DefaultWindow" Name="Login_main" >
+       <;Property Name="UnifiedPosition" Value="{{0.0,0.0},{0.0,0.0}" />
+       <;Property Name="UnifiedSize" Value="{{1.0,0.0},{1.0,0.0}" />
+             <Window Type="Le3dLook/StaticImage" Name="Login_B" >
+               <;Property Name="FrameEnabled" Value="False" />
+               <;Property Name="BackgroundEnabled" Value="False" />
+               <;Property Name="UnifiedPosition" Value="{{0.0,251},{0.0,40}" />
+               <;Property Name="UnifiedSize" Value="{{0.0,309},{0.0,204}" />
+               <;Property Name="Image" Value="set:login2 image:login2" />
+                <Window Type="Le3dLook/StaticText" Name="Login_ID_Text">
+                    <;Property Name="BackgroundEnabled" Value="False" />
+                    <;Property Name="FrameEnabled" Value="False" />
+                    <;Property Name="UnifiedPosition" Value="{{0,30},{0,50}}" />
+                    <;Property Name="UnifiedSize" Value="{{0.3,0},{0,23}}" />
+                    <;Property Name="Text" Value="输入账号" />
+      <;Property Name="TextColours" Value="ffffdd11" />
+                    <;Property Name="HorzFormatting" Value="HorzCentred" />
+                    <;Property Name="VertFormatting" Value="VertCentred" />
+                </Window>
+                <Window Type="Le3dLook/Editbox" Name="Login_ID">
+                   <;Property Name="UnifiedPosition" Value="{{0,30},{0,74}}" />
+                   <;Property Name="UnifiedSize" Value="{{0,120},{0,30}}" />
+                   <;Property Name="NormalTextColour" Value="FFFFFFFF" />
+                   <;Property Name="SelectedTextColour" Value="FFeeffcc" />
+                   <;Property Name="ActiveSelectionColour" Value="FFffff00" />
+                   <;Property Name="InactiveSelectionColour" Value="FFeeffcc" />
+                   <;Property Name="Text" Value="" />
+                   <;Property Name="MaxTextLength" Value="32" />
+                </Window>
+                <Window Type="Le3dLook/StaticText" Name="Login_PassWord_Text">
+                    <;Property Name="BackgroundEnabled" Value="False" />
+                    <;Property Name="FrameEnabled" Value="False" />
+                    <;Property Name="UnifiedPosition" Value="{{0,30},{0,106}}" />
+                    <;Property Name="UnifiedSize" Value="{{0.3,0},{0,23}}" />
+                    <;Property Name="Text" Value="输入密码" />
+      <;Property Name="TextColours" Value="ffffdd11" />
+                    <;Property Name="HorzFormatting" Value="HorzCentred" />
+                    <;Property Name="VertFormatting" Value="VertCentred" />
+                </Window>
+                <Window Type="Le3dLook/Editbox" Name="Login_PassWord">
+                   <;Property Name="UnifiedPosition" Value="{{0,30},{0,126}}" />
+                   <;Property Name="UnifiedSize" Value="{{0,120},{0,30}}" />
+                   <;Property Name="NormalTextColour" Value="FFFFFFFF" />
+                   <;Property Name="SelectedTextColour" Value="FFeeffcc" />
+                   <;Property Name="ActiveSelectionColour" Value="FFffff00" />
+                   <;Property Name="InactiveSelectionColour" Value="FFffff00" />
+                   <;Property Name="MaskText" Value="true" />
+                   <;Property Name="MaxTextLength" Value="32" />
+                   <;Property Name="RiseOnClick" Value="true" />
+                </Window>
+
+             </Window>
+             <Window Type="Le3dLook/ImageButton" Name="LoginGame">
+                <;Property Name="UnifiedPosition" Value="{{0,338},{0,260}}" />
+                <;Property Name="UnifiedSize" Value="{{0,128},{0,52}}" />
+                <;Property Name="NormalImage"     Value="set:common1 image:login_Normal" />
+                <;Property Name="HoverImage"      Value="set:common1 image:login_Hover" />
+                <;Property Name="PushedImage"     Value="set:common1 image:login_Pushed" />
+                <;Property Name="DisabledImage"   Value="set:common1 image:login_Disabl" />
+                 <Window Type="Le3dLook/StaticText" Name="LoginGame_text">
+        <;Property Name="UnifiedPosition"   Value="{{0,0},{-0.04,0}}" />
+     <;Property Name="UnifiedSize"       Value="{{1.0,0},{1.0,0}}" />
+     <;Property Name="FrameEnabled"      Value="False" />
+     <;Property Name="BackgroundEnabled" Value="False" />
+     <;Property Name="HorzFormatting"    Value="WordWrapCentred" />
+     <;Property Name="VertFormatting"    Value="VertCentred" />
+                   <;Property Name="Disabled"          Value="True" />
+     <;Property Name="Text">进入游戏</Property>
+     <;Property Name="TextColours" Value="ffffdd11" />
+                 </Window>
+             </Window>
+       </Window>
+       <Window Type="Le3dLook/Button" Name="b1">
+         <;Property Name="UnifiedPosition" Value="{{0,600},{0,360}}" />
+         <;Property Name="UnifiedSize" Value="{{0,104},{0,44}}" />
+         <;Property Name="Text" Value="账号注册" />
+         <;Property Name="NormalTextColour" Value="FFffff00" />
+         <;Property Name="HoverTextColour" Value="FFffff00" />
+         <;Property Name="PushedTextColour" Value="FFffff00" />
+         <;Property Name="DisabledTextColour" Value="FF7F7F7F" />
+         <;Property Name="AlwaysOnTop" Value="True" />
+       </Window>
+       <Window Type="Le3dLook/Button" Name="b2">
+         <;Property Name="UnifiedPosition" Value="{{0,600},{0,416}}" />
+         <;Property Name="UnifiedSize" Value="{{0,104},{0,44}}" />
+         <;Property Name="Text" Value="退出游戏" />
+         <;Property Name="NormalTextColour" Value="FFffff00" />
+         <;Property Name="HoverTextColour" Value="FFffff00" />
+         <;Property Name="PushedTextColour" Value="FFffff00" />
+         <;Property Name="DisabledTextColour" Value="FF7F7F7F" />
+         <;Property Name="AlwaysOnTop" Value="True" />
+       </Window>
+       <Window Type="Le3dLook/StaticText" Name="shuoming">
+         <;Property Name="BackgroundEnabled" Value="False" />
+         <;Property Name="FrameEnabled" Value="False" />
+         <;Property Name="HorzFormatting" Value="WordWrapCentred" />
+         <;Property Name="VertFormatting" Value="CentreAligned" />
+         <;Property Name="UnifiedPosition" Value="{{0,10},{0,10}}" />
+         <;Property Name="UnifiedSize" Value="{{0,300},{0,32}}" />
+         <;Property Name="Text" Value="本演示所有资源归原作者所有司马逍遥" />
+         <;Property Name="Font" Value="" />
+         <;Property Name="TextColours" Value="tl:FFFFFFFF tr:FFFFFFFF bl:FFFFFFFF br:FFFFFFFF" />
+       </Window>
+</Window>
+</GUILayout>
+

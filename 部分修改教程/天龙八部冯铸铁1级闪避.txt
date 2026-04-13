@@ -1,0 +1,9 @@
+[scene593]
+threadindex=81
+clientres=263
+name=ÇØ»Ê¹ÅÄ¹1²ã
+active=1
+file=qinhuanggong_1.scn
+serverid=0
+type=0
+PvpRuler=0

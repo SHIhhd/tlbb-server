@@ -1,0 +1,33 @@
+以汉化 洛阳 驿站老板--吴德昌 为例~目录 \tlbb\Public\Scene  下 luoyang_monster.ini  就是洛阳的npc了！名字可以自己汉化~打开luoyang_monster.ini 找到[monster86] [monster86]                              NPC序号                  [monster86]  也就是第87个NPC 从0开始算的
+guid=3526379                          唯一标示
+type=193                                  NPC类别
+name=Ng?醒c X呓ng                 NPC名字                  “Ng?醒c X呓ng”   汉化后就是 “吴德昌”
+title=詎g ch?d竎h tr誱               NPC名字上面的字   “ 詎g ch?d竎h tr誱” 汉化后就是“驿站老板”
+pos_x=139.7322                      NPC坐标
+pos_z=182.9768                       NPC坐标
+dir=18                                       不知道作用
+script_id=82                              调用脚本的ID  82就是点开后对话框内要调用的lua脚本
+respawn_time=1000      
+group_id=-1
+team_id=-1
+base_ai=3
+ai_file=0
+patrol_id=-1
+shop0=-1
+shop1=-1
+shop2=-1
+shop3=-1
+ReputationID=-1
+level=20                                  NPC等级注意看 这一行 script_id=82                              调用脚本的ID  82就是点开后对话框内要调用的lua脚本\tlbb\Public\Data\Script\obj       这个下面存放的是脚本我们找到\tlbb\Public\Data\Script\obj\luoyang\oluoyang_wudechang.lua然后用记事本方式打开内容如下--洛阳NPC
+--吴德昌
+--普通x000082_g_ScriptId = 000082                              这一行的82是不是和script_id=82对应？--门派信息(门派名称，SceneID，PosX，PosY，门派ID)
+x000082_g_mpInfo  = {}
+x000082_g_mpInfo[0] = { "Tinh T鷆", 16,  96, 152, MP_XINGSU }
+x000082_g_mpInfo[1] = { "Ti陁 Dao", 14,  67, 145, MP_XIAOYAO }
+x000082_g_mpInfo[2] = { "Thi猽 L鈓",  9,  96, 127, MP_SHAOLIN }
+x000082_g_mpInfo[3] = { "Thi阯 S絥", 17,  95, 120, MP_TIANSHAN }
+x000082_g_mpInfo[4] = { "Thi阯 Long", 13,  96, 120, MP_DALI }
+x000082_g_mpInfo[5] = { "Nga My", 15,  89, 139, MP_EMEI }
+x000082_g_mpInfo[6] = { "V?衋ng", 12, 103, 140, MP_WUDANG }
+x000082_g_mpInfo[7] = { "Minh Gi醥", 11,  98, 167, MP_MINGJIAO }
+x000082_g_mpInfo[8] = { "C醝 Bang", 10,  91, 116, MP_GAIBANG }那些显示乱码的文字就是我们要翻译的内容了 { "Tinh T鷆", 16,  96, 152, MP_XINGSU }  "Tinh T鷆", 翻译后就是 “星宿”哈哈，其他的也是这么翻译！

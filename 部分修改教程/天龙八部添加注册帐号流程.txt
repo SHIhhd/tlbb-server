@@ -1,0 +1,34 @@
+怎么在数据库里加帐号的教程.也不知道自成登陆器里用的IP是WIN的IP还是Linux的IP？
+
+服务器架好了，真想马上进去看看.没帐号噢
+
+写LINUX的IP
+打开plsqldev
+找到这个表
+Users——TL_gameuser--Objects--Tables--Userbase 点右键盘 编辑数据 里面的密码是MD5加密的
+
+装好IIS 然后修改\Inc\conn.asp 这里的两处红色fstest 你的ORACLE实例名
+(HOST=127.0.0.1)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=fstest)))"
+附件:您所在的用户组无法下载或查看附件
+
+运行plsqldev
+
+Oracle登陆
+用户名：TLBB
+口  令：iernei37d
+下面的默认
+点确定
+
+点Tables前面的+号
+找TL_GAMEUSER.USER_BASIC
+右键 编辑数据
+
+这里是帐号 先改一个 把@前面改成你的帐号
+PASSWD_MD5是密码
+这密码要换算下
+进http://www.cmd5.com/
+把你帐号的密码输入进去点 MD5加密或解密
+复制MD5(maoaihaozi,32) = 后面的代码
+粘贴到PASSWD_MD5下面对应着你的帐号
+点上面的√
+关了  进下游戏试试 我是成功了

@@ -1,0 +1,13 @@
+前面的天龙八部架设教程里面提到,开天龙必须使用Oracle数据库,今天我们说一下orcl的环境变量配置方法.这一步非常重要,如果配置错了,游戏无法启动.
+
+需要设置ORACLE_HOME和ORACLE_SID两个环境变量，再把ORACLE的bin目录添加到PATH中即可，通常缺省安装的情况下ORACLE_SID=orcl，ORACLE_HOME=/home/oracle/oracle/product/10......这样的形式，操作步骤： 
+1、su oracle并回车切换到oracle用户； 
+2、cd并回车回到oracle用户目录； 
+3、vi .bash_profile并回车编辑该文件，按I键进入插入状态，在最后加入以下行： 
+export ORACLE_SID=orcl 
+export ORACLE_HOME=/home/oracle/oracle/product/10....（...部分根据你的实际路径修改） 
+export PATH=$PATH:$ORACLE_HOME/bin 
+输入完毕后按ESC键退出vi编辑状态，输入:wq并回车存盘退出。 
+注销所有oracle用户，再使用oracle登录即可。
+
+注意输入wq前面有个:冒号，先输入这个:就可以在编辑器最底端输入命令了Z

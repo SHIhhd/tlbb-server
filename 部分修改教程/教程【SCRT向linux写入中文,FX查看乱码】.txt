@@ -1,0 +1,22 @@
+问题描述
+SecureCRT与SecureFX的常规选项里面已经设置成了UTF-8，但是在SecureCRT中新建的中文文件夹，在SecureFX里面仍是乱码，这个问题，找了很多的方法，最后还是解决了，在这里和大家分享下。
+查看服务器编码
+查看linux的编码，修改为自己需要的，本文将已UTF-8为例进行说明。
+修改Linux服务器的配置文件：
+[root@iitshare ~]# vi /etc/sysconfig/i18n
+如果安装系统的时候选择了中文系统，则把LANG字段改为：
+LANG=”zh_CN.UTF-8″
+如果安装系统的时候选择的英文系统，则把LANG字段改为：
+LANG=”en_US.UTF-8″
+一般解决办法
+1. 右键点击SecureCRT的连接标签,点击会话选项。
+
+2. 在弹出的窗口中，左边栏选择“外观”选项卡，在右边的窗口中选择UTF8
+
+3. 此时，SecureCRT中即可正常显示中文了：
+
+此时虽然可以显示中文，但是在SecureFX中新建的中文文件夹在SecureCRT中仍然会显示乱码，此问题如何解决了？需要通过修改配置文件进行配置，下面将进行具体说明。
+配置文件进行设置
+1. 找到SecureFX配置文件夹（选项–全局选项，常规下的配置文件夹），比如：C:\Users\ZhangYQ\AppData\Roaming\VanDyke\Config；
+2. 在配置文件夹下的Sessions子目录中，找到SecureCRT连接对应的Session文件（.ini扩展名），双击打开；
+3. 查找Filenames Always Use UTF8，将=号后面的参数改成00000001，保存退出即可。

@@ -1,0 +1,12 @@
+mysql -u root -p  进入mysql操作
+输入密码进入mysql操作
+
+delete from t_guild           <-清空帮派表
+
+delete from t_city              <-清空占领城市表
+
+update t_char set  guldid = -1        <-设置玩家帮会标志为空
+
+exit       退出mysql操作
+
+[注] 以上操作必须在停服的时候进行,先启动MYSQL 再清理

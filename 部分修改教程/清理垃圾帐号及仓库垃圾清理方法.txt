@@ -1,0 +1,63 @@
+按登陆日期清理垃圾帐号及仓库垃圾清理方法 
+提醒你先备份你的数据库,以防万一.备份好后,打开你的SQL查询分析器,对muonline数据库进行操作: 
+
+1.select * into membstat from memb_stat where connecttm>年/月/日(这里按格式输入你要删除什么日期后没登陆过的帐号) 
+
+2.truncate table memb_stat 
+
+3.insert into memb_stat select * from membstat 
+
+4.select * into membinfo from memb_info where memb___id in 
+(select memb_info.memb___id 
+from memb_info,membstat 
+where memb_info.memb___id=membstat.memb___id) 
+
+5.truncate table memb_info 
+
+这里注意要先将memb_info表的memb___id列的identity属性去掉. 
+
+6.insert into memb_info select * from membinfo 
+
+修改回memb___id列的identity属性 
+
+这里要先修改accountcharacter表的id列的排序规则,在规则里把区分大小写也选中,同时去掉Number列的identity属性,否则下面的插入操作无法进行 
+
+7.select * into accountchbak from accountcharacter where id in 
+(select accountcharacter.id 
+from accountcharacter,membstat 
+where accountcharacter.id=membstat.memb___id) 
+
+8.truncate table accountcharacter 
+
+9.insert into accountcharacter select * from accountchbak 
+
+这里将上面修改过的规则和属性修改回来 
+
+修改character表accountid列的排序规则.方法同上面一样. 
+
+10.select * into characterbak from character where accountid in 
+(select character.accountid 
+from character,membstat 
+where character.accountid=membstat.memb___id) 
+
+11.delete from character 
+
+12.insert into character select * from characterbak 
+
+改回排序规则. 
+
+下面是删除仓库空的和重复记录 
+13.delete from warehouse where items is null 
+
+14.select distinct * into warehousebak from warehouse 
+
+15.select accountid from warehousebak group by accountid having count(*)>1 
+
+16.truncate table warehouse 
+
+17.insert into warehouse select * from warehousebak 
+
+
+最后把不再需要的备份和临时表删除:warehousebak,characterbak,accountchbak,membinfo,membstat. 
+
+上面的步骤和方法我自己已经用过没有出现什么问题,不过还是建议大家先备份好自己的数
