@@ -57,7 +57,7 @@ x050100_g_CopySceneType = FUBEN_SONGLIAO	-- 副本类型，定义在ScriptGlobal.lua里面
 x050100_g_LimitMembers = 1					-- 可以进副本的最小队伍人数
 x050100_g_LevelLimit = 30					-- 可以进入副本的最低级别
 x050100_g_TickTime = 5						-- 回调脚本的时钟时间（单位：秒/次）
-x050100_g_LimitTotalHoldTime = 360			-- 副本可以存活的时间（单位：次数）,如果此时间到了，则任务将会失败
+x050100_g_LimitTotalHoldTime = 720			-- 副本可以存活的时间（单位：次数）,如果此时间到了，则任务将会失败
 x050100_g_CloseTick = 6						-- 副本关闭前倒计时（单位：次数）
 x050100_g_NoUserTime = 30					-- 副本中没有人后可以继续保存的时间（单位：秒）
 x050100_g_LoadBossTick = 180				-- 15 分钟刷小 Boss
@@ -514,6 +514,19 @@ function x050100_OnCopySceneReady( sceneId, destsceneId )
 			NewWorld( sceneId, members[i], destsceneId, x050100_g_Fuben_X, x050100_g_Fuben_Z )
 		end
 	end
+		-- 副本创建时刷巡逻小兵
+		local bossGrade = LuaFnGetCopySceneData_Param( destsceneId, 13 )
+		local LevelGap = LuaFnGetCopySceneData_Param( destsceneId, CopyScene_LevelGap )
+		if x050100_g_Dogface[bossGrade] then
+			for i = 1, getn( x050100_g_DogfacePos ) do
+				if x050100_g_DogfacePos[i] then
+					local dogfaceId = LuaFnCreateMonster( destsceneId, x050100_g_Dogface[bossGrade], x050100_g_DogfacePos[i][1], x050100_g_DogfacePos[i][2], 1, 4, -1 )
+					SetLevel( destsceneId, dogfaceId, GetLevel( destsceneId, dogfaceId ) + LevelGap )
+					SetMonsterGroupID( destsceneId, dogfaceId, x050100_g_DogfaceGroup )
+					SetPatrolId( destsceneId, dogfaceId, x050100_g_DogfacePos[i][3] )
+				end
+			end
+		end
 end
 
 --**********************************
@@ -790,20 +803,6 @@ function x050100_OnCopySceneTimer( sceneId, nowTime )
 				LuaFnSetCopySceneData_Param( sceneId, 12, 0 )
 
 				local bossGrade = LuaFnGetCopySceneData_Param( sceneId, 13 )
-				if not x050100_g_Dogface[bossGrade] then
-					return
-				end
-
-				local dogfaceId = -1
-				for i = 1, getn( x050100_g_DogfacePos ) do
-					if x050100_g_DogfacePos[i] then
-						dogfaceId = LuaFnCreateMonster( sceneId, x050100_g_Dogface[bossGrade], x050100_g_DogfacePos[i][1], x050100_g_DogfacePos[i][2], 1, 4, -1 )
-						SetLevel( sceneId, dogfaceId, GetLevel( sceneId, dogfaceId ) + LevelGap )
-						SetMonsterGroupID( sceneId, dogfaceId, x050100_g_DogfaceGroup )
-						SetPatrolId( sceneId, dogfaceId, x050100_g_DogfacePos[i][3] )		-- 设置巡逻路径
-					end
-				end
-				--运营要求，创建伪宋军副都统
 				if not x050100_g_LittleBoss[bossGrade] then
 					return
 				end
@@ -823,37 +822,6 @@ function x050100_OnCopySceneTimer( sceneId, nowTime )
 			end
 		end
 
-		-- 小怪沿路线到达指定区域则消失
-		-- 当有一个小怪逃走后在屏幕上方提示玩家：“逃窜匪类逃出，贼人头目闻风藏匿，任务失败。”
-		local monstercount = GetMonsterCount( sceneId )
-		local monsterId, GroupID, DogX, DogZ, misIndex
-		local x, z = GetLastPatrolPoint( sceneId, 5 )
-
-		for i = 0, monstercount - 1 do
-			monsterId = GetMonsterObjID( sceneId, i )
-			GroupID = GetMonsterGroupID( sceneId, monsterId )
-
-			if GroupID == x050100_g_DogfaceGroup
-			 and LuaFnIsCharacterLiving( sceneId, monsterId ) == 1 then			-- 判断活着的小兵是否逃跑成功
-				DogX, DogZ = GetWorldPos( sceneId, monsterId )
-
-				if (x - DogX) * (x - DogX) + (z - DogZ) * (z - DogZ) < 25 then	-- 离终点不到 5 米
-					if LuaFnGetCopySceneData_Param( sceneId, 14 ) < 1 then		-- 第一次小兵逃跑
-						LuaFnSetCopySceneData_Param( sceneId, 14, 1 )			-- 是否已经有小怪逃走
-
-						for	i = 0, membercount - 1 do
-							if LuaFnIsObjValid( sceneId, mems[i] ) == 1 and LuaFnIsCharacterLiving( sceneId, mems[i] ) == 1 and LuaFnIsCanDoScriptLogic(sceneId,mems[i] ) == 1 then
-								misIndex = GetMissionIndexByID( sceneId, mems[i], x050100_g_MissionId )
-								SetMissionByIndex( sceneId, mems[i], misIndex, x050100_g_IsMissionOkFail, 2 )	-- 任务失败
-								x050100_NotifyFailTips( sceneId, mems[i], "逃窜匪类逃出，贼人头目闻风藏匿，任务失败。" )
-							end
-						end
-					end
-
-					LuaFnDeleteMonster( sceneId, monsterId )
-				end
-			end
-		end
 
 --		if GetMonsterCount( sceneId ) < 1 then
 --			LuaFnSetCopySceneData_Param( sceneId, 4, 1 )

@@ -732,7 +732,6 @@ function x401001_OnCopySceneTimer(sceneId, nowTime)
 								SetLevel(sceneId, monsterObjId, monsterLevel);
 							end
 						end
-						end
 					elseif monstertype == White_A[mgroup] then
 						if nowTime >= mcreatetime + x401001_g_aToBInterval then --需要将怪物变成B状态了
 							LuaFnDeleteMonster(sceneId, monsterObjId)
@@ -741,7 +740,6 @@ function x401001_OnCopySceneTimer(sceneId, nowTime)
 							if monsterObjId and monsterObjId > -1 then
 								SetLevel(sceneId, monsterObjId, monsterLevel);
 							end
-						end
 						end
 					else
 					end
