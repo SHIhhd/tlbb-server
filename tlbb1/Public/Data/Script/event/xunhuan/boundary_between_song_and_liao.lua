@@ -823,38 +823,6 @@ function x050100_OnCopySceneTimer( sceneId, nowTime )
 			end
 		end
 
-		-- 小怪沿路线到达指定区域则消失
-		-- 当有一个小怪逃走后在屏幕上方提示玩家：“逃窜匪类逃出，贼人头目闻风藏匿，任务失败。”
-		local monstercount = GetMonsterCount( sceneId )
-		local monsterId, GroupID, DogX, DogZ, misIndex
-		local x, z = GetLastPatrolPoint( sceneId, 5 )
-
-		for i = 0, monstercount - 1 do
-			monsterId = GetMonsterObjID( sceneId, i )
-			GroupID = GetMonsterGroupID( sceneId, monsterId )
-
-			if GroupID == x050100_g_DogfaceGroup
-			 and LuaFnIsCharacterLiving( sceneId, monsterId ) == 1 then			-- 判断活着的小兵是否逃跑成功
-				DogX, DogZ = GetWorldPos( sceneId, monsterId )
-
-				if (x - DogX) * (x - DogX) + (z - DogZ) * (z - DogZ) < 25 then	-- 离终点不到 5 米
-					if LuaFnGetCopySceneData_Param( sceneId, 14 ) < 1 then		-- 第一次小兵逃跑
-						LuaFnSetCopySceneData_Param( sceneId, 14, 1 )			-- 是否已经有小怪逃走
-
-						for	i = 0, membercount - 1 do
-							if LuaFnIsObjValid( sceneId, mems[i] ) == 1 and LuaFnIsCharacterLiving( sceneId, mems[i] ) == 1 and LuaFnIsCanDoScriptLogic(sceneId,mems[i] ) == 1 then
-								misIndex = GetMissionIndexByID( sceneId, mems[i], x050100_g_MissionId )
-								SetMissionByIndex( sceneId, mems[i], misIndex, x050100_g_IsMissionOkFail, 2 )	-- 任务失败
-								x050100_NotifyFailTips( sceneId, mems[i], "逃窜匪类逃出，贼人头目闻风藏匿，任务失败。" )
-							end
-						end
-					end
-
-					LuaFnDeleteMonster( sceneId, monsterId )
-				end
-			end
-		end
-
 --		if GetMonsterCount( sceneId ) < 1 then
 --			LuaFnSetCopySceneData_Param( sceneId, 4, 1 )
 --		end

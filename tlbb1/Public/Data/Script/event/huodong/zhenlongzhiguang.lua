@@ -11,7 +11,7 @@ x808123_g_RestRooms = {193, 418, 419, 518};      -- 棋局休息室的场景id
 
 x808123_g_iMonsterTypeID = 12150; --52000; -- 要采集的怪的id  MonsterAttrExtable.txt
 
-x808123_g_iZhenglongZhiguangBuffId = 76;    -- 珍珑之光buffid，见 StandardImpact.txt
+x808123_g_iZhenglongZhiguangBuffId = 54329;    -- 珍珑之光buffid，见 StandardImpact.txt
 
 
 --**********************************
@@ -58,12 +58,11 @@ function x808123_OnTimer( sceneId, actId, uTime )
 	local iMinute = GetMinute();
 	local schedule =
 	{
-	    [1] =  { StartTime1 = {11, 25}, StartTime2 = {11, 27}, EndTime = {14, 30}, },
-		[2] =  { StartTime1 = {20, 25}, StartTime2 = {20, 27}, EndTime = {22, 00}, },
-	}
+    [1] =  { StartTime1 = {1, 0}, StartTime2 = {1, 2}, EndTime = {23, 0}, },
+}
 	local i = 1;
 	local iParam = 0;
-	for i = 1, 2 do
+    for i = 1, 1 do
 	    local iOffSet = (i - 1) * 3;
 	    if ( iHour == schedule[i].EndTime[1] and iMinute == schedule[i].EndTime[2] ) then -- 删除未采集的采集点
 	         iParam = GetActivityParam(sceneId, actId, iOffSet + 3);
@@ -151,19 +150,6 @@ end
 --特殊交互:条件判断
 --**********************************
 function x808123_OnActivateConditionCheck( sceneId, selfId, activatorId )
-	-- 1 检测队伍是不是够人数
-	if GetTeamSize(sceneId,activatorId) < 3  then
-		--"你需要一个3人或3人以上的队伍。"
-		x808123_NotifyTip( sceneId, activatorId, "你需要一个3人或3人以上的队伍。" )
-		return 0
-	end
-	-- 2 检测玩家是不是队长
-	if GetTeamLeader(sceneId,activatorId) ~= activatorId then
-        --只有队长才能进行采集。
-        x808123_NotifyTip( sceneId, activatorId, "只有队长才能进行采集。" )
-		return 0
-	end
-	
 	-- 限制身上的buff
 	if LuaFnHaveImpactOfSpecificDataIndex(sceneId, activatorId, x808123_g_iZhenglongZhiguangBuffId) == 1 then
 	   x808123_NotifyTip( sceneId, activatorId, "珍珑之光已经环绕在你的身上，不要重复采集。" )
@@ -196,12 +182,7 @@ function x808123_OnActivateEffectOnce( sceneId, selfId, activatorId )
 		LuaFnDeleteMonster(sceneId, selfId)
 		--LuaFnSendSpecificImpactToUnit(sceneId, activatorId, activatorId, activatorId, SmallBoxBuff[1].buff, 100 )
 		-- 给队里其它玩家加上buff
-  		local	nearteammembercount = GetNearTeamCount( sceneId, activatorId)
-		local mems = {}
-		for	i=0,nearteammembercount-1 do
-			mems[i] = GetNearTeamMember(sceneId, activatorId, i)
-			LuaFnSendSpecificImpactToUnit(sceneId, mems[i], mems[i], mems[i], SmallBoxBuff[1].buff, 100 )
-		end
+		LuaFnSendSpecificImpactToUnit(sceneId, activatorId, activatorId, activatorId, SmallBoxBuff[1].buff, 100 )
 	end
 
 	return 1
