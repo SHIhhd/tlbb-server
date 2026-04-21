@@ -54,6 +54,7 @@ x050100_g_CopySceneArea = "songliao_area.ini"
 x050100_g_CopySceneMonsterIni = "songliao_monster_%d.ini"
 
 x050100_g_CopySceneType = FUBEN_SONGLIAO	-- 副本类型，定义在ScriptGlobal.lua里面
+x050100_g_EnterBuff = 54329;
 x050100_g_LimitMembers = 1					-- 可以进副本的最小队伍人数
 x050100_g_LevelLimit = 30					-- 可以进入副本的最低级别
 x050100_g_TickTime = 5						-- 回调脚本的时钟时间（单位：秒/次）
@@ -521,6 +522,7 @@ end
 --**********************************
 function x050100_OnPlayerEnter( sceneId, selfId )
 	SetPlayerDefaultReliveInfo( sceneId, selfId, "%10", -1, "0", sceneId, x050100_g_Fuben_Relive_X, x050100_g_Fuben_Relive_Z )
+	LuaFnSendSpecificImpactToUnit(sceneId, selfId, selfId, selfId, x050100_g_EnterBuff, 0);
 end
 
 --**********************************
@@ -644,8 +646,10 @@ end
 --离开副本
 --**********************************
 function x050100_Exit( sceneId, selfId )
-	local oldsceneId = LuaFnGetCopySceneData_Param( sceneId, 3 )				-- 取得副本入口场景号
-	NewWorld( sceneId, selfId, oldsceneId, x050100_g_Back_X, x050100_g_Back_Z )
+	local oldsceneId = LuaFnGetCopySceneData_Param( sceneId, 3 )				-- 取得副本入口场景号	NewWorld( sceneId, selfId, oldsceneId, x050100_g_Back_X, x050100_g_Back_Z )
+end
+function x050100_PlayerExit(sceneId, selfId)
+	LuaFnCancelSpecificImpact(sceneId, selfId, x050100_g_EnterBuff);
 end
 
 --**********************************
@@ -675,8 +679,7 @@ function x050100_OnAbandon( sceneId, selfId )
 
 	if sceneId == copyscene and fubentype == x050100_g_CopySceneType then											-- 如果在副本里删除任务，则直接传送回
 		x050100_NotifyFailTips( sceneId, selfId, "任务失败！" )
-		local oldsceneId = LuaFnGetCopySceneData_Param( sceneId, 3 )		-- 取得副本入口场景号
-		NewWorld( sceneId, selfId, oldsceneId, x050100_g_Back_X, x050100_g_Back_Z )
+		local oldsceneId = LuaFnGetCopySceneData_Param( sceneId, 3 )		-- 取得副本入口场景号		NewWorld( sceneId, selfId, oldsceneId, x050100_g_Back_X, x050100_g_Back_Z )
 	end
 end
 

@@ -11,6 +11,7 @@ x401001_g_beginTime2 = 20 * 60 + 30;
 x401001_g_endTime2 = 22 * 60;
 
 x401001_g_CopySceneType = FUBEN_ZHENGLONG;	--副本类型，定义在ScriptGlobal.lua里面
+x401001_g_EnterBuff = 54329;
 x401001_g_limitMembers = 1;					--可以进副本的最小队伍人数
 x401001_g_tickDiffTime = 1;					--回调脚本的时钟时间（单位：秒/次）
 x401001_g_closeTickCount = 30;				--副本关闭前倒计时（单位：次）
@@ -488,6 +489,7 @@ end
 --**********************************
 function x401001_PlayerExit(sceneId, selfId)
 	if selfId then
+		LuaFnCancelSpecificImpact(sceneId, selfId, x401001_g_EnterBuff);
 		local oldsceneId = LuaFnGetCopySceneData_Param(sceneId, 3);		--取得副本入口场景号
 		
 		--将当前副本场景里的所有人传送回原来进入时候的场景
@@ -496,12 +498,9 @@ function x401001_PlayerExit(sceneId, selfId)
 		for	i = 0, membercount - 1 do
 			memId = LuaFnGetCopyScene_HumanObjId(sceneId, i);
 			if memId == selfId then
-				if oldsceneId == 0 or oldsceneId == 418 or oldsceneId == 419 then
-					NewWorld(sceneId, selfId, 0, x401001_g_Back_X_Ly, x401001_g_Back_Z_Ly);
-				elseif oldsceneId == 1 or oldsceneId == 518 then
-					NewWorld(sceneId, selfId, 1, x401001_g_Back_X_Sz, x401001_g_Back_Z_Sz);
-				else
-					NewWorld(sceneId, selfId, 2, x401001_g_Back_X_Dl, x401001_g_Back_Z_Dl);
+				if oldsceneId == 0 or oldsceneId == 418 or oldsceneId == 419 then					NewWorld(sceneId, selfId, 0, x401001_g_Back_X_Ly, x401001_g_Back_Z_Ly);
+				elseif oldsceneId == 1 or oldsceneId == 518 then					NewWorld(sceneId, selfId, 1, x401001_g_Back_X_Sz, x401001_g_Back_Z_Sz);
+				else					NewWorld(sceneId, selfId, 2, x401001_g_Back_X_Dl, x401001_g_Back_Z_Dl);
 				end
 				return 
 			end
@@ -550,6 +549,7 @@ end
 function x401001_OnPlayerEnter(sceneId, selfId)
 	--设置死亡后复活点位置
 	SetPlayerDefaultReliveInfo(sceneId, selfId, "%10", -1, "0", sceneId, x401001_g_Fuben_X, x401001_g_Fuben_Z);
+	LuaFnSendSpecificImpactToUnit(sceneId, selfId, selfId, selfId, x401001_g_EnterBuff, 0);
 	local teamLeaderFlag = LuaFnIsTeamLeader(sceneId, selfId);
 	if teamLeaderFlag and teamLeaderFlag == 1 then
 		LuaFnSetTeamExpAllotMode(sceneId, selfId, 0);
@@ -624,12 +624,9 @@ function x401001_OnCopySceneTimer(sceneId, nowTime)
 			for	i = 0, membercount - 1 do
 				memId = LuaFnGetCopyScene_HumanObjId(sceneId, i);
 				if LuaFnIsObjValid(sceneId, memId) == 1 and LuaFnIsCanDoScriptLogic(sceneId, memId) == 1 then
-					if oldsceneId == 0 or oldsceneId == 418 or oldsceneId == 419 then
-						NewWorld(sceneId, memId, 0, x401001_g_Back_X_Ly, x401001_g_Back_Z_Ly);
-					elseif oldsceneId == 1 or oldsceneId == 518 then
-						NewWorld(sceneId, memId, 1, x401001_g_Back_X_Sz, x401001_g_Back_Z_Sz);
-					else
-						NewWorld(sceneId, memId, 2, x401001_g_Back_X_Dl, x401001_g_Back_Z_Dl);
+					if oldsceneId == 0 or oldsceneId == 418 or oldsceneId == 419 then						NewWorld(sceneId, memId, 0, x401001_g_Back_X_Ly, x401001_g_Back_Z_Ly);
+					elseif oldsceneId == 1 or oldsceneId == 518 then						NewWorld(sceneId, memId, 1, x401001_g_Back_X_Sz, x401001_g_Back_Z_Sz);
+					else						NewWorld(sceneId, memId, 2, x401001_g_Back_X_Dl, x401001_g_Back_Z_Dl);
 					end
 				end
 			end

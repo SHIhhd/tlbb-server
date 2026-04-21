@@ -54,6 +54,7 @@ x050102_g_CopySceneArea = "yewai_area.ini"
 x050102_g_CopySceneMonsterIni = "yewai_monster_%d.ini"
 
 x050102_g_CopySceneType = FUBEN_FEIZHAI		-- 副本类型，定义在ScriptGlobal.lua里面
+x050102_g_EnterBuff = 54329;
 x050102_g_LimitMembers = 1					-- 可以进副本的最小队伍人数
 x050102_g_LevelLimit = 30					-- 可以进入副本的最低级别
 x050102_g_TickTime = 5						-- 回调脚本的时钟时间（单位：秒/次）
@@ -183,10 +184,10 @@ function x050102_CheckAccept( sceneId, selfId )
 	--local CurTime = GetHourTime()												-- 当前时间(单位：一刻钟)
 	local CurTime = GetQuarterTime()												-- 当前时间(单位：一刻钟)
 	--end modified by zhangguoxin 090208
-	if iTime+1 >= CurTime then
-		x050102_NotifyFailTips( sceneId, selfId, "放弃任务30分钟后才能再次接取" )
-		return 0
-	end
+	--if iTime+1 >= CurTime then
+	--	x050102_NotifyFailTips( sceneId, selfId, "放弃任务30分钟后才能再次接取" )
+	--	return 0
+	--end
 
 	-- 如果没有信则提示
 	if LuaFnGetAvailableItemCount( sceneId, selfId, x050102_g_Mail ) < 1 then
@@ -525,6 +526,7 @@ end
 --**********************************
 function x050102_OnPlayerEnter( sceneId, selfId )
 	SetPlayerDefaultReliveInfo( sceneId, selfId, "%10", -1, "0", sceneId, x050102_g_Fuben_Relive_X, x050102_g_Fuben_Relive_Z )
+	LuaFnSendSpecificImpactToUnit(sceneId, selfId, selfId, selfId, x050102_g_EnterBuff, 0);
 end
 
 --**********************************
@@ -636,6 +638,9 @@ end
 function x050102_Exit( sceneId, selfId )
 	local oldsceneId = LuaFnGetCopySceneData_Param( sceneId, 3 )				-- 取得副本入口场景号
 	NewWorld( sceneId, selfId, oldsceneId, x050102_g_Back_X, x050102_g_Back_Z )
+end
+function x050102_PlayerExit(sceneId, selfId)
+	LuaFnCancelSpecificImpact(sceneId, selfId, x050102_g_EnterBuff);
 end
 
 --**********************************
