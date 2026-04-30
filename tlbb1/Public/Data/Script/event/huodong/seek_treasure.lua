@@ -17,7 +17,7 @@ x808039_g_MonsterChangeTime = 90 * 1000; -- 怪物变身时间 90秒 (毫秒)
 
 x808039_g_CopySceneType = FUBEN_SEEK_TREASURE	--副本类型，定义在ScriptGlobal.lua里面
 
-x808039_g_LimitMembers = 3							--可以进副本的最小队伍人数
+x808039_g_LimitMembers = 1						--可以进副本的最小队伍人数
 x808039_g_TickTime = 5									--回调脚本的时钟时间（单位：秒/次）
 x808039_g_LimitTotalHoldTime = 720 			--副本可以存活的时间（单位：次数）,如果此时间到了，则任务将会失败 72*5 =60分钟
 x808039_g_StartTickCount = 7  					--战斗开始提醒（单位：次数）

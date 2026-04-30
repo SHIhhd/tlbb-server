@@ -46,7 +46,7 @@ x050010_g_CopySceneMap = "bianguan_1.path"
 x050010_g_CopySceneArea = "bianguan_1_area.ini"
 
 x050010_g_CopySceneType = FUBEN_BIANGUAN	--副本类型，定义在ScriptGlobal.lua里面
-x050010_g_LimitMembers = 3					--可以进副本的最小队伍人数
+x050010_g_LimitMembers = 1					--可以进副本的最小队伍人数
 x050010_g_TickTime = 5						--回调脚本的时钟时间（单位：秒/次）
 x050010_g_LimitTotalHoldTime = 240			--副本可以存活的时间（单位：次数）,如果此时间到了，则任务将会失败
 x050010_g_CloseTick = 3						--副本关闭前倒计时（单位：次数）

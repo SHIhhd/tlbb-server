@@ -535,6 +535,13 @@ x300027_g_petList[30310134] = {type=1, dataId=30229, level=1} --’‰ ﬁµ∞£∫∆ΩÃÏ¥Û •
 x300027_g_petList[30310135] = {type=1, dataId=30239, level=1} --’‰ ﬁµ∞£∫∆ΩÃÏ¥Û • 85
 x300027_g_petList[30310136] = {type=1, dataId=30249, level=1} --’‰ ﬁµ∞£∫∆ΩÃÏ¥Û • 95
 
+x300027_g_petList[38003424] = {type=1, dataId=6809, level=1} --’‰ ﬁµ∞£∫ ¥π«⁄§…ﬂ 5
+x300027_g_petList[38003414] = {type=1, dataId=6819, level=1} --’‰ ﬁµ∞£∫ ¥π«⁄§…ﬂ 45
+x300027_g_petList[38003415] = {type=1, dataId=6829, level=1} --’‰ ﬁµ∞£∫ ¥π«⁄§…ﬂ 55
+x300027_g_petList[38003416] = {type=1, dataId=6839, level=1} --’‰ ﬁµ∞£∫ ¥π«⁄§…ﬂ 65
+x300027_g_petList[38003417] = {type=1, dataId=6849, level=1} --’‰ ﬁµ∞£∫ ¥π«⁄§…ﬂ 75
+x300027_g_petList[38003418] = {type=1, dataId=6859, level=1} --’‰ ﬁµ∞£∫ ¥π«⁄§…ﬂ 85
+x300027_g_petList[38003419] = {type=1, dataId=6869, level=1} --’‰ ﬁµ∞£∫ ¥π«⁄§…ﬂ 95
 -- x300027_g_petList[30310141] = {type=1, dataId=30189, level=1} --’‰ ﬁµ∞£∫∞Ÿ±‰ •…Æ 5
 -- x300027_g_petList[30310142] = {type=1, dataId=30199, level=1} --’‰ ﬁµ∞£∫∞Ÿ±‰ •…Æ 45
 -- x300027_g_petList[30310143] = {type=1, dataId=30209, level=1} --’‰ ﬁµ∞£∫∞Ÿ±‰ •…Æ 55

@@ -52,7 +52,7 @@ x401020_g_Param_time		=5	--5号：完成副本所用时间(单位：秒)
 --7号：未用
 
 x401020_g_CopySceneType=FUBEN_EXAMPLE	--副本类型，定义在ScriptGlobal.lua里面
-x401020_g_LimitMembers=3			--可以进副本的最小队伍人数
+x401020_g_LimitMembers=1			--可以进副本的最小队伍人数
 x401020_g_TickTime=5				--回调脚本的时钟时间（单位：秒/次）
 x401020_g_LimitTotalHoldTime=360	--副本可以存活的时间（单位：次数）,如果此时间到了，则任务将会失败
 x401020_g_LimitTimeSuccess=500		--副本时间限制（单位：次数），如果此时间到了，任务完成

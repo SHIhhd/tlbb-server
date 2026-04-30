@@ -37,10 +37,7 @@ x990001_ChuansongList[5] =
 }			
 
 function x990001_Teleport(sceneId, selfId, nType, Index)
-	if sceneId > 2 then
-		x990001_NotifyTip( sceneId, selfId, "万能传送只能在主城内使用!" )
-		return
-	end
+	
     if x990001_ChuansongList[nType] == nil then 
 		return
 	end
